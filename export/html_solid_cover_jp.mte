@@ -1,0 +1,198 @@
+﻿$filename(solid_cover_jp.html,utf-8)<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<title>トラックリスト | Mp3tag</title>
+		<meta name="description" content="Created by Mp3tag">
+		<style>
+* {
+	margin: 0px;
+	padding: 0px;
+}
+body {
+	background-color: #000;
+	padding: 30px;
+	font-family: Meiryo, sans-serif;
+}
+table {
+	border-collapse: collapse;
+}
+#wrapper {
+	width: 70%%;
+	min-width: 960px;
+	margin: auto;
+}
+div.frame {
+	width: 100%%;
+	border: solid 1px #9c9c9c;
+	margin-bottom: 40px;
+	background-color: #191919;
+	color: #fff;
+}
+div.frame .headline {
+	width: 100%%;
+	font-size: 180%%;
+	text-align: center;
+	background-color: #bb1212;
+	text-decoration-line: underline;
+	color: #fff;
+}
+div.frame hr {
+	margin: 30px 20px;
+}
+table.properties {
+	width: 100%%;
+	margin: 20px auto;
+	border: none;
+	font-size: 12px;
+	font-weight: normal;
+}
+table.properties tr {
+	width: 100%%;
+}
+table.properties tr > td {
+	width: 50%%;
+	border: none;
+	text-align: right;
+	font-weight: bold;
+	padding-right: 20px;
+}
+table.properties td + td {
+	text-align: left;
+	font-weight: normal;
+	padding-left: 20px;
+}
+table.tracks {
+	width: 90%%;
+	margin: auto;
+}
+table.tracks > tbody > tr:nth-child(2) {
+	background-color: #333333;
+	color: #929292;
+}
+table.tracks > tbody > tr:nth-child(2n+4) {
+	background-color: #272727;
+}
+table.tracks > tbody > tr:nth-child(2n+3) {
+	background-color: #1d1d1d;
+}
+table.tracks th {
+	font-weight: bold;
+	text-align: left;
+	padding: 1px 10px 1px 10px;
+}
+table.tracks td {
+	text-align: left;
+	padding: 1px 10px 1px 10px;
+}
+table.tracks th.numerical {
+	text-align: right;
+}
+table.tracks td.numerical {
+	text-align: right;
+}
+table.tracks td.cover_cell {
+	width: 40%%;
+	text-align: right;
+	vertical-align: top;
+}
+table.tracks td.album_info_cell {
+	vertical-align: top;
+}
+img.cover {
+	max-width: 60%%;
+	margin: 20px 10%%;
+}
+.album {
+	font-size: 150%%;
+	font-weight: bold;
+	margin: 20px auto;
+}
+		</style>
+	</head>
+	<body>
+		<div id="wrapper">
+			<header>
+				<div class="frame">
+					<h1 class="headline">概要</h1>
+					<table class="properties">
+						<tbody>
+							<tr>
+								<td>トラック数</td>
+								<td>%_total_files%</td>
+							</tr>
+							<tr>
+								<td>演奏時間</td>
+								<td>%_total_time%</td>
+							</tr>
+							<tr>
+								<td>トータルサイズ</td>
+								<td>%_total_size%</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</header>
+			<main>
+$loop(%albumartist%)				<div class="frame">
+					<h2 class="headline">%albumartist%</h2>
+$loop(%year%)$loop(%album%)					<table class="tracks">
+						<tbody>
+							<tr>
+								<td colspan="2" class="cover_cell">
+									<img class="cover" alt="cover" src="covers/$validate(%albumartist%-%album%,_).$replace(%_cover_mimetype%,image/jpeg,jpg,image/jpg,jpg,image/png,png,image/gif,gif)">
+								</td>
+								<td colspan="3" class="album_info_cell">
+									<h3 class="album">%album%</h3>
+									<table class="properties">
+										<tbody>
+											<tr>
+												<td>日付</td>
+												<td>%year%</td>
+											</tr>
+											<tr>
+												<td>ジャンル</td>
+												<td>%genre%</td>
+											</tr>
+											[<tr>
+												<td>スタイル</td>
+												<td>%style%</td>
+											</tr>]
+											<tr>
+												<td>トラック数</td>
+												<td>%_total_files%</td>
+											</tr>
+											<tr>
+												<td>演奏時間</td>
+												<td>%_total_time%</td>
+											</tr>
+											<tr>
+												<td>データサイズ</td>
+												<td>%_total_size%</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<th class="numerical">#</th>
+								<th>タイトル</th>
+								<th>アーティスト</th>
+								<th class="numerical">時間</th>
+								<th class="numerical">サイズ</th>
+							</tr>
+							$loop(%discnumber%)$loop(%_filename_ext%)<tr>
+								<td class="numerical">%track%</td>
+								<td>%title%</td>
+								<td>%artist%</td>
+								<td class="numerical">%_length%</td>
+								<td class="numerical">%_file_size%</td>
+							</tr>$loopend()$loopend()
+						</tbody>
+					</table>
+					<hr>
+$loopend()$loopend()				</div>
+$loopend()			</main>
+		</div>
+	</body>
+</html>
