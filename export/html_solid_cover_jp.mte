@@ -11,7 +11,7 @@ $filename(html,utf-8)<!DOCTYPE html>
 }
 body {
 	background-color: #000;
-	padding: 30px;
+	margin: 30px auto;
 	font-family: Meiryo, sans-serif;
 }
 table {
