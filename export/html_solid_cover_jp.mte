@@ -107,7 +107,7 @@ img.cover {
 	margin: 20px 10%%;
 }
 .album {
-	font-size: 160%%;
+	font-size: 150%%;
 	font-weight: bold;
 	margin: 20px auto;
 }
