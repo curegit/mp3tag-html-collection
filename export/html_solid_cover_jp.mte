@@ -21,6 +21,9 @@ header, main, footer {
 table {
 	border-collapse: collapse;
 }
+tbody {
+	vertical-align: middle;
+}
 #wrapper {
 	width: 70%%;
 	min-width: 960px;
