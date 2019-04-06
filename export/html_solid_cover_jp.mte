@@ -126,7 +126,7 @@ img.cover {
 		</style>
 		<style id="dynamic_css">
 div.frame .headline {
-	background-color: #bb1212;
+	background-color: #bb1276;
 }
 		</style>
 		<script>
