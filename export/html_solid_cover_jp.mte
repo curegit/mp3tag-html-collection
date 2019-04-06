@@ -44,7 +44,10 @@ div.frame .headline {
 	color: #fff;
 }
 div.frame hr {
-	margin: 30px 20px;
+	margin: 25px 20px;
+}
+div.frame hr:last-child {
+	display: none;
 }
 table.properties {
 	width: 100%%;
@@ -70,7 +73,7 @@ table.properties td + td {
 }
 table.tracks {
 	width: 90%%;
-	margin: auto;
+	margin: 25px auto;
 }
 table.tracks > tbody > tr:nth-child(2) {
 	background-color: #333333;
