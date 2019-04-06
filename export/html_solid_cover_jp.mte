@@ -102,7 +102,7 @@ table.tracks td.numerical {
 }
 table.tracks td.cover_cell {
 	width: 40%%;
-	text-align: right;
+	text-align: center;
 	vertical-align: top;
 }
 table.tracks td.album_info_cell {
@@ -110,7 +110,7 @@ table.tracks td.album_info_cell {
 }
 img.cover {
 	max-width: 60%%;
-	margin: 20px 10%%;
+	margin: 20px auto;
 }
 .album {
 	font-size: 150%%;
