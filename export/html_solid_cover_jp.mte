@@ -186,7 +186,7 @@ $loop(%year%)$loop(%album%)					<table class="tracks">
 								<th class="numerical">サイズ</th>
 							</tr>
 							$loop(%discnumber%)$loop(%_filename_ext%)<tr>
-								<td class="numerical">$replace(%track%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
+								<td class="numerical">$replace($num(%track%,2),&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
 								<td>$replace(%title%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
 								<td>$replace($meta_sep(artist,',' ),&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
 								<td class="numerical">$replace(%_length%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
