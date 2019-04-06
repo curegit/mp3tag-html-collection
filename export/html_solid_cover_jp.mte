@@ -37,7 +37,6 @@ div.frame .headline {
 	width: 100%%;
 	font-size: 180%%;
 	text-align: center;
-	background-color: #bb1212;
 	text-decoration-line: underline;
 	color: #fff;
 }
@@ -112,7 +111,23 @@ img.cover {
 	font-weight: bold;
 	margin: 20px auto;
 }
+.pallet {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	border: solid 1px #9c9c9c;
+}
 		</style>
+		<style id="dynamic_css">
+div.frame .headline {
+	background-color: #bb1212;
+}
+		</style>
+		<script>
+function change_color(color) {
+	document.getElementById("dynamic_css").innerHTML = "div.frame .headline { background-color: " + color + "; }";
+}
+		</script>
 	</head>
 	<body>
 		<div id="wrapper">
@@ -197,6 +212,51 @@ $loop(%year%)$loop(%album%)					<table class="tracks">
 					<hr>
 $loopend()$loopend()				</div>
 $loopend()			</main>
+			<footer>
+				<span class="pallet" onclick="change_color(''#bb1212'')" style="background-color: #bb1212;"></span>
+				<span class="pallet" onclick="change_color(''#bb1276'')" style="background-color: #bb1276;"></span>
+				<span class="pallet" onclick="change_color(''#bb12ad'')" style="background-color: #bb12ad;"></span>
+				<span class="pallet" onclick="change_color(''#8b12bb'')" style="background-color: #8b12bb;"></span>
+				<span class="pallet" onclick="change_color(''#5412bb'')" style="background-color: #5412bb;"></span>
+				<span class="pallet" onclick="change_color(''#2d12bb'')" style="background-color: #2d12bb;"></span>
+				<span class="pallet" onclick="change_color(''#125cbb'')" style="background-color: #125cbb;"></span>
+				<span class="pallet" onclick="change_color(''#1283bb'')" style="background-color: #1283bb;"></span>
+				<span class="pallet" onclick="change_color(''#12b2bb'')" style="background-color: #12b2bb;"></span>
+				<span class="pallet" onclick="change_color(''#12bb8e'')" style="background-color: #12bb8e;"></span>
+				<span class="pallet" onclick="change_color(''#12bb67'')" style="background-color: #12bb67;"></span>
+				<span class="pallet" onclick="change_color(''#12bb40'')" style="background-color: #12bb40;"></span>
+				<span class="pallet" onclick="change_color(''#79bb12'')" style="background-color: #79bb12;"></span>
+				<span class="pallet" onclick="change_color(''#a0bb12'')" style="background-color: #a0bb12;"></span>
+				<span class="pallet" onclick="change_color(''#b7bb12'')" style="background-color: #b7bb12;"></span>
+				<span class="pallet" onclick="change_color(''#bb9812'')" style="background-color: #bb9812;"></span>
+				<span class="pallet" onclick="change_color(''#bb7912'')" style="background-color: #bb7912;"></span>
+				<span class="pallet" onclick="change_color(''#bb6912'')" style="background-color: #bb6912;"></span>
+				<span class="pallet" onclick="change_color(''#f44336'')" style="background-color: #f44336;"></span>
+				<span class="pallet" onclick="change_color(''#e91e63'')" style="background-color: #e91e63;"></span>
+				<span class="pallet" onclick="change_color(''#9c27b0'')" style="background-color: #9c27b0;"></span>
+				<span class="pallet" onclick="change_color(''#673ab7'')" style="background-color: #673ab7;"></span>
+				<span class="pallet" onclick="change_color(''#3f51b5'')" style="background-color: #3f51b5;"></span>
+				<span class="pallet" onclick="change_color(''#2196f3'')" style="background-color: #2196f3;"></span>
+				<span class="pallet" onclick="change_color(''#03a9f4'')" style="background-color: #03a9f4;"></span>
+				<span class="pallet" onclick="change_color(''#00bcd4'')" style="background-color: #00bcd4;"></span>
+				<span class="pallet" onclick="change_color(''#009688'')" style="background-color: #009688;"></span>
+				<span class="pallet" onclick="change_color(''#4caf50'')" style="background-color: #4caf50;"></span>
+				<span class="pallet" onclick="change_color(''#8bc34a'')" style="background-color: #8bc34a;"></span>
+				<span class="pallet" onclick="change_color(''#cddc39'')" style="background-color: #cddc39;"></span>
+				<span class="pallet" onclick="change_color(''#ffeb3b'')" style="background-color: #ffeb3b;"></span>
+				<span class="pallet" onclick="change_color(''#ffc107'')" style="background-color: #ffc107;"></span>
+				<span class="pallet" onclick="change_color(''#ff9800'')" style="background-color: #ff9800;"></span>
+				<span class="pallet" onclick="change_color(''#ff5722'')" style="background-color: #ff5722;"></span>
+				<span class="pallet" onclick="change_color(''#795548'')" style="background-color: #795548;"></span>
+				<span class="pallet" onclick="change_color(''#9e9e9e'')" style="background-color: #9e9e9e;"></span>
+				<span class="pallet" onclick="change_color(''#607d8b'')" style="background-color: #607d8b;"></span>
+				<span class="pallet" onclick="change_color(''#000000'')" style="background-color: #000000;"></span>
+				<span class="pallet" onclick="change_color(''#191919'')" style="background-color: #191919;"></span>
+				<span class="pallet" onclick="change_color(''#444444'')" style="background-color: #444444;"></span>
+				<span class="pallet" onclick="change_color(''#777777'')" style="background-color: #777777;"></span>
+				<span class="pallet" onclick="change_color(''#b9b9b9'')" style="background-color: #b9b9b9;"></span>
+				<span class="pallet" onclick="change_color(''#d9d9d9'')" style="background-color: #d9d9d9;"></span>
+			</footer>
 		</div>
 	</body>
 </html>
