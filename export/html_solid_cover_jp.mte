@@ -15,6 +15,9 @@ body {
 	font-family: Meiryo, sans-serif;
 	font-size: 16px;
 }
+header, main, footer {
+	margin: 20px auto;
+}
 table {
 	border-collapse: collapse;
 }
