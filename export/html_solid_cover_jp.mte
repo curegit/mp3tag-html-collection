@@ -256,6 +256,24 @@ $loopend()			</main>
 				<span class="pallet" onclick="change_color(''#795548'')" style="background-color: #795548;"></span>
 				<span class="pallet" onclick="change_color(''#9e9e9e'')" style="background-color: #9e9e9e;"></span>
 				<span class="pallet" onclick="change_color(''#607d8b'')" style="background-color: #607d8b;"></span>
+				<span class="pallet" onclick="change_color(''#770000'')" style="background-color: #770000;"></span>
+				<span class="pallet" onclick="change_color(''#77003b'')" style="background-color: #77003b;"></span>
+				<span class="pallet" onclick="change_color(''#77005c'')" style="background-color: #77005c;"></span>
+				<span class="pallet" onclick="change_color(''#6b0077'')" style="background-color: #6b0077;"></span>
+				<span class="pallet" onclick="change_color(''#4a0077'')" style="background-color: #4a0077;"></span>
+				<span class="pallet" onclick="change_color(''#2f0077'')" style="background-color: #2f0077;"></span>
+				<span class="pallet" onclick="change_color(''#000e77'')" style="background-color: #000e77;"></span>
+				<span class="pallet" onclick="change_color(''#003477'')" style="background-color: #003477;"></span>
+				<span class="pallet" onclick="change_color(''#004a77'')" style="background-color: #004a77;"></span>
+				<span class="pallet" onclick="change_color(''#005b77'')" style="background-color: #005b77;"></span>
+				<span class="pallet" onclick="change_color(''#007772'')" style="background-color: #007772;"></span>
+				<span class="pallet" onclick="change_color(''#00774c'')" style="background-color: #00774c;"></span>
+				<span class="pallet" onclick="change_color(''#007715'')" style="background-color: #007715;"></span>
+				<span class="pallet" onclick="change_color(''#4e7700'')" style="background-color: #4e7700;"></span>
+				<span class="pallet" onclick="change_color(''#697700'')" style="background-color: #697700;"></span>
+				<span class="pallet" onclick="change_color(''#775e00'')" style="background-color: #775e00;"></span>
+				<span class="pallet" onclick="change_color(''#775300'')" style="background-color: #775300;"></span>
+				<span class="pallet" onclick="change_color(''#773800'')" style="background-color: #773800;"></span>
 				<span class="pallet" onclick="change_color(''#000000'')" style="background-color: #000000;"></span>
 				<span class="pallet" onclick="change_color(''#191919'')" style="background-color: #191919;"></span>
 				<span class="pallet" onclick="change_color(''#444444'')" style="background-color: #444444;"></span>
