@@ -14,6 +14,7 @@ body {
 	margin: 30px auto;
 	font-family: sans-serif;
 	font-size: 16px;
+	line-height: 1.6;
 	word-break: keep-all;
 }
 header, main, footer {
@@ -40,6 +41,7 @@ div.frame {
 div.frame .headline {
 	width: 100%%;
 	font-size: 180%%;
+	line-height: 1.5;
 	text-align: center;
 	text-decoration-line: underline;
 	color: #fff;
@@ -56,6 +58,7 @@ table.properties {
 	border: none;
 	font-size: 80%%;
 	font-weight: normal;
+	line-height: 1.5;
 }
 table.properties tr {
 	width: 100%%;
@@ -116,6 +119,7 @@ img.cover {
 .album {
 	font-size: 150%%;
 	font-weight: bold;
+	line-height: 1.4;
 	margin: 20px auto 30px auto;
 }
 .pallet {
