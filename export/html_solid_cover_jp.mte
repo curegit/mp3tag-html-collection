@@ -116,7 +116,7 @@ img.cover {
 .album {
 	font-size: 150%%;
 	font-weight: bold;
-	margin: 20px auto;
+	margin: 20px auto 30px auto;
 }
 .pallet {
 	display: inline-block;
