@@ -110,6 +110,7 @@ table.tracks td.cover_cell {
 	vertical-align: top;
 }
 table.tracks td.album_info_cell {
+	width: 60%%;
 	vertical-align: top;
 }
 img.cover {
@@ -121,6 +122,21 @@ img.cover {
 	font-weight: bold;
 	line-height: 1.4;
 	margin: 20px auto 30px auto;
+}
+.track {
+	width: 5%%;
+}
+.title {
+	width: 35%%;
+}
+.artist {
+	width: 30%%;
+}
+.duration {
+	width: 10%%;
+}
+.size {
+	width: 10%%;
 }
 .pallet {
 	display: inline-block;
@@ -205,18 +221,18 @@ $loop(%year%)$loop(%album%)					<table class="tracks">
 								</td>
 							</tr>
 							<tr>
-								<th class="numerical">#</th>
-								<th>タイトル</th>
-								<th>アーティスト</th>
-								<th class="numerical">時間</th>
-								<th class="numerical">サイズ</th>
+								<th class="track numerical">#</th>
+								<th class="title">タイトル</th>
+								<th class="artist">アーティスト</th>
+								<th class="duration numerical">時間</th>
+								<th class="size numerical">サイズ</th>
 							</tr>
 							$loop(%discnumber%)$loop(%_filename_ext%)<tr>
-								<td class="numerical">$replace($num(%track%,2),&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
-								<td>$replace(%title%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
-								<td>$replace($meta_sep(artist,',' ),&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
-								<td class="numerical">$replace(%_length%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
-								<td class="numerical">$replace(%_file_size%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
+								<td class="track numerical">$replace($num(%track%,2),&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
+								<td class="title">$replace(%title%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
+								<td class="artist">$replace($meta_sep(artist,',' ),&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
+								<td class="duration numerical">$replace(%_length%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
+								<td class="size numerical">$replace(%_file_size%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
 							</tr>$loopend()$loopend()
 						</tbody>
 					</table>
