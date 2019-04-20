@@ -43,9 +43,10 @@ div.frame .headline {
 	width: 100%%;
 	font-size: 180%%;
 	line-height: 1.5;
+	color: #fff;
 	text-align: center;
 	text-decoration-line: underline;
-	color: #fff;
+	text-decoration-color: #fffc;
 }
 div.frame hr {
 	margin: 25px 20px;
