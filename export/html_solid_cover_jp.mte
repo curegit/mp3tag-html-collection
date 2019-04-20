@@ -43,9 +43,10 @@ div.frame .headline {
 	width: 100%%;
 	font-size: 180%%;
 	line-height: 1.5;
+	color: #fff;
 	text-align: center;
 	text-decoration-line: underline;
-	color: #fff;
+	text-decoration-color: #fffc;
 }
 div.frame hr {
 	margin: 25px 20px;
@@ -60,7 +61,6 @@ table.properties {
 	border: none;
 	font-size: 80%%;
 	font-weight: normal;
-	line-height: 1.5;
 }
 table.properties tr {
 	width: 100%%;
@@ -77,15 +77,40 @@ table.properties td + td {
 	font-weight: normal;
 	padding-left: 20px;
 }
+table.summary {
+	width: 90%%;
+	margin: 20px auto;
+	table-layout: fixed;
+}
+table.summary td.cover_cell {
+	width: 40%%;
+	text-align: center;
+	vertical-align: top;
+}
+table.summary td.album_info_cell {
+	width: 60%%;
+	vertical-align: top;
+}
+img.cover {
+	max-width: 60%%;
+	margin: 20px auto;
+}
+.album {
+	font-size: 150%%;
+	font-weight: bold;
+	line-height: 1.4;
+	margin: 20px auto 30px auto;
+}
 table.tracks {
 	width: 90%%;
-	margin: 25px auto;
+	margin: 20px auto;
+	table-layout: fixed;
 }
-table.tracks > tbody > tr:nth-child(2) {
+table.tracks > tbody > tr:nth-child(1) {
 	background-color: #333333;
 	color: #929292;
 }
-table.tracks > tbody > tr:nth-child(2n+4) {
+table.tracks > tbody > tr:nth-child(2n+2) {
 	background-color: #272727;
 }
 table.tracks > tbody > tr:nth-child(2n+3) {
@@ -105,25 +130,6 @@ table.tracks th.numerical {
 }
 table.tracks td.numerical {
 	text-align: right;
-}
-table.tracks td.cover_cell {
-	width: 40%%;
-	text-align: center;
-	vertical-align: top;
-}
-table.tracks td.album_info_cell {
-	width: 60%%;
-	vertical-align: top;
-}
-img.cover {
-	max-width: 60%%;
-	margin: 20px auto;
-}
-.album {
-	font-size: 150%%;
-	font-weight: bold;
-	line-height: 1.4;
-	margin: 20px auto 30px auto;
 }
 .track {
 	width: 5%%;
@@ -184,14 +190,18 @@ function change_color(color) {
 			<main>
 $loop(%albumartist%)				<div class="frame">
 					<h2 class="headline">$replace(%albumartist%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</h2>
-$loop(%year%)$loop(%album%)					<table class="tracks">
+$loop(%year%)$loop(%album%)					<table class="summary">
 						<tbody>
 							<tr>
-								<td colspan="2" class="cover_cell">
+								<td rowspan="2" class="cover_cell">
 									<img class="cover" alt="cover" src="$replace(covers/$replace($validate(%albumartist%-%album%,-), ,_).$replace(%_cover_mimetype%,image/jpeg,jpg,image/jpg,jpg,image/png,png,image/gif,gif),&,&amp;,<,&lt;,>,&gt;,",&quot;)">
 								</td>
-								<td colspan="3" class="album_info_cell">
+								<td class="album_info_cell">
 									<h3 class="album">$replace(%album%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</h3>
+								</td>
+							</tr>
+							<tr>
+								<td class="album_info_cell">
 									<table class="properties">
 										<tbody>
 											[<tr>
@@ -222,6 +232,10 @@ $loop(%year%)$loop(%album%)					<table class="tracks">
 									</table>
 								</td>
 							</tr>
+						</tbody>
+					</table>
+					<table class="tracks">
+						<tbody>
 							<tr>
 								<th class="track numerical">#</th>
 								<th class="title">タイトル</th>
