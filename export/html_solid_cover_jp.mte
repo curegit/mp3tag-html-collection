@@ -60,7 +60,6 @@ table.properties {
 	border: none;
 	font-size: 80%%;
 	font-weight: normal;
-	line-height: 1.5;
 }
 table.properties tr {
 	width: 100%%;
