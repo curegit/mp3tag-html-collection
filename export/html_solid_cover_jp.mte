@@ -243,14 +243,14 @@ $loop(%year%)$loop(%album%)					<table class="summary">
 								<th class="duration numerical">時間</th>
 								<th class="size numerical">サイズ</th>
 							</tr>
-							$loop(%discnumber%)$loop(%_filename_ext%)<tr>
+$loop(%discnumber%)$loop(%_filename_ext%)							<tr>
 								<td class="track numerical">$replace($num(%track%,2),&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
 								<td class="title">$replace(%title%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
 								<td class="artist">$replace($meta_sep(artist,',' ),&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
 								<td class="duration numerical">$replace(%_length%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
 								<td class="size numerical">$replace(%_file_size%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
-							</tr>$loopend()$loopend()
-						</tbody>
+							</tr>
+$loopend()$loopend()						</tbody>
 					</table>
 					<hr>
 $loopend()$loopend()				</div>
