@@ -2,7 +2,7 @@ $filename(html,utf-8)<!DOCTYPE html>
 <html lang="ja">
 	<head>
 		<meta charset="utf-8">
-		<title>トラックリスト | Mp3tag</title>
+		<title>アルバムリスト | Mp3tag</title>
 		<meta name="description" content="Created by Mp3tag">
 		<style>
 * {
