@@ -1,0 +1,333 @@
+$filename(html,utf-8)<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Album List | Mp3tag</title>
+		<meta name="description" content="Created with Mp3tag">
+		<style>
+* {
+	margin: 0px;
+	padding: 0px;
+}
+body {
+	color: #fff;
+	background-color: #000;
+	margin: 30px auto;
+	font-family: sans-serif;
+	font-size: 16px;
+	line-height: 1.6;
+	word-break: keep-all;
+	overflow-wrap: break-word;
+}
+header, footer {
+	text-align: center;
+}
+header, main, footer {
+	margin: 20px auto;
+}
+hr {
+	margin: 20px auto;
+}
+table {
+	border-collapse: collapse;
+}
+tbody {
+	vertical-align: middle;
+}
+#wrapper {
+	width: 70%%;
+	min-width: 960px;
+	margin: auto;
+}
+div.frame {
+	width: 100%%;
+	border: solid 1px #9c9c9c;
+	margin-bottom: 40px;
+	background-color: #191919;
+}
+div.frame .headline {
+	width: 100%%;
+	font-size: 180%%;
+	line-height: 1.5;
+	color: #fff;
+	text-align: center;
+	text-decoration-line: underline;
+	text-decoration-color: #fffc;
+}
+div.frame hr {
+	margin: 25px 20px;
+}
+div.frame hr:last-child {
+	display: none;
+}
+table.properties {
+	table-layout: fixed;
+	width: 100%%;
+	margin: 20px auto;
+	border: none;
+	font-size: 80%%;
+	font-weight: normal;
+}
+table.properties tr {
+	width: 100%%;
+}
+table.properties tr > td {
+	width: 50%%;
+	border: none;
+	text-align: right;
+	font-weight: bold;
+	padding-right: 20px;
+}
+table.properties td + td {
+	text-align: left;
+	font-weight: normal;
+	padding-left: 20px;
+}
+table.summary {
+	width: 90%%;
+	margin: 20px auto;
+	table-layout: fixed;
+}
+table.summary td.cover_cell {
+	width: 40%%;
+	text-align: center;
+	vertical-align: top;
+}
+table.summary td.album_info_cell {
+	width: 60%%;
+	vertical-align: top;
+}
+img.cover {
+	max-width: 60%%;
+	margin: 20px auto;
+}
+.album {
+	font-size: 150%%;
+	font-weight: bold;
+	line-height: 1.4;
+	margin: 20px auto 30px auto;
+}
+table.tracks {
+	width: 90%%;
+	margin: 20px auto;
+	table-layout: fixed;
+}
+table.tracks > tbody > tr:nth-child(1) {
+	background-color: #333333;
+	color: #929292;
+}
+table.tracks > tbody > tr:nth-child(2n+2) {
+	background-color: #272727;
+}
+table.tracks > tbody > tr:nth-child(2n+3) {
+	background-color: #1d1d1d;
+}
+table.tracks th {
+	font-weight: bold;
+	text-align: left;
+	padding: 1px 10px 1px 10px;
+}
+table.tracks td {
+	text-align: left;
+	padding: 1px 10px 1px 10px;
+}
+table.tracks th.numerical {
+	text-align: right;
+}
+table.tracks td.numerical {
+	text-align: right;
+}
+.track {
+	width: 5%%;
+}
+.title {
+	width: 35%%;
+}
+.artist {
+	width: 30%%;
+}
+.duration {
+	width: 10%%;
+}
+.size {
+	width: 10%%;
+}
+.pallet {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	border: solid 1px #9c9c9c;
+}
+		</style>
+		<style id="dynamic_css">
+div.frame .headline {
+	background-color: #bb1276;
+}
+		</style>
+		<script>
+function change_color(color) {
+	document.getElementById("dynamic_css").innerHTML = "div.frame .headline { background-color: " + color + "; }";
+}
+		</script>
+	</head>
+	<body>
+		<div id="wrapper">
+			<header>
+				<div class="frame">
+					<h1 class="headline">Summary</h1>
+					<table class="properties">
+						<tbody>
+							<tr>
+								<td>Tracks</td>
+								<td>$replace(%_total_files%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
+							</tr>
+							<tr>
+								<td>Duration</td>
+								<td>$replace(%_total_time%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
+							</tr>
+							<tr>
+								<td>Size</td>
+								<td>$replace(%_total_size%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</header>
+			<main>
+$loop(%albumartist%)				<div class="frame">
+					<h2 class="headline">$replace(%albumartist%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</h2>
+$loop(%year%)$loop(%album%)					<table class="summary">
+						<tbody>
+							<tr>
+								<td rowspan="2" class="cover_cell">
+									<img class="cover" alt="cover" src="$replace(covers/$replace($validate(%albumartist%-%album%,-), ,_).$replace(%_cover_mimetype%,image/jpeg,jpg,image/jpg,jpg,image/png,png,image/gif,gif),&,&amp;,<,&lt;,>,&gt;,",&quot;)">
+								</td>
+								<td class="album_info_cell">
+									<h3 class="album">$replace(%album%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</h3>
+								</td>
+							</tr>
+							<tr>
+								<td class="album_info_cell">
+									<table class="properties">
+										<tbody>
+											[<tr>
+												<td>Year</td>
+												<td>$replace(%year%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
+											</tr>]
+											[<tr>
+												<td>Genre</td>
+												<td>$replace(%genre%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
+											</tr>]
+											[<tr>
+												<td>Style</td>
+												<td>$replace(%style%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
+											</tr>]
+											<tr>
+												<td>Tracks</td>
+												<td>$replace(%_total_files%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
+											</tr>
+											<tr>
+												<td>Duration</td>
+												<td>$replace(%_total_time%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
+											</tr>
+											<tr>
+												<td>Size</td>
+												<td>$replace(%_total_size%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<table class="tracks">
+						<tbody>
+							<tr>
+								<th class="track numerical">#</th>
+								<th class="title">Title</th>
+								<th class="artist">Artist</th>
+								<th class="duration numerical">Duration</th>
+								<th class="size numerical">Size</th>
+							</tr>
+$loop(%discnumber%)$loop(%_filename_ext%)							<tr>
+								<td class="track numerical">$replace($num(%track%,2),&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
+								<td class="title">$replace(%title%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
+								<td class="artist">$replace($meta_sep(artist,',' ),&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
+								<td class="duration numerical">$replace(%_length%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
+								<td class="size numerical">$replace(%_file_size%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
+							</tr>
+$loopend()$loopend()						</tbody>
+					</table>
+					<hr>
+$loopend()$loopend()				</div>
+$loopend()			</main>
+			<footer>
+				<div>
+					<span class="pallet" onclick="change_color(''#bb1212'')" style="background-color: #bb1212;"></span>
+					<span class="pallet" onclick="change_color(''#bb1276'')" style="background-color: #bb1276;"></span>
+					<span class="pallet" onclick="change_color(''#bb12ad'')" style="background-color: #bb12ad;"></span>
+					<span class="pallet" onclick="change_color(''#8b12bb'')" style="background-color: #8b12bb;"></span>
+					<span class="pallet" onclick="change_color(''#5412bb'')" style="background-color: #5412bb;"></span>
+					<span class="pallet" onclick="change_color(''#2d12bb'')" style="background-color: #2d12bb;"></span>
+					<span class="pallet" onclick="change_color(''#125cbb'')" style="background-color: #125cbb;"></span>
+					<span class="pallet" onclick="change_color(''#1283bb'')" style="background-color: #1283bb;"></span>
+					<span class="pallet" onclick="change_color(''#12b2bb'')" style="background-color: #12b2bb;"></span>
+					<span class="pallet" onclick="change_color(''#12bb8e'')" style="background-color: #12bb8e;"></span>
+					<span class="pallet" onclick="change_color(''#12bb67'')" style="background-color: #12bb67;"></span>
+					<span class="pallet" onclick="change_color(''#12bb40'')" style="background-color: #12bb40;"></span>
+					<span class="pallet" onclick="change_color(''#79bb12'')" style="background-color: #79bb12;"></span>
+					<span class="pallet" onclick="change_color(''#a0bb12'')" style="background-color: #a0bb12;"></span>
+					<span class="pallet" onclick="change_color(''#b7bb12'')" style="background-color: #b7bb12;"></span>
+					<span class="pallet" onclick="change_color(''#bb9812'')" style="background-color: #bb9812;"></span>
+					<span class="pallet" onclick="change_color(''#bb7912'')" style="background-color: #bb7912;"></span>
+					<span class="pallet" onclick="change_color(''#bb6912'')" style="background-color: #bb6912;"></span>
+					<span class="pallet" onclick="change_color(''#f44336'')" style="background-color: #f44336;"></span>
+					<span class="pallet" onclick="change_color(''#e91e63'')" style="background-color: #e91e63;"></span>
+					<span class="pallet" onclick="change_color(''#9c27b0'')" style="background-color: #9c27b0;"></span>
+					<span class="pallet" onclick="change_color(''#673ab7'')" style="background-color: #673ab7;"></span>
+					<span class="pallet" onclick="change_color(''#3f51b5'')" style="background-color: #3f51b5;"></span>
+					<span class="pallet" onclick="change_color(''#2196f3'')" style="background-color: #2196f3;"></span>
+					<span class="pallet" onclick="change_color(''#03a9f4'')" style="background-color: #03a9f4;"></span>
+					<span class="pallet" onclick="change_color(''#00bcd4'')" style="background-color: #00bcd4;"></span>
+					<span class="pallet" onclick="change_color(''#009688'')" style="background-color: #009688;"></span>
+					<span class="pallet" onclick="change_color(''#4caf50'')" style="background-color: #4caf50;"></span>
+					<span class="pallet" onclick="change_color(''#8bc34a'')" style="background-color: #8bc34a;"></span>
+					<span class="pallet" onclick="change_color(''#cddc39'')" style="background-color: #cddc39;"></span>
+					<span class="pallet" onclick="change_color(''#ffeb3b'')" style="background-color: #ffeb3b;"></span>
+					<span class="pallet" onclick="change_color(''#ffc107'')" style="background-color: #ffc107;"></span>
+					<span class="pallet" onclick="change_color(''#ff9800'')" style="background-color: #ff9800;"></span>
+					<span class="pallet" onclick="change_color(''#ff5722'')" style="background-color: #ff5722;"></span>
+					<span class="pallet" onclick="change_color(''#795548'')" style="background-color: #795548;"></span>
+					<span class="pallet" onclick="change_color(''#9e9e9e'')" style="background-color: #9e9e9e;"></span>
+					<span class="pallet" onclick="change_color(''#607d8b'')" style="background-color: #607d8b;"></span>
+					<span class="pallet" onclick="change_color(''#770000'')" style="background-color: #770000;"></span>
+					<span class="pallet" onclick="change_color(''#77003b'')" style="background-color: #77003b;"></span>
+					<span class="pallet" onclick="change_color(''#77005c'')" style="background-color: #77005c;"></span>
+					<span class="pallet" onclick="change_color(''#6b0077'')" style="background-color: #6b0077;"></span>
+					<span class="pallet" onclick="change_color(''#4a0077'')" style="background-color: #4a0077;"></span>
+					<span class="pallet" onclick="change_color(''#2f0077'')" style="background-color: #2f0077;"></span>
+					<span class="pallet" onclick="change_color(''#000e77'')" style="background-color: #000e77;"></span>
+					<span class="pallet" onclick="change_color(''#003477'')" style="background-color: #003477;"></span>
+					<span class="pallet" onclick="change_color(''#004a77'')" style="background-color: #004a77;"></span>
+					<span class="pallet" onclick="change_color(''#005b77'')" style="background-color: #005b77;"></span>
+					<span class="pallet" onclick="change_color(''#007772'')" style="background-color: #007772;"></span>
+					<span class="pallet" onclick="change_color(''#00774c'')" style="background-color: #00774c;"></span>
+					<span class="pallet" onclick="change_color(''#007715'')" style="background-color: #007715;"></span>
+					<span class="pallet" onclick="change_color(''#4e7700'')" style="background-color: #4e7700;"></span>
+					<span class="pallet" onclick="change_color(''#697700'')" style="background-color: #697700;"></span>
+					<span class="pallet" onclick="change_color(''#775e00'')" style="background-color: #775e00;"></span>
+					<span class="pallet" onclick="change_color(''#775300'')" style="background-color: #775300;"></span>
+					<span class="pallet" onclick="change_color(''#773800'')" style="background-color: #773800;"></span>
+					<span class="pallet" onclick="change_color(''#000000'')" style="background-color: #000000;"></span>
+					<span class="pallet" onclick="change_color(''#191919'')" style="background-color: #191919;"></span>
+					<span class="pallet" onclick="change_color(''#444444'')" style="background-color: #444444;"></span>
+					<span class="pallet" onclick="change_color(''#777777'')" style="background-color: #777777;"></span>
+					<span class="pallet" onclick="change_color(''#b9b9b9'')" style="background-color: #b9b9b9;"></span>
+					<span class="pallet" onclick="change_color(''#d9d9d9'')" style="background-color: #d9d9d9;"></span>
+				</div>
+				<hr>
+				<p>Mp3tag - The Universal Tag Editor</p>
+			</footer>
+		</div>
+	</body>
+</html>
