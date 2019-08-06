@@ -1,0 +1,32 @@
+$filename(html,utf-8)<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Album Covers | Mp3tag</title>
+		<meta name="description" content="Created with Mp3tag">
+		<style>
+* {
+	margin: 0px;
+	padding: 0px;
+}
+body {
+	background-color: #000;
+}
+main {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: stretch;
+}
+img {
+	width: calc(100%% / 3);
+	height: auto;
+}
+		</style>
+	</head>
+	<body>
+		<main>
+$loop(%albumartist%)$loop(%year%)$loop(%album%,1)			<img class="cover" alt="cover" src="$replace(covers/$replace($validate(%albumartist%-%album%,-), ,_).$replace(%_cover_mimetype%,image/jpeg,jpg,image/jpg,jpg,image/png,png,image/gif,gif),&,&amp;,<,&lt;,>,&gt;,",&quot;)">
+$loopend()$loopend()$loopend()		</main>
+	</body>
+</html>
