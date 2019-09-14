@@ -2,8 +2,6 @@
 
 オーディオタグエディタ、[Mp3tag](https://www.mp3tag.de/) のテキストファイル出力機能で使う HTML テンプレート集
 
-アルバムアート書き出し機能と合わせると画像の表示が可能
-
 ## インストール
 
 ### Standard Installation 環境
