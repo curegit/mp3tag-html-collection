@@ -1,6 +1,6 @@
-# Mp3tag で使える HTML テンプレート集
+# Mp3tag HTML テンプレート集
 
-Windows フリーオーディオタグエディタ、[Mp3tag](https://www.mp3tag.de/) のテキストファイル出力機能に食わせる HTML テンプレート集
+オーディオタグエディタ、[Mp3tag](https://www.mp3tag.de/) のテキストファイル出力機能で使う HTML テンプレート集
 
 アルバムアート書き出し機能と合わせると画像の表示が可能
 
@@ -8,37 +8,23 @@ Windows フリーオーディオタグエディタ、[Mp3tag](https://www.mp3tag
 
 ### Standard Installation 環境
 
-#### インストールスクリプトを使う
-
-`install.bat`を実行する
-
-※送り先にある同名のファイルは上書きされます
-
-#### 手動でインストールする
-
-`%APPDATA%\Mp3tag\export\`に MTE ファイルを配置する
+インストールスクリプトを使う場合は `install.bat` を実行してください（送り先にある同名のファイルは上書きされます）。
+手動でインストールする場合は `%APPDATA%\Mp3tag\export\` に MTE ファイルを配置してください。
 
 ### Portable Installation 環境
 
-`{インストールしたフォルダ}\export\`に MTE ファイルを配置する
+`{Mp3tag フォルダ}\export\`に MTE ファイルを配置してください。
 
 ## アンインストール
 
 ### Standard Installation 環境
 
-#### アンインストールスクリプトを使う
-
-`uninstall.bat`を実行する
-
-※たまたま削除リストと同名のファイルがあった場合でも削除されます
-
-#### 手動でアンインストールする
-
-`%APPDATA%\Mp3tag\export\`に配置済みの MTE ファイルを削除する
+`uninstall.bat`を実行すると該当ファイルが削除されます（たまたま削除リストと同名のファイルがあった場合でも削除されます）。
+手動でアンインストールする場合は `%APPDATA%\Mp3tag\export\` に配置済みの MTE ファイルを削除してください。
 
 ### Portable Installation 環境
 
-`{インストールしたフォルダ}\export\`に配置済みの MTE ファイルを削除する
+`{Mp3tag フォルダ}\export\`に配置済みの MTE ファイルを削除してください。
 
 ## アクションの設定方法
 
@@ -67,3 +53,7 @@ Windows フリーオーディオタグエディタ、[Mp3tag](https://www.mp3tag
 「テキストファイルを出力」アクションとの実行順は問わない
 
 ![カバーファイルを出力](img/cover.png)
+
+## ライセンス
+
+[The Unlicense](LICENSE)
