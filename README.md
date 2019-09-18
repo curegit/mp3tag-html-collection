@@ -2,6 +2,14 @@
 
 オーディオタグエディタ、[Mp3tag](https://www.mp3tag.de/) のテキストファイル出力機能で使う HTML テンプレート集
 
+## プレビュー
+
+- [Solid (jp)](https://curegit.github.io/mp3tag-html-collection/solid_jp.html)
+- [Solid (en)](https://curegit.github.io/mp3tag-html-collection/solid_en.html)
+- [Stretch 3](https://curegit.github.io/mp3tag-html-collection/stretch_3.html)
+- [Stretch 5](https://curegit.github.io/mp3tag-html-collection/stretch_5.html)
+- [Stretch 8](https://curegit.github.io/mp3tag-html-collection/stretch_8.html)
+
 ## インストール
 
 ### Standard Installation 環境
