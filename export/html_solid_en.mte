@@ -195,7 +195,7 @@ function change_color(color) {
 			</header>
 			<main>
 $loop(%albumartist%)				<div class="frame">
-					<h2 class="headline">$replace(%albumartist%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</h2>
+					<h2 class="headline">$replace($meta_sep(albumartist,',' ),&,&amp;,<,&lt;,>,&gt;,",&quot;)</h2>
 $loop(%year%)$loop(%album%)					<table class="summary">
 						<tbody>
 							<tr>
