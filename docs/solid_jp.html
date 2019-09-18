@@ -1,0 +1,1835 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<title>アルバムリスト | Mp3tag</title>
+		<meta name="description" content="Created with Mp3tag">
+		<style>
+* {
+	margin: 0px;
+	padding: 0px;
+}
+body {
+	color: #fff;
+	background-color: #000;
+	margin: 30px auto;
+	font-family: sans-serif;
+	font-size: 16px;
+	line-height: 1.6;
+	word-break: keep-all;
+	overflow-wrap: break-word;
+}
+header, footer {
+	text-align: center;
+}
+header, main, footer {
+	margin: 20px auto;
+}
+hr {
+	margin: 20px auto;
+}
+table {
+	border-collapse: collapse;
+}
+tbody {
+	vertical-align: middle;
+}
+#wrapper {
+	width: 70%;
+	min-width: 960px;
+	margin: auto;
+}
+div.frame {
+	width: 100%;
+	border: solid 1px #9c9c9c;
+	margin-bottom: 40px;
+	background-color: #191919;
+}
+div.frame .headline {
+	width: 100%;
+	font-size: 180%;
+	line-height: 1.5;
+	color: #fff;
+	text-align: center;
+	text-decoration-line: underline;
+	text-decoration-color: #fffc;
+}
+div.frame hr {
+	margin: 25px 20px;
+}
+div.frame hr:last-child {
+	display: none;
+}
+table.properties {
+	table-layout: fixed;
+	width: 100%;
+	margin: 20px auto;
+	border: none;
+	font-size: 80%;
+	font-weight: normal;
+}
+table.properties tr {
+	width: 100%;
+}
+table.properties tr > td {
+	width: 50%;
+	border: none;
+	text-align: right;
+	font-weight: bold;
+	padding-right: 20px;
+}
+table.properties td + td {
+	text-align: left;
+	font-weight: normal;
+	padding-left: 20px;
+}
+table.summary {
+	width: 90%;
+	margin: 20px auto;
+	table-layout: fixed;
+}
+table.summary td.cover_cell {
+	width: 40%;
+	text-align: center;
+	vertical-align: top;
+}
+table.summary td.album_info_cell {
+	width: 60%;
+	vertical-align: top;
+}
+img.cover {
+	max-width: 60%;
+	margin: 20px auto;
+}
+.album {
+	font-size: 150%;
+	font-weight: bold;
+	line-height: 1.4;
+	margin: 20px auto 30px auto;
+}
+table.tracks {
+	width: 90%;
+	margin: 20px auto;
+	table-layout: fixed;
+}
+table.tracks > tbody > tr:nth-child(1) {
+	background-color: #333333;
+	color: #929292;
+}
+table.tracks > tbody > tr:nth-child(2n+2) {
+	background-color: #272727;
+}
+table.tracks > tbody > tr:nth-child(2n+3) {
+	background-color: #1d1d1d;
+}
+table.tracks th {
+	font-weight: bold;
+	text-align: left;
+	padding: 1px 10px 1px 10px;
+}
+table.tracks td {
+	text-align: left;
+	padding: 1px 10px 1px 10px;
+}
+table.tracks th.numerical {
+	text-align: right;
+}
+table.tracks td.numerical {
+	text-align: right;
+}
+.track {
+	width: 5%;
+}
+.title {
+	width: 35%;
+}
+.artist {
+	width: 30%;
+}
+.duration {
+	width: 10%;
+}
+.size {
+	width: 10%;
+}
+.pallet {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	border: solid 1px #9c9c9c;
+}
+		</style>
+		<style id="dynamic_css">
+div.frame .headline {
+	background-color: #bb1276;
+}
+		</style>
+		<script>
+function change_color(color) {
+	document.getElementById("dynamic_css").innerHTML = "div.frame .headline { background-color: " + color + "; }";
+}
+		</script>
+	</head>
+	<body>
+		<div id="wrapper">
+			<header>
+				<div class="frame">
+					<h1 class="headline">概要</h1>
+					<table class="properties">
+						<tbody>
+							<tr>
+								<td>トラック数</td>
+								<td>141</td>
+							</tr>
+							<tr>
+								<td>演奏時間</td>
+								<td>10:18:14</td>
+							</tr>
+							<tr>
+								<td>トータルサイズ</td>
+								<td>4.08 GB</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</header>
+			<main>
+				<div class="frame">
+					<h2 class="headline">Dr. Dre</h2>
+					<table class="summary">
+						<tbody>
+							<tr>
+								<td rowspan="2" class="cover_cell">
+									<img class="cover" alt="cover" src="covers/Dr._Dre-The_Chronic.jpg">
+								</td>
+								<td class="album_info_cell">
+									<h3 class="album">The Chronic</h3>
+								</td>
+							</tr>
+							<tr>
+								<td class="album_info_cell">
+									<table class="properties">
+										<tbody>
+											<tr>
+												<td>日付</td>
+												<td>1992</td>
+											</tr>
+											<tr>
+												<td>ジャンル</td>
+												<td>Hip-Hop</td>
+											</tr>
+											<tr>
+												<td>スタイル</td>
+												<td>Gangsta</td>
+											</tr>
+											<tr>
+												<td>トラック数</td>
+												<td>16</td>
+											</tr>
+											<tr>
+												<td>演奏時間</td>
+												<td>01:02:55</td>
+											</tr>
+											<tr>
+												<td>データサイズ</td>
+												<td>428.12 MB</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<table class="tracks">
+						<tbody>
+							<tr>
+								<th class="track numerical">#</th>
+								<th class="title">タイトル</th>
+								<th class="artist">アーティスト</th>
+								<th class="duration numerical">時間</th>
+								<th class="size numerical">サイズ</th>
+							</tr>
+							<tr>
+								<td class="track numerical">01</td>
+								<td class="title">The Chronic (Intro)</td>
+								<td class="artist">Dr. Dre Feat. Snoop</td>
+								<td class="duration numerical">01:58</td>
+								<td class="size numerical">14.33 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">02</td>
+								<td class="title">Fuck Wit Dre Day (And Everybody's Celebratin')</td>
+								<td class="artist">Dr. Dre Feat. Snoop, RBX &amp; Jewell</td>
+								<td class="duration numerical">04:52</td>
+								<td class="size numerical">34.97 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">03</td>
+								<td class="title">Let Me Ride</td>
+								<td class="artist">Dr. Dre Feat. Ruben &amp; Jewell</td>
+								<td class="duration numerical">04:21</td>
+								<td class="size numerical">29.28 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">04</td>
+								<td class="title">The Day The Niggaz Took Over</td>
+								<td class="artist">Dr. Dre Feat. RBX, Snoop &amp; That Nigga Daz</td>
+								<td class="duration numerical">04:33</td>
+								<td class="size numerical">32.35 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">05</td>
+								<td class="title">Nuthin' But A &quot;G&quot; Thang</td>
+								<td class="artist">Dr. Dre Feat. Snoop</td>
+								<td class="duration numerical">03:58</td>
+								<td class="size numerical">27.85 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">06</td>
+								<td class="title">Deeez Nuuuts</td>
+								<td class="artist">Dr. Dre Feat. That Nigga Daz, Snoop, Nate Dogg &amp; Warren G.</td>
+								<td class="duration numerical">05:06</td>
+								<td class="size numerical">34.35 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">07</td>
+								<td class="title">Lil' Ghetto Boy</td>
+								<td class="artist">Dr. Dre Feat. Snoop &amp; That Nigga Daz</td>
+								<td class="duration numerical">05:29</td>
+								<td class="size numerical">36.62 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">08</td>
+								<td class="title">A Nigga Witta Gun</td>
+								<td class="artist">Dr. Dre</td>
+								<td class="duration numerical">03:52</td>
+								<td class="size numerical">27.46 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">09</td>
+								<td class="title">Rat-Tat-Tat-Tat</td>
+								<td class="artist">Dr. Dre Feat. RBX, BJ &amp; Snoop</td>
+								<td class="duration numerical">03:49</td>
+								<td class="size numerical">26.55 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">10</td>
+								<td class="title">The $20 Sack Pyramid</td>
+								<td class="artist">Dr. Dre Feat. Big Tittie Nickie, D.O.C., Samara &amp; Snoop</td>
+								<td class="duration numerical">02:53</td>
+								<td class="size numerical">16.94 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">11</td>
+								<td class="title">Lyrical Gangbang</td>
+								<td class="artist">Dr. Dre Feat. Rage, Kurupt &amp; RBX</td>
+								<td class="duration numerical">04:04</td>
+								<td class="size numerical">28.67 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">12</td>
+								<td class="title">High Powered</td>
+								<td class="artist">Dr. Dre Feat. RBX, That Nigga Daz &amp; Rage</td>
+								<td class="duration numerical">02:44</td>
+								<td class="size numerical">19.55 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">13</td>
+								<td class="title">The Doctor's Office</td>
+								<td class="artist">Dr. Dre Feat. Rage &amp; Jewell</td>
+								<td class="duration numerical">01:04</td>
+								<td class="size numerical">7.05 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">14</td>
+								<td class="title">Stranded On Death Row</td>
+								<td class="artist">Dr. Dre Feat. Bushwick Bill, Kurupt, RBX, Rage &amp; Snoop</td>
+								<td class="duration numerical">04:47</td>
+								<td class="size numerical">31.14 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">15</td>
+								<td class="title">The Roach (The Chronic Outro)</td>
+								<td class="artist">Dr. Dre Feat. RBX, That Nigga Daz, Rage, Emmage, Ruben &amp; Jewell</td>
+								<td class="duration numerical">04:37</td>
+								<td class="size numerical">30.70 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">16</td>
+								<td class="title">Bitches Ain't Shit</td>
+								<td class="artist">Dr. Dre Feat. Snoop, That Nigga Daz &amp; Kurupt</td>
+								<td class="duration numerical">04:48</td>
+								<td class="size numerical">30.32 MB</td>
+							</tr>
+						</tbody>
+					</table>
+					<hr>
+					<table class="summary">
+						<tbody>
+							<tr>
+								<td rowspan="2" class="cover_cell">
+									<img class="cover" alt="cover" src="covers/Dr._Dre-2001.jpg">
+								</td>
+								<td class="album_info_cell">
+									<h3 class="album">2001</h3>
+								</td>
+							</tr>
+							<tr>
+								<td class="album_info_cell">
+									<table class="properties">
+										<tbody>
+											<tr>
+												<td>日付</td>
+												<td>1999</td>
+											</tr>
+											<tr>
+												<td>ジャンル</td>
+												<td>Hip-Hop</td>
+											</tr>
+											<tr>
+												<td>スタイル</td>
+												<td>Gangsta</td>
+											</tr>
+											<tr>
+												<td>トラック数</td>
+												<td>22</td>
+											</tr>
+											<tr>
+												<td>演奏時間</td>
+												<td>01:08:15</td>
+											</tr>
+											<tr>
+												<td>データサイズ</td>
+												<td>439.32 MB</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<table class="tracks">
+						<tbody>
+							<tr>
+								<th class="track numerical">#</th>
+								<th class="title">タイトル</th>
+								<th class="artist">アーティスト</th>
+								<th class="duration numerical">時間</th>
+								<th class="size numerical">サイズ</th>
+							</tr>
+							<tr>
+								<td class="track numerical">01</td>
+								<td class="title">Lolo (Intro)</td>
+								<td class="artist">Dr. Dre Feat. Xzibit &amp; Tray-Dee</td>
+								<td class="duration numerical">00:42</td>
+								<td class="size numerical">4.31 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">02</td>
+								<td class="title">The Watcher</td>
+								<td class="artist">Dr. Dre</td>
+								<td class="duration numerical">03:27</td>
+								<td class="size numerical">20.95 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">03</td>
+								<td class="title">Fuck You</td>
+								<td class="artist">Dr. Dre Feat. Devin a/k/a The Dude &amp; Snoop Dogg</td>
+								<td class="duration numerical">03:25</td>
+								<td class="size numerical">20.46 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">04</td>
+								<td class="title">Still D.R.E.</td>
+								<td class="artist">Dr. Dre Feat. Snoop Dogg</td>
+								<td class="duration numerical">04:31</td>
+								<td class="size numerical">31.34 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">05</td>
+								<td class="title">Big Ego's</td>
+								<td class="artist">Dr. Dre Feat. Hittman</td>
+								<td class="duration numerical">03:58</td>
+								<td class="size numerical">25.99 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">06</td>
+								<td class="title">Xxplosive</td>
+								<td class="artist">Dr. Dre Feat. Hittman, Kurupt, Nate Dogg &amp; Six-Two</td>
+								<td class="duration numerical">03:35</td>
+								<td class="size numerical">22.97 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">07</td>
+								<td class="title">What's The Difference</td>
+								<td class="artist">Dr. Dre Feat. Eminem &amp; Xzibit</td>
+								<td class="duration numerical">04:04</td>
+								<td class="size numerical">29.77 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">08</td>
+								<td class="title">Bar One</td>
+								<td class="artist">Dr. Dre Feat. Traci Nelson, Ms. Roq &amp; Eddie Griffin</td>
+								<td class="duration numerical">00:51</td>
+								<td class="size numerical">4.96 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">09</td>
+								<td class="title">Light Speed</td>
+								<td class="artist">Dr. Dre Feat. Hittman</td>
+								<td class="duration numerical">02:41</td>
+								<td class="size numerical">17.00 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">10</td>
+								<td class="title">Forgot About Dre</td>
+								<td class="artist">Dr. Dre Feat. Eminem</td>
+								<td class="duration numerical">03:42</td>
+								<td class="size numerical">24.50 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">11</td>
+								<td class="title">The Next Episode</td>
+								<td class="artist">Dr. Dre Feat. Snoop Dogg</td>
+								<td class="duration numerical">02:42</td>
+								<td class="size numerical">17.93 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">12</td>
+								<td class="title">Let's Get High</td>
+								<td class="artist">Dr. Dre Feat. Hittman, Kurupt &amp; Ms. Roq</td>
+								<td class="duration numerical">02:27</td>
+								<td class="size numerical">16.80 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">13</td>
+								<td class="title">Bitch Niggaz</td>
+								<td class="artist">Dr. Dre Feat. Snoop Dogg, Hittman &amp; Six-Two</td>
+								<td class="duration numerical">04:14</td>
+								<td class="size numerical">26.11 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">14</td>
+								<td class="title">The Car Bomb</td>
+								<td class="artist">Dr. Dre Feat. Mel-Man &amp; Charis Henry</td>
+								<td class="duration numerical">01:01</td>
+								<td class="size numerical">6.53 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">15</td>
+								<td class="title">Murder Ink</td>
+								<td class="artist">Dr. Dre Feat. Hittman &amp; Ms. Roq</td>
+								<td class="duration numerical">02:28</td>
+								<td class="size numerical">17.10 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">16</td>
+								<td class="title">Ed-Ucation</td>
+								<td class="artist">Dr. Dre Feat. Eddie Griffin</td>
+								<td class="duration numerical">01:32</td>
+								<td class="size numerical">9.25 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">17</td>
+								<td class="title">Some L.A. Niggaz</td>
+								<td class="artist">Dr. Dre Feat. Defari, Xzibit, Knoc-Turn'al, Time Bomb, King T, MC Ren &amp; Kokane</td>
+								<td class="duration numerical">04:25</td>
+								<td class="size numerical">25.14 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">18</td>
+								<td class="title">Pause 4 Porno</td>
+								<td class="artist">Dr. Dre Feat. Jake Steed</td>
+								<td class="duration numerical">01:33</td>
+								<td class="size numerical">8.56 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">19</td>
+								<td class="title">Housewife</td>
+								<td class="artist">Dr. Dre Feat. Kurupt &amp; Hittman</td>
+								<td class="duration numerical">04:03</td>
+								<td class="size numerical">26.39 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">20</td>
+								<td class="title">Ackrite</td>
+								<td class="artist">Dr. Dre Feat. Hittman</td>
+								<td class="duration numerical">03:40</td>
+								<td class="size numerical">23.37 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">21</td>
+								<td class="title">Bang Bang</td>
+								<td class="artist">Dr. Dre Feat. Knoc-Turn'al &amp; Hittman</td>
+								<td class="duration numerical">03:43</td>
+								<td class="size numerical">24.59 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">22</td>
+								<td class="title">The Message</td>
+								<td class="artist">Dr. Dre Feat. Mary J. Blige &amp; Rell</td>
+								<td class="duration numerical">05:31</td>
+								<td class="size numerical">35.30 MB</td>
+							</tr>
+						</tbody>
+					</table>
+					<hr>
+				</div>
+				<div class="frame">
+					<h2 class="headline">Omni Trio</h2>
+					<table class="summary">
+						<tbody>
+							<tr>
+								<td rowspan="2" class="cover_cell">
+									<img class="cover" alt="cover" src="covers/Omni_Trio-Volume_1993-2003.jpg">
+								</td>
+								<td class="album_info_cell">
+									<h3 class="album">Volume 1993-2003</h3>
+								</td>
+							</tr>
+							<tr>
+								<td class="album_info_cell">
+									<table class="properties">
+										<tbody>
+											<tr>
+												<td>日付</td>
+												<td>2003</td>
+											</tr>
+											<tr>
+												<td>ジャンル</td>
+												<td>Electronic</td>
+											</tr>
+											<tr>
+												<td>スタイル</td>
+												<td>Drum &amp; Bass</td>
+											</tr>
+											<tr>
+												<td>トラック数</td>
+												<td>33</td>
+											</tr>
+											<tr>
+												<td>演奏時間</td>
+												<td>02:26:22</td>
+											</tr>
+											<tr>
+												<td>データサイズ</td>
+												<td>945.27 MB</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<table class="tracks">
+						<tbody>
+							<tr>
+								<th class="track numerical">#</th>
+								<th class="title">タイトル</th>
+								<th class="artist">アーティスト</th>
+								<th class="duration numerical">時間</th>
+								<th class="size numerical">サイズ</th>
+							</tr>
+							<tr>
+								<td class="track numerical">01</td>
+								<td class="title">Renegade Snares VIP</td>
+								<td class="artist">Omni Trio</td>
+								<td class="duration numerical">06:29</td>
+								<td class="size numerical">40.64 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">02</td>
+								<td class="title">Mystic Stepper (Feel Good) Remix</td>
+								<td class="artist">Omni Trio</td>
+								<td class="duration numerical">05:57</td>
+								<td class="size numerical">39.60 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">03</td>
+								<td class="title">Thru The Vibe (2 On 1 Mix)</td>
+								<td class="artist">Omni Trio</td>
+								<td class="duration numerical">05:59</td>
+								<td class="size numerical">40.72 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">04</td>
+								<td class="title">Tripping On Broken Beats VIP</td>
+								<td class="artist">Omni Trio</td>
+								<td class="duration numerical">06:15</td>
+								<td class="size numerical">40.23 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">05</td>
+								<td class="title">Who Are You</td>
+								<td class="artist">Omni Trio</td>
+								<td class="duration numerical">06:44</td>
+								<td class="size numerical">37.56 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">06</td>
+								<td class="title">Sanctuary</td>
+								<td class="artist">Omni Trio</td>
+								<td class="duration numerical">07:07</td>
+								<td class="size numerical">41.70 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">07</td>
+								<td class="title">Byte Size Life</td>
+								<td class="artist">Omni Trio</td>
+								<td class="duration numerical">06:57</td>
+								<td class="size numerical">45.51 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">08</td>
+								<td class="title">Revolver</td>
+								<td class="artist">Omni Trio</td>
+								<td class="duration numerical">07:58</td>
+								<td class="size numerical">47.74 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">09</td>
+								<td class="title">Nu Birth (Re-Lick)</td>
+								<td class="artist">Omni Trio</td>
+								<td class="duration numerical">06:40</td>
+								<td class="size numerical">44.11 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">10</td>
+								<td class="title">Higher Ground</td>
+								<td class="artist">Omni Trio</td>
+								<td class="duration numerical">07:12</td>
+								<td class="size numerical">42.92 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">11</td>
+								<td class="title">Breakbeat Etiquette</td>
+								<td class="artist">Omni Trio</td>
+								<td class="duration numerical">07:24</td>
+								<td class="size numerical">46.86 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">01</td>
+								<td class="title">Thru The Vibe (Bongo Beats Edit)</td>
+								<td class="artist">Omni Trio</td>
+								<td class="duration numerical">03:25</td>
+								<td class="size numerical">20.24 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">02</td>
+								<td class="title">Renegade Snares (Foul Play VIP Mix)</td>
+								<td class="artist">Omni Trio</td>
+								<td class="duration numerical">04:19</td>
+								<td class="size numerical">27.73 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">03</td>
+								<td class="title">Feel Better (Foul Play Remix)</td>
+								<td class="artist">Omni Trio</td>
+								<td class="duration numerical">02:00</td>
+								<td class="size numerical">13.03 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">04</td>
+								<td class="title">Rollin' Heights (More Strings Attached Mix)</td>
+								<td class="artist">Omni Trio</td>
+								<td class="duration numerical">02:30</td>
+								<td class="size numerical">17.07 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">05</td>
+								<td class="title">Living For The Future</td>
+								<td class="artist">Omni Trio</td>
+								<td class="duration numerical">01:36</td>
+								<td class="size numerical">10.43 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">06</td>
+								<td class="title">Soul Promenade (Nookie Remix)</td>
+								<td class="artist">Omni Trio</td>
+								<td class="duration numerical">01:47</td>
+								<td class="size numerical">12.05 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">07</td>
+								<td class="title">Soul Of Darkness</td>
+								<td class="artist">Omni Trio</td>
+								<td class="duration numerical">02:33</td>
+								<td class="size numerical">17.21 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">08</td>
+								<td class="title">Together (VIP Mix)</td>
+								<td class="artist">Omni Trio</td>
+								<td class="duration numerical">02:37</td>
+								<td class="size numerical">16.44 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">09</td>
+								<td class="title">Red Rain (E-Coli Mix)</td>
+								<td class="artist">Omni Trio</td>
+								<td class="duration numerical">02:18</td>
+								<td class="size numerical">15.93 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">10</td>
+								<td class="title">Torn</td>
+								<td class="artist">Omni Trio</td>
+								<td class="duration numerical">03:25</td>
+								<td class="size numerical">22.24 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">11</td>
+								<td class="title">Tripping On Broken Beats (VIP Mix)</td>
+								<td class="artist">Omni Trio</td>
+								<td class="duration numerical">02:39</td>
+								<td class="size numerical">16.56 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">12</td>
+								<td class="title">Sanctuary</td>
+								<td class="artist">Omni Trio</td>
+								<td class="duration numerical">03:46</td>
+								<td class="size numerical">22.79 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">13</td>
+								<td class="title">First Contact</td>
+								<td class="artist">Omni Trio</td>
+								<td class="duration numerical">02:04</td>
+								<td class="size numerical">13.39 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">14</td>
+								<td class="title">Meltdown 2000 (Remix)</td>
+								<td class="artist">Omni Trio</td>
+								<td class="duration numerical">04:29</td>
+								<td class="size numerical">30.67 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">15</td>
+								<td class="title">Diffusion Loops</td>
+								<td class="artist">Omni Trio</td>
+								<td class="duration numerical">03:43</td>
+								<td class="size numerical">25.77 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">16</td>
+								<td class="title">Byte Size Life</td>
+								<td class="artist">Omni Trio</td>
+								<td class="duration numerical">04:37</td>
+								<td class="size numerical">32.13 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">17</td>
+								<td class="title">Revolver</td>
+								<td class="artist">Omni Trio</td>
+								<td class="duration numerical">02:57</td>
+								<td class="size numerical">19.15 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">18</td>
+								<td class="title">Secret Life</td>
+								<td class="artist">Omni Trio</td>
+								<td class="duration numerical">02:34</td>
+								<td class="size numerical">17.87 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">19</td>
+								<td class="title">Breakbeat Etiquette (London Steppers Remix)</td>
+								<td class="artist">Omni Trio</td>
+								<td class="duration numerical">04:03</td>
+								<td class="size numerical">25.79 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">20</td>
+								<td class="title">Nu Birth (Re-Lick)</td>
+								<td class="artist">Omni Trio</td>
+								<td class="duration numerical">03:19</td>
+								<td class="size numerical">23.04 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">21</td>
+								<td class="title">Penetration</td>
+								<td class="artist">Omni Trio</td>
+								<td class="duration numerical">03:08</td>
+								<td class="size numerical">21.56 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">22</td>
+								<td class="title">Thru The Vibe (John B Mix)</td>
+								<td class="artist">Omni Trio</td>
+								<td class="duration numerical">07:51</td>
+								<td class="size numerical">56.58 MB</td>
+							</tr>
+						</tbody>
+					</table>
+					<hr>
+				</div>
+				<div class="frame">
+					<h2 class="headline">The Chemical Brothers</h2>
+					<table class="summary">
+						<tbody>
+							<tr>
+								<td rowspan="2" class="cover_cell">
+									<img class="cover" alt="cover" src="covers/The_Chemical_Brothers-Come_With_Us.jpg">
+								</td>
+								<td class="album_info_cell">
+									<h3 class="album">Come With Us</h3>
+								</td>
+							</tr>
+							<tr>
+								<td class="album_info_cell">
+									<table class="properties">
+										<tbody>
+											<tr>
+												<td>日付</td>
+												<td>2002</td>
+											</tr>
+											<tr>
+												<td>ジャンル</td>
+												<td>Electronic</td>
+											</tr>
+											<tr>
+												<td>スタイル</td>
+												<td>Techno</td>
+											</tr>
+											<tr>
+												<td>トラック数</td>
+												<td>10</td>
+											</tr>
+											<tr>
+												<td>演奏時間</td>
+												<td>00:54:48</td>
+											</tr>
+											<tr>
+												<td>データサイズ</td>
+												<td>370.18 MB</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<table class="tracks">
+						<tbody>
+							<tr>
+								<th class="track numerical">#</th>
+								<th class="title">タイトル</th>
+								<th class="artist">アーティスト</th>
+								<th class="duration numerical">時間</th>
+								<th class="size numerical">サイズ</th>
+							</tr>
+							<tr>
+								<td class="track numerical">01</td>
+								<td class="title">Come With Us</td>
+								<td class="artist">The Chemical Brothers</td>
+								<td class="duration numerical">04:58</td>
+								<td class="size numerical">35.36 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">02</td>
+								<td class="title">It Began In Afrika</td>
+								<td class="artist">The Chemical Brothers</td>
+								<td class="duration numerical">06:16</td>
+								<td class="size numerical">43.03 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">03</td>
+								<td class="title">Galaxy Bounce</td>
+								<td class="artist">The Chemical Brothers</td>
+								<td class="duration numerical">03:28</td>
+								<td class="size numerical">24.21 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">04</td>
+								<td class="title">Star Guitar</td>
+								<td class="artist">The Chemical Brothers</td>
+								<td class="duration numerical">06:27</td>
+								<td class="size numerical">45.54 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">05</td>
+								<td class="title">Hoops</td>
+								<td class="artist">The Chemical Brothers</td>
+								<td class="duration numerical">06:32</td>
+								<td class="size numerical">37.53 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">06</td>
+								<td class="title">My Elastic Eye</td>
+								<td class="artist">The Chemical Brothers</td>
+								<td class="duration numerical">03:42</td>
+								<td class="size numerical">23.73 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">07</td>
+								<td class="title">The State We're In</td>
+								<td class="artist">The Chemical Brothers</td>
+								<td class="duration numerical">06:27</td>
+								<td class="size numerical">40.60 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">08</td>
+								<td class="title">Denmark</td>
+								<td class="artist">The Chemical Brothers</td>
+								<td class="duration numerical">05:07</td>
+								<td class="size numerical">36.07 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">09</td>
+								<td class="title">Pioneer Skies</td>
+								<td class="artist">The Chemical Brothers</td>
+								<td class="duration numerical">04:05</td>
+								<td class="size numerical">29.71 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">10</td>
+								<td class="title">The Test</td>
+								<td class="artist">The Chemical Brothers</td>
+								<td class="duration numerical">07:46</td>
+								<td class="size numerical">54.37 MB</td>
+							</tr>
+						</tbody>
+					</table>
+					<hr>
+				</div>
+				<div class="frame">
+					<h2 class="headline">The Offspring</h2>
+					<table class="summary">
+						<tbody>
+							<tr>
+								<td rowspan="2" class="cover_cell">
+									<img class="cover" alt="cover" src="covers/The_Offspring-Ixnay_On_The_Hombre.jpg">
+								</td>
+								<td class="album_info_cell">
+									<h3 class="album">Ixnay On The Hombre</h3>
+								</td>
+							</tr>
+							<tr>
+								<td class="album_info_cell">
+									<table class="properties">
+										<tbody>
+											<tr>
+												<td>日付</td>
+												<td>1997</td>
+											</tr>
+											<tr>
+												<td>ジャンル</td>
+												<td>Rock</td>
+											</tr>
+											<tr>
+												<td>スタイル</td>
+												<td>Punk Rock</td>
+											</tr>
+											<tr>
+												<td>トラック数</td>
+												<td>14</td>
+											</tr>
+											<tr>
+												<td>演奏時間</td>
+												<td>00:42:27</td>
+											</tr>
+											<tr>
+												<td>データサイズ</td>
+												<td>304.23 MB</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<table class="tracks">
+						<tbody>
+							<tr>
+								<th class="track numerical">#</th>
+								<th class="title">タイトル</th>
+								<th class="artist">アーティスト</th>
+								<th class="duration numerical">時間</th>
+								<th class="size numerical">サイズ</th>
+							</tr>
+							<tr>
+								<td class="track numerical">01</td>
+								<td class="title">Disclaimer</td>
+								<td class="artist">The Offspring</td>
+								<td class="duration numerical">00:45</td>
+								<td class="size numerical">5.15 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">02</td>
+								<td class="title">The Meaning Of Life</td>
+								<td class="artist">The Offspring</td>
+								<td class="duration numerical">02:57</td>
+								<td class="size numerical">23.22 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">03</td>
+								<td class="title">Mota</td>
+								<td class="artist">The Offspring</td>
+								<td class="duration numerical">02:57</td>
+								<td class="size numerical">22.25 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">04</td>
+								<td class="title">Me &amp; My Old Lady</td>
+								<td class="artist">The Offspring</td>
+								<td class="duration numerical">04:33</td>
+								<td class="size numerical">33.75 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">05</td>
+								<td class="title">Cool To Hate</td>
+								<td class="artist">The Offspring</td>
+								<td class="duration numerical">02:48</td>
+								<td class="size numerical">20.75 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">06</td>
+								<td class="title">Leave It Behind</td>
+								<td class="artist">The Offspring</td>
+								<td class="duration numerical">01:59</td>
+								<td class="size numerical">14.86 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">07</td>
+								<td class="title">Gone Away</td>
+								<td class="artist">The Offspring</td>
+								<td class="duration numerical">04:29</td>
+								<td class="size numerical">34.32 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">08</td>
+								<td class="title">I Choose</td>
+								<td class="artist">The Offspring</td>
+								<td class="duration numerical">03:55</td>
+								<td class="size numerical">28.52 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">09</td>
+								<td class="title">Intermission</td>
+								<td class="artist">The Offspring</td>
+								<td class="duration numerical">00:48</td>
+								<td class="size numerical">4.57 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">10</td>
+								<td class="title">All I Want</td>
+								<td class="artist">The Offspring</td>
+								<td class="duration numerical">01:55</td>
+								<td class="size numerical">14.57 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">11</td>
+								<td class="title">Way Down The Line</td>
+								<td class="artist">The Offspring</td>
+								<td class="duration numerical">02:37</td>
+								<td class="size numerical">20.29 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">12</td>
+								<td class="title">Don't Pick It Up</td>
+								<td class="artist">The Offspring</td>
+								<td class="duration numerical">01:54</td>
+								<td class="size numerical">14.45 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">13</td>
+								<td class="title">Amazed</td>
+								<td class="artist">The Offspring</td>
+								<td class="duration numerical">04:25</td>
+								<td class="size numerical">33.65 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">14</td>
+								<td class="title">Change The World</td>
+								<td class="artist">The Offspring</td>
+								<td class="duration numerical">06:25</td>
+								<td class="size numerical">33.88 MB</td>
+							</tr>
+						</tbody>
+					</table>
+					<hr>
+				</div>
+				<div class="frame">
+					<h2 class="headline">Underworld</h2>
+					<table class="summary">
+						<tbody>
+							<tr>
+								<td rowspan="2" class="cover_cell">
+									<img class="cover" alt="cover" src="covers/Underworld-Beaucoup_Fish.jpg">
+								</td>
+								<td class="album_info_cell">
+									<h3 class="album">Beaucoup Fish</h3>
+								</td>
+							</tr>
+							<tr>
+								<td class="album_info_cell">
+									<table class="properties">
+										<tbody>
+											<tr>
+												<td>日付</td>
+												<td>1999</td>
+											</tr>
+											<tr>
+												<td>ジャンル</td>
+												<td>Electronic</td>
+											</tr>
+											<tr>
+												<td>スタイル</td>
+												<td>Techno</td>
+											</tr>
+											<tr>
+												<td>トラック数</td>
+												<td>11</td>
+											</tr>
+											<tr>
+												<td>演奏時間</td>
+												<td>01:13:59</td>
+											</tr>
+											<tr>
+												<td>データサイズ</td>
+												<td>496.77 MB</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<table class="tracks">
+						<tbody>
+							<tr>
+								<th class="track numerical">#</th>
+								<th class="title">タイトル</th>
+								<th class="artist">アーティスト</th>
+								<th class="duration numerical">時間</th>
+								<th class="size numerical">サイズ</th>
+							</tr>
+							<tr>
+								<td class="track numerical">01</td>
+								<td class="title">Cups</td>
+								<td class="artist">Underworld</td>
+								<td class="duration numerical">11:46</td>
+								<td class="size numerical">77.55 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">02</td>
+								<td class="title">Push Upstairs</td>
+								<td class="artist">Underworld</td>
+								<td class="duration numerical">04:34</td>
+								<td class="size numerical">32.74 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">03</td>
+								<td class="title">Jumbo</td>
+								<td class="artist">Underworld</td>
+								<td class="duration numerical">06:58</td>
+								<td class="size numerical">48.64 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">04</td>
+								<td class="title">Shudder / King Of Snake</td>
+								<td class="artist">Underworld</td>
+								<td class="duration numerical">09:32</td>
+								<td class="size numerical">67.77 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">05</td>
+								<td class="title">Winjer</td>
+								<td class="artist">Underworld</td>
+								<td class="duration numerical">04:29</td>
+								<td class="size numerical">28.98 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">06</td>
+								<td class="title">Skym</td>
+								<td class="artist">Underworld</td>
+								<td class="duration numerical">04:08</td>
+								<td class="size numerical">18.92 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">07</td>
+								<td class="title">Bruce Lee</td>
+								<td class="artist">Underworld</td>
+								<td class="duration numerical">04:42</td>
+								<td class="size numerical">34.04 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">08</td>
+								<td class="title">Kittens</td>
+								<td class="artist">Underworld</td>
+								<td class="duration numerical">07:31</td>
+								<td class="size numerical">53.37 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">09</td>
+								<td class="title">Push Downstairs</td>
+								<td class="artist">Underworld</td>
+								<td class="duration numerical">06:04</td>
+								<td class="size numerical">37.03 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">10</td>
+								<td class="title">Something Like A Mama</td>
+								<td class="artist">Underworld</td>
+								<td class="duration numerical">06:37</td>
+								<td class="size numerical">43.52 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">11</td>
+								<td class="title">Moaner</td>
+								<td class="artist">Underworld</td>
+								<td class="duration numerical">07:38</td>
+								<td class="size numerical">54.20 MB</td>
+							</tr>
+						</tbody>
+					</table>
+					<hr>
+				</div>
+				<div class="frame">
+					<h2 class="headline">Various Artists</h2>
+					<table class="summary">
+						<tbody>
+							<tr>
+								<td rowspan="2" class="cover_cell">
+									<img class="cover" alt="cover" src="covers/Various_Artists-美少女戦士セーラームーン_World_Super_Best.jpg">
+								</td>
+								<td class="album_info_cell">
+									<h3 class="album">美少女戦士セーラームーン World Super Best</h3>
+								</td>
+							</tr>
+							<tr>
+								<td class="album_info_cell">
+									<table class="properties">
+										<tbody>
+											<tr>
+												<td>日付</td>
+												<td>2000</td>
+											</tr>
+											<tr>
+												<td>ジャンル</td>
+												<td>Pop</td>
+											</tr>
+											<tr>
+												<td>スタイル</td>
+												<td>Anime</td>
+											</tr>
+											<tr>
+												<td>トラック数</td>
+												<td>15</td>
+											</tr>
+											<tr>
+												<td>演奏時間</td>
+												<td>01:01:18</td>
+											</tr>
+											<tr>
+												<td>データサイズ</td>
+												<td>420.97 MB</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<table class="tracks">
+						<tbody>
+							<tr>
+								<th class="track numerical">#</th>
+								<th class="title">タイトル</th>
+								<th class="artist">アーティスト</th>
+								<th class="duration numerical">時間</th>
+								<th class="size numerical">サイズ</th>
+							</tr>
+							<tr>
+								<td class="track numerical">01</td>
+								<td class="title">ムーンライト伝説</td>
+								<td class="artist">DALI</td>
+								<td class="duration numerical">02:56</td>
+								<td class="size numerical">19.74 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">02</td>
+								<td class="title">HEART MOVING</td>
+								<td class="artist">高松美奈絵</td>
+								<td class="duration numerical">03:40</td>
+								<td class="size numerical">24.10 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">03</td>
+								<td class="title">プリンセス・ムーン</td>
+								<td class="artist">橋本潮, アップルパイ</td>
+								<td class="duration numerical">04:05</td>
+								<td class="size numerical">25.02 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">04</td>
+								<td class="title">乙女のポリシー</td>
+								<td class="artist">石田よう子</td>
+								<td class="duration numerical">03:16</td>
+								<td class="size numerical">23.10 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">05</td>
+								<td class="title">ムーンライト伝説</td>
+								<td class="artist">ムーンリップス</td>
+								<td class="duration numerical">02:55</td>
+								<td class="size numerical">20.64 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">06</td>
+								<td class="title">タキシード・ミラージュ</td>
+								<td class="artist">三石琴乃, 富沢美智恵, 久川綾, 篠原恵美, 深見梨加</td>
+								<td class="duration numerical">03:37</td>
+								<td class="size numerical">23.26 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">07</td>
+								<td class="title">私たちになりたくて</td>
+								<td class="artist">藤谷美和子</td>
+								<td class="duration numerical">05:23</td>
+								<td class="size numerical">36.68 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">08</td>
+								<td class="title">“らしく”いきましょ</td>
+								<td class="artist">Meu</td>
+								<td class="duration numerical">03:34</td>
+								<td class="size numerical">26.18 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">09</td>
+								<td class="title">セーラースターソング</td>
+								<td class="artist">花沢加絵</td>
+								<td class="duration numerical">03:54</td>
+								<td class="size numerical">28.51 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">10</td>
+								<td class="title">風も空もきっと…</td>
+								<td class="artist">観月ありさ</td>
+								<td class="duration numerical">04:46</td>
+								<td class="size numerical">33.13 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">11</td>
+								<td class="title">流れ星へ</td>
+								<td class="artist">新山志保, 津野田なるみ, 坂本千夏</td>
+								<td class="duration numerical">04:47</td>
+								<td class="size numerical">33.34 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">12</td>
+								<td class="title">とどかぬ想い—my friend's love—</td>
+								<td class="artist">新山志保, 津野田なるみ, 坂本千夏</td>
+								<td class="duration numerical">03:54</td>
+								<td class="size numerical">29.70 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">13</td>
+								<td class="title">Moon Revenge</td>
+								<td class="artist">三石琴乃, 富沢美智恵, 久川綾, 篠原恵美, 深見梨加</td>
+								<td class="duration numerical">04:03</td>
+								<td class="size numerical">29.64 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">14</td>
+								<td class="title">Moonlight Destiny</td>
+								<td class="artist">朝川ひろこ</td>
+								<td class="duration numerical">05:59</td>
+								<td class="size numerical">37.24 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">15</td>
+								<td class="title">Morning Moonで会いましょう</td>
+								<td class="artist">プリティキャスト</td>
+								<td class="duration numerical">04:29</td>
+								<td class="size numerical">30.68 MB</td>
+							</tr>
+						</tbody>
+					</table>
+					<hr>
+					<table class="summary">
+						<tbody>
+							<tr>
+								<td rowspan="2" class="cover_cell">
+									<img class="cover" alt="cover" src="covers/Various_Artists-The_Original_Chicago_House_Classics.jpg">
+								</td>
+								<td class="album_info_cell">
+									<h3 class="album">The Original Chicago House Classics</h3>
+								</td>
+							</tr>
+							<tr>
+								<td class="album_info_cell">
+									<table class="properties">
+										<tbody>
+											<tr>
+												<td>日付</td>
+												<td>2002</td>
+											</tr>
+											<tr>
+												<td>ジャンル</td>
+												<td>Electronic</td>
+											</tr>
+											<tr>
+												<td>スタイル</td>
+												<td>House</td>
+											</tr>
+											<tr>
+												<td>トラック数</td>
+												<td>12</td>
+											</tr>
+											<tr>
+												<td>演奏時間</td>
+												<td>01:17:15</td>
+											</tr>
+											<tr>
+												<td>データサイズ</td>
+												<td>532.36 MB</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<table class="tracks">
+						<tbody>
+							<tr>
+								<th class="track numerical">#</th>
+								<th class="title">タイトル</th>
+								<th class="artist">アーティスト</th>
+								<th class="duration numerical">時間</th>
+								<th class="size numerical">サイズ</th>
+							</tr>
+							<tr>
+								<td class="track numerical">01</td>
+								<td class="title">Your Love</td>
+								<td class="artist">Frankie Knuckles Feat. Jamie Principle</td>
+								<td class="duration numerical">06:47</td>
+								<td class="size numerical">44.91 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">02</td>
+								<td class="title">Can You Feel It</td>
+								<td class="artist">Mr. Fingers</td>
+								<td class="duration numerical">05:30</td>
+								<td class="size numerical">37.49 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">03</td>
+								<td class="title">Love Can't Turn Around</td>
+								<td class="artist">Farley &quot;Jackmaster&quot; Funk &amp; Jesse Saunders</td>
+								<td class="duration numerical">05:39</td>
+								<td class="size numerical">41.67 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">04</td>
+								<td class="title">Do It Properly</td>
+								<td class="artist">Adonis</td>
+								<td class="duration numerical">05:26</td>
+								<td class="size numerical">41.08 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">05</td>
+								<td class="title">Move Your Body</td>
+								<td class="artist">Marshall Jefferson</td>
+								<td class="duration numerical">06:44</td>
+								<td class="size numerical">42.65 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">06</td>
+								<td class="title">Promised Land</td>
+								<td class="artist">Joe Smooth</td>
+								<td class="duration numerical">05:09</td>
+								<td class="size numerical">41.28 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">07</td>
+								<td class="title">Baby Wants To Ride</td>
+								<td class="artist">Frankie Knuckles Feat. Jamie Principle</td>
+								<td class="duration numerical">08:35</td>
+								<td class="size numerical">52.73 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">08</td>
+								<td class="title">You Used To Hold Me</td>
+								<td class="artist">Ralphi Rosario Feat. Xavier Gold</td>
+								<td class="duration numerical">06:56</td>
+								<td class="size numerical">53.45 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">09</td>
+								<td class="title">House Nation</td>
+								<td class="artist">The House Master Boyz &amp; The Rude Boy Of House</td>
+								<td class="duration numerical">08:12</td>
+								<td class="size numerical">52.15 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">10</td>
+								<td class="title">Pump Up London</td>
+								<td class="artist">Mr. Lee</td>
+								<td class="duration numerical">07:13</td>
+								<td class="size numerical">48.47 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">11</td>
+								<td class="title">Can't Get Enough</td>
+								<td class="artist">Liz Torres</td>
+								<td class="duration numerical">05:22</td>
+								<td class="size numerical">40.80 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">12</td>
+								<td class="title">Bring Down The Walls</td>
+								<td class="artist">Robert Owens</td>
+								<td class="duration numerical">05:42</td>
+								<td class="size numerical">35.66 MB</td>
+							</tr>
+						</tbody>
+					</table>
+					<hr>
+					<table class="summary">
+						<tbody>
+							<tr>
+								<td rowspan="2" class="cover_cell">
+									<img class="cover" alt="cover" src="covers/Various_Artists-We_can!!_HUGっと!_プリキュア_-_HUGっと!未来☆ドリーマー.jpg">
+								</td>
+								<td class="album_info_cell">
+									<h3 class="album">We can!! HUGっと! プリキュア / HUGっと!未来☆ドリーマー</h3>
+								</td>
+							</tr>
+							<tr>
+								<td class="album_info_cell">
+									<table class="properties">
+										<tbody>
+											<tr>
+												<td>日付</td>
+												<td>2018/03/07</td>
+											</tr>
+											<tr>
+												<td>ジャンル</td>
+												<td>Pop</td>
+											</tr>
+											<tr>
+												<td>スタイル</td>
+												<td>Anime</td>
+											</tr>
+											<tr>
+												<td>トラック数</td>
+												<td>4</td>
+											</tr>
+											<tr>
+												<td>演奏時間</td>
+												<td>00:16:54</td>
+											</tr>
+											<tr>
+												<td>データサイズ</td>
+												<td>126.59 MB</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<table class="tracks">
+						<tbody>
+							<tr>
+								<th class="track numerical">#</th>
+								<th class="title">タイトル</th>
+								<th class="artist">アーティスト</th>
+								<th class="duration numerical">時間</th>
+								<th class="size numerical">サイズ</th>
+							</tr>
+							<tr>
+								<td class="track numerical">01</td>
+								<td class="title">We can!! HUGっと! プリキュア</td>
+								<td class="artist">宮本佳那子</td>
+								<td class="duration numerical">04:33</td>
+								<td class="size numerical">34.18 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">02</td>
+								<td class="title">HUGっと!未来☆ドリーマー</td>
+								<td class="artist">引坂 理絵、本泉莉奈、小倉唯</td>
+								<td class="duration numerical">03:57</td>
+								<td class="size numerical">29.67 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">03</td>
+								<td class="title">We can!! HUGっと! プリキュア（オリジナル・メロディ・カラオケ）</td>
+								<td class="artist">福富雅之 (Nostalgic Orchestra)</td>
+								<td class="duration numerical">04:33</td>
+								<td class="size numerical">33.23 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">04</td>
+								<td class="title">HUGっと!未来☆ドリーマー（オリジナル・メロディ・カラオケ）</td>
+								<td class="artist">睦月周平</td>
+								<td class="duration numerical">03:51</td>
+								<td class="size numerical">29.51 MB</td>
+							</tr>
+						</tbody>
+					</table>
+					<hr>
+				</div>
+				<div class="frame">
+					<h2 class="headline">平野綾, 茅原実里, 後藤邑子</h2>
+					<table class="summary">
+						<tbody>
+							<tr>
+								<td rowspan="2" class="cover_cell">
+									<img class="cover" alt="cover" src="covers/平野綾-ハレ晴レユカイ.jpg">
+								</td>
+								<td class="album_info_cell">
+									<h3 class="album">ハレ晴レユカイ</h3>
+								</td>
+							</tr>
+							<tr>
+								<td class="album_info_cell">
+									<table class="properties">
+										<tbody>
+											<tr>
+												<td>日付</td>
+												<td>2006/05/10</td>
+											</tr>
+											<tr>
+												<td>ジャンル</td>
+												<td>Pop</td>
+											</tr>
+											<tr>
+												<td>スタイル</td>
+												<td>Anime</td>
+											</tr>
+											<tr>
+												<td>トラック数</td>
+												<td>4</td>
+											</tr>
+											<tr>
+												<td>演奏時間</td>
+												<td>00:14:01</td>
+											</tr>
+											<tr>
+												<td>データサイズ</td>
+												<td>109.75 MB</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<table class="tracks">
+						<tbody>
+							<tr>
+								<th class="track numerical">#</th>
+								<th class="title">タイトル</th>
+								<th class="artist">アーティスト</th>
+								<th class="duration numerical">時間</th>
+								<th class="size numerical">サイズ</th>
+							</tr>
+							<tr>
+								<td class="track numerical">01</td>
+								<td class="title">ハレ晴レユカイ</td>
+								<td class="artist">平野綾, 茅原実里, 後藤邑子</td>
+								<td class="duration numerical">03:38</td>
+								<td class="size numerical">28.93 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">02</td>
+								<td class="title">うぇるかむUNKNOWN</td>
+								<td class="artist">平野綾, 茅原実里, 後藤邑子</td>
+								<td class="duration numerical">03:24</td>
+								<td class="size numerical">26.61 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">03</td>
+								<td class="title">ハレ晴レユカイ (off vocal)</td>
+								<td class="artist">田代智一</td>
+								<td class="duration numerical">03:38</td>
+								<td class="size numerical">28.27 MB</td>
+							</tr>
+							<tr>
+								<td class="track numerical">04</td>
+								<td class="title">うぇるかむUNKNOWN (off vocal)</td>
+								<td class="artist">鈴木盛広</td>
+								<td class="duration numerical">03:21</td>
+								<td class="size numerical">25.94 MB</td>
+							</tr>
+						</tbody>
+					</table>
+					<hr>
+				</div>
+			</main>
+			<footer>
+				<div>
+					<span class="pallet" onclick="change_color('#bb1212')" style="background-color: #bb1212;"></span>
+					<span class="pallet" onclick="change_color('#bb1276')" style="background-color: #bb1276;"></span>
+					<span class="pallet" onclick="change_color('#bb12ad')" style="background-color: #bb12ad;"></span>
+					<span class="pallet" onclick="change_color('#8b12bb')" style="background-color: #8b12bb;"></span>
+					<span class="pallet" onclick="change_color('#5412bb')" style="background-color: #5412bb;"></span>
+					<span class="pallet" onclick="change_color('#2d12bb')" style="background-color: #2d12bb;"></span>
+					<span class="pallet" onclick="change_color('#125cbb')" style="background-color: #125cbb;"></span>
+					<span class="pallet" onclick="change_color('#1283bb')" style="background-color: #1283bb;"></span>
+					<span class="pallet" onclick="change_color('#12b2bb')" style="background-color: #12b2bb;"></span>
+					<span class="pallet" onclick="change_color('#12bb8e')" style="background-color: #12bb8e;"></span>
+					<span class="pallet" onclick="change_color('#12bb67')" style="background-color: #12bb67;"></span>
+					<span class="pallet" onclick="change_color('#12bb40')" style="background-color: #12bb40;"></span>
+					<span class="pallet" onclick="change_color('#79bb12')" style="background-color: #79bb12;"></span>
+					<span class="pallet" onclick="change_color('#a0bb12')" style="background-color: #a0bb12;"></span>
+					<span class="pallet" onclick="change_color('#b7bb12')" style="background-color: #b7bb12;"></span>
+					<span class="pallet" onclick="change_color('#bb9812')" style="background-color: #bb9812;"></span>
+					<span class="pallet" onclick="change_color('#bb7912')" style="background-color: #bb7912;"></span>
+					<span class="pallet" onclick="change_color('#bb6912')" style="background-color: #bb6912;"></span>
+					<span class="pallet" onclick="change_color('#f44336')" style="background-color: #f44336;"></span>
+					<span class="pallet" onclick="change_color('#e91e63')" style="background-color: #e91e63;"></span>
+					<span class="pallet" onclick="change_color('#9c27b0')" style="background-color: #9c27b0;"></span>
+					<span class="pallet" onclick="change_color('#673ab7')" style="background-color: #673ab7;"></span>
+					<span class="pallet" onclick="change_color('#3f51b5')" style="background-color: #3f51b5;"></span>
+					<span class="pallet" onclick="change_color('#2196f3')" style="background-color: #2196f3;"></span>
+					<span class="pallet" onclick="change_color('#03a9f4')" style="background-color: #03a9f4;"></span>
+					<span class="pallet" onclick="change_color('#00bcd4')" style="background-color: #00bcd4;"></span>
+					<span class="pallet" onclick="change_color('#009688')" style="background-color: #009688;"></span>
+					<span class="pallet" onclick="change_color('#4caf50')" style="background-color: #4caf50;"></span>
+					<span class="pallet" onclick="change_color('#8bc34a')" style="background-color: #8bc34a;"></span>
+					<span class="pallet" onclick="change_color('#cddc39')" style="background-color: #cddc39;"></span>
+					<span class="pallet" onclick="change_color('#ffeb3b')" style="background-color: #ffeb3b;"></span>
+					<span class="pallet" onclick="change_color('#ffc107')" style="background-color: #ffc107;"></span>
+					<span class="pallet" onclick="change_color('#ff9800')" style="background-color: #ff9800;"></span>
+					<span class="pallet" onclick="change_color('#ff5722')" style="background-color: #ff5722;"></span>
+					<span class="pallet" onclick="change_color('#795548')" style="background-color: #795548;"></span>
+					<span class="pallet" onclick="change_color('#9e9e9e')" style="background-color: #9e9e9e;"></span>
+					<span class="pallet" onclick="change_color('#607d8b')" style="background-color: #607d8b;"></span>
+					<span class="pallet" onclick="change_color('#770000')" style="background-color: #770000;"></span>
+					<span class="pallet" onclick="change_color('#77003b')" style="background-color: #77003b;"></span>
+					<span class="pallet" onclick="change_color('#77005c')" style="background-color: #77005c;"></span>
+					<span class="pallet" onclick="change_color('#6b0077')" style="background-color: #6b0077;"></span>
+					<span class="pallet" onclick="change_color('#4a0077')" style="background-color: #4a0077;"></span>
+					<span class="pallet" onclick="change_color('#2f0077')" style="background-color: #2f0077;"></span>
+					<span class="pallet" onclick="change_color('#000e77')" style="background-color: #000e77;"></span>
+					<span class="pallet" onclick="change_color('#003477')" style="background-color: #003477;"></span>
+					<span class="pallet" onclick="change_color('#004a77')" style="background-color: #004a77;"></span>
+					<span class="pallet" onclick="change_color('#005b77')" style="background-color: #005b77;"></span>
+					<span class="pallet" onclick="change_color('#007772')" style="background-color: #007772;"></span>
+					<span class="pallet" onclick="change_color('#00774c')" style="background-color: #00774c;"></span>
+					<span class="pallet" onclick="change_color('#007715')" style="background-color: #007715;"></span>
+					<span class="pallet" onclick="change_color('#4e7700')" style="background-color: #4e7700;"></span>
+					<span class="pallet" onclick="change_color('#697700')" style="background-color: #697700;"></span>
+					<span class="pallet" onclick="change_color('#775e00')" style="background-color: #775e00;"></span>
+					<span class="pallet" onclick="change_color('#775300')" style="background-color: #775300;"></span>
+					<span class="pallet" onclick="change_color('#773800')" style="background-color: #773800;"></span>
+					<span class="pallet" onclick="change_color('#000000')" style="background-color: #000000;"></span>
+					<span class="pallet" onclick="change_color('#191919')" style="background-color: #191919;"></span>
+					<span class="pallet" onclick="change_color('#444444')" style="background-color: #444444;"></span>
+					<span class="pallet" onclick="change_color('#777777')" style="background-color: #777777;"></span>
+					<span class="pallet" onclick="change_color('#b9b9b9')" style="background-color: #b9b9b9;"></span>
+					<span class="pallet" onclick="change_color('#d9d9d9')" style="background-color: #d9d9d9;"></span>
+				</div>
+				<hr>
+				<p>Mp3tag - The Universal Tag Editor</p>
+			</footer>
+		</div>
+	</body>
+</html>
