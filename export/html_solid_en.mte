@@ -216,11 +216,11 @@ $loop(%year%)$loop(%album%)					<table class="summary">
 											</tr>]
 											[<tr>
 												<td>Genre</td>
-												<td>$replace(%genre%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
+												<td>$replace($meta_sep(genre,',' ),&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
 											</tr>]
 											[<tr>
 												<td>Style</td>
-												<td>$replace(%style%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
+												<td>$replace($meta_sep(style,',' ),&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
 											</tr>]
 											<tr>
 												<td>Tracks</td>

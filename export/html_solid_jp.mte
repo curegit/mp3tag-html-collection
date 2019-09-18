@@ -216,11 +216,11 @@ $loop(%year%)$loop(%album%)					<table class="summary">
 											</tr>]
 											[<tr>
 												<td>ジャンル</td>
-												<td>$replace(%genre%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
+												<td>$replace($meta_sep(genre,',' ),&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
 											</tr>]
 											[<tr>
 												<td>スタイル</td>
-												<td>$replace(%style%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
+												<td>$replace($meta_sep(style,',' ),&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
 											</tr>]
 											<tr>
 												<td>トラック数</td>
