@@ -44,6 +44,7 @@ div.frame {
 	border: solid 1px #9c9c9c;
 	margin-bottom: 40px;
 	background-color: #191919;
+	box-sizing: border-box;
 }
 div.frame .headline {
 	width: 100%%;
