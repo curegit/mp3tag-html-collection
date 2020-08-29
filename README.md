@@ -1,6 +1,6 @@
 # Mp3tag HTML テンプレート集
 
-オーディオタグエディタ、[Mp3tag](https://www.mp3tag.de/) のテキストファイル出力機能で使う HTML テンプレート集
+オーディオタグエディタ、[Mp3tag](https://www.mp3tag.de/) のテキストファイル出力機能で使える HTML テンプレート集
 
 ## プレビュー
 
