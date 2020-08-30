@@ -64,7 +64,6 @@ div.frame hr:last-child {
 table.properties {
 	table-layout: fixed;
 	width: 100%%;
-	margin: 20px auto;
 	border: none;
 	font-size: 80%%;
 	font-weight: normal;
@@ -106,7 +105,7 @@ img.cover {
 	font-size: 150%%;
 	font-weight: bold;
 	line-height: 1.4;
-	margin: 20px auto 30px auto;
+	margin: 20px auto;
 }
 table.tracks {
 	width: 90%%;
@@ -176,7 +175,7 @@ function change_color(color) {
 			<header>
 				<div class="frame">
 					<h1 class="headline">Summary</h1>
-					<table class="properties">
+					<table class="summary properties">
 						<tbody>
 							<tr>
 								<td>Tracks</td>
