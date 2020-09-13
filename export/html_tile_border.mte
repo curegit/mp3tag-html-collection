@@ -10,17 +10,17 @@ $filename(html,utf-8)<!DOCTYPE html>
 	padding: 0px;
 }
 body {
+	min-width: 300px;
 	background-color: #222;
 }
 main {
-	display: flex;
-	flex-wrap: wrap;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
 div.frame {
 	display: inline-block;
-	box-sizing: border-box;
 	position: relative;
-	width: calc(100%% / 8);
+	box-sizing: border-box;
 	border: 1px solid #333;
 }
 div.frame::after {
