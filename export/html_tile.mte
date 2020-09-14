@@ -39,7 +39,7 @@ div.frame > img.cover {
 	<body>
 		<main>
 $loop(%albumartist%)$loop(%year%)$loop(%album%,1)			<div class="frame">
-				<img class="cover" alt="cover" src="$replace(covers/$replace($validate(%albumartist%-%album%,-), ,_).$replace(%_cover_mimetype%,image/jpeg,jpg,image/jpg,jpg,image/png,png,image/gif,gif),&,&amp;,<,&lt;,>,&gt;,",&quot;)">
+				<img class="cover" src="$replace(covers/$replace($validate(%albumartist%-%album%,-), ,_).$replace(%_cover_mimetype%,image/jpeg,jpg,image/jpg,jpg,image/png,png,image/gif,gif),&,&amp;,<,&lt;,>,&gt;,",&quot;)">
 			</div>
 $loopend()$loopend()$loopend()		</main>
 	</body>

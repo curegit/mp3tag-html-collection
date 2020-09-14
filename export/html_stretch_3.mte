@@ -26,7 +26,7 @@ img {
 	</head>
 	<body>
 		<main>
-$loop(%albumartist%)$loop(%year%)$loop(%album%,1)			<img class="cover" alt="cover" src="$replace(covers/$replace($validate(%albumartist%-%album%,-), ,_).$replace(%_cover_mimetype%,image/jpeg,jpg,image/jpg,jpg,image/png,png,image/gif,gif),&,&amp;,<,&lt;,>,&gt;,",&quot;)">
+$loop(%albumartist%)$loop(%year%)$loop(%album%,1)			<img class="cover" src="$replace(covers/$replace($validate(%albumartist%-%album%,-), ,_).$replace(%_cover_mimetype%,image/jpeg,jpg,image/jpg,jpg,image/png,png,image/gif,gif),&,&amp;,<,&lt;,>,&gt;,",&quot;)">
 $loopend()$loopend()$loopend()		</main>
 	</body>
 </html>
