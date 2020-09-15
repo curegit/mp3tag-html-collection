@@ -1,0 +1,222 @@
+$filename(html,utf-8)<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Album List | Mp3tag</title>
+		<meta name="description" content="Created with Mp3tag">
+		<style>
+* {
+	margin: 0px;
+	padding: 0px;
+}
+body {
+	min-width: 320px;
+	color: #000;
+	background-color: #fff;
+	font-family: sans-serif;
+	font-size: 16px;
+	line-height: 1.6;
+	word-break: keep-all;
+	overflow-wrap: break-word;
+}
+main {
+	display: grid;
+	grid-auto-flow: row dense;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+div.cover {
+	position: relative;
+	box-sizing: border-box;
+	border: 1px solid #333;
+}
+div.cover::after {
+	content: "";
+	display: block;
+	padding-bottom: 100%%;
+}
+div.cover > img {
+	display: block;
+	position: absolute;
+	width: 100%%;
+	height: 100%%;
+	object-fit: cover;
+	object-position: center center;
+}
+div.detail {
+	grid-column: 1 / -1;
+}
+		</style>
+		<script>
+function clamp(a, x, b) {
+	return x < a ? a : x < b ? x : b;
+}
+function gamma_forward(x) {
+	return x <= 0.0031308 ? 12.92 * x : 1.055 * x ** (1 / 2.4) - 0.055;
+}
+function gamma_reverse(x) {
+	return x <= 0.04045 ? x / 12.92 : ((x + 0.055) / 1.055) ** 2.4;
+}
+function srgb_rgb('['r, g, b']') {
+	return '['clamp(0, gamma_reverse(r / 255), 1), clamp(0, gamma_reverse(g / 255), 1), clamp(0, gamma_reverse(b / 255), 1)']';
+}
+function rgb_srgb('['r, g, b']') {
+	return '['clamp(0, 255 * gamma_forward(r), 255), clamp(0, 255 * gamma_forward(g), 255), clamp(0, 255 * gamma_forward(b), 255)']';
+}
+function rgb_yuv('['r, g, b']') {
+	return '['0.2126 * r + 0.7152 * g + 0.0722 * b, -0.114572 * r - 0.385428 * g + 0.5 * b, 0.5 * r - 0.454153 * g - 0.045847 * b']';
+}
+function yuv_rgb('['y, u, v']') {
+	return '['y + 1.5748 * v, y - 0.187324 * u - 0.468124 * v, y + 1.8556 * u']';
+}
+function color_add('['y1, u1, v1']', '['y2, u2, v2']') {
+	return '['y1 + y2, u1 + u2, v1 + v2']';
+}
+function color_multiply(a, '['y, u, v']') {
+	return '['a * y, a * u, a * v']';
+}
+function sqr_distance('['y1, u1, v1']', '['y2, u2, v2']') {
+	return (y1 - y2) ** 2 + (u1 - u2) ** 2 + (v1 - v2) ** 2;
+}
+function contrast_ratio('['y1, u1, v1']', '['y2, u2, v2']') {
+	return y1 > y2 ? (y1 + 0.05) / (y2 + 0.05) : (y2 + 0.05) / (y1 + 0.05);
+}
+function img_to_pixels(img, width, height) {
+	const canvas = document.createElement("canvas");
+	canvas.width = width;
+	canvas.height = height;
+	const ctx = canvas.getContext("2d");
+	ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+	return ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+}
+function pick_colors(img, n, threshold = 0.016, merge = 0.032, distance = 0.09, contrast = 3.8, vivid = 4.4) {
+	const width = img.width < img.height ? Math.round(50 * img.width / img.height) : 50;
+	const height = img.width < img.height ? 50 : Math.round(50 * img.height / img.width);
+	const pixels = img_to_pixels(img, width, height);
+	const buckets = '['']';
+	pix: for (let i = 0; i < pixels.length; i += 4) {
+		const color = rgb_yuv(srgb_rgb(pixels.slice(i, i + 3)));
+		for (let j = 0; j < buckets.length; j++) {
+			if (sqr_distance(color, buckets'['j']'.mean) < threshold ** 2) {
+				const sum = color_add(color_multiply(buckets'['j']'.count, buckets'['j']'.mean), color);
+				buckets'['j']'.count += 1;
+				buckets'['j']'.mean = color_multiply(1 / buckets'['j']'.count, sum);
+				continue pix;
+			}
+		}
+		buckets.push({ count: 1, mean: color });
+	}
+	buckets.sort((a, b) => b.count - a.count);
+	for (let i = 0; i < buckets.length; i++) {
+		for (let j = i + 1; j < buckets.length; j++) {
+			if (sqr_distance(buckets'['i']'.mean, buckets'['j']'.mean) < merge ** 2) {
+				buckets'['i']'.count += buckets'['j']'.count;
+				buckets.splice(j--, 1);
+			}
+		}
+	}
+	buckets.sort((a, b) => b.count - a.count);
+	const background = buckets.shift().mean;
+	const foregrounds = '['']';
+	fg: for (let i = 0; i < n; i++) {
+		while (buckets.length) {
+			const color = buckets.shift().mean;
+			const ratio = contrast_ratio(background, color);
+			if (ratio >= contrast && foregrounds.every(f => sqr_distance(f.color, color) >= distance ** 2)) {
+				foregrounds.push({ color: color, contrast: ratio });
+				continue fg;
+			}
+		}
+		const dark = rgb_yuv('['0, 0, 0']');
+		const light = rgb_yuv('['1, 1, 1']');
+		const fallback = contrast_ratio(dark, background) > contrast_ratio(light, background) ? dark : light;
+		foregrounds.push({ color: fallback, contrast: contrast_ratio(fallback, background)});
+	}
+	foregrounds.sort((a, b) => a.contrast >= vivid || b.contrast >= vivid ? 0 : b.contrast - a.contrast);
+	return '['background, ...foregrounds.map(f => f.color)']'.map(yuv_rgb).map(rgb_srgb);
+}
+
+function dc(img) {
+	let '['bg, f1, f2']' = pick_colors(img, 2);
+	console.log(bg);
+	let f = img.parentNode.parentNode.parentNode.parentNode.parentNode;
+	f.style.backgroundColor = `rgb('$'{bg'['0']'}, '$'{bg'['1']'}, '$'{bg'['2']'})`;
+	f.style.color = `rgb('$'{f1'['0']'}, '$'{f1'['1']'}, '$'{f1'['2']'})`;
+	f.firstElementChild.style.color = `rgb('$'{f2'['0']'}, '$'{f2'['1']'}, '$'{f2'['2']'})`;
+}
+function change_color(color) {
+	document.getElementById("dynamic_css").innerHTML = "div.frame .headline { background-color: " + color + "; }";
+}
+		</script>
+	</head>
+	<body>
+
+		<header>
+		</header>
+		<main>
+
+$loop(%albumartist%)$loop(%year%)$loop(%album%,1)					
+<div class="cover">
+<img src="$replace(covers/$replace($validate(%albumartist%-%album%,-), ,_).$replace(%_cover_mimetype%,image/jpeg,jpg,image/jpg,jpg,image/png,png,image/gif,gif),&,&amp;,<,&lt;,>,&gt;,",&quot;)">
+</div>
+
+<div class="detail">
+
+
+									<h3 class="album">$replace(%album%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</h3>
+
+									<table class="properties">
+										<tbody>
+											[<tr>
+												<td>Year</td>
+												<td>$replace(%year%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
+											</tr>]
+											[<tr>
+												<td>Genre</td>
+												<td>$replace($meta_sep(genre,',' ),&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
+											</tr>]
+											[<tr>
+												<td>Style</td>
+												<td>$replace($meta_sep(style,',' ),&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
+											</tr>]
+											<tr>
+												<td>Tracks</td>
+												<td>$replace(%_total_files%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
+											</tr>
+											<tr>
+												<td>Duration</td>
+												<td>$replace(%_total_time%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
+											</tr>
+											<tr>
+												<td>Size</td>
+												<td>$replace(%_total_size%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+					<table class="tracks">
+						<tbody>
+							<tr>
+								<th class="track numerical">#</th>
+								<th class="title">Title</th>
+								<th class="artist">Artist</th>
+								<th class="duration numerical">Duration</th>
+								<th class="size numerical">Size</th>
+							</tr>
+$loop(%discnumber%)$loop(%_filename_ext%)							<tr>
+								<td class="track numerical">$replace($num(%track%,2),&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
+								<td class="title">$replace(%title%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
+								<td class="artist">$replace($meta_sep(artist,',' ),&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
+								<td class="duration numerical">$replace(%_length%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
+								<td class="size numerical">$replace(%_file_size%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
+							</tr>
+$loopend()$loopend()						</tbody>
+					</table>
+				</div>
+$loopend()$loopend()		
+$loopend()			</main>
+			<footer>
+				<p>Mp3tag - The Universal Tag Editor</p>
+			</footer>
+
+	</body>
+</html>
