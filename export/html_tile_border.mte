@@ -17,18 +17,18 @@ main {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
-div.frame {
+div.cover {
 	display: inline-block;
 	position: relative;
 	box-sizing: border-box;
 	border: 1px solid #333;
 }
-div.frame::after {
+div.cover::after {
 	content: "";
 	display: block;
 	padding-bottom: 100%%;
 }
-div.frame > img.cover {
+div.cover > img {
 	display: block;
 	position: absolute;
 	width: 100%%;
@@ -40,8 +40,8 @@ div.frame > img.cover {
 	</head>
 	<body>
 		<main>
-$loop(%albumartist%)$loop(%year%)$loop(%album%,1)			<div class="frame">
-				<img class="cover" src="$replace(covers/$replace($validate(%albumartist%-%album%,-), ,_).$replace(%_cover_mimetype%,image/jpeg,jpg,image/jpg,jpg,image/png,png,image/gif,gif),&,&amp;,<,&lt;,>,&gt;,",&quot;)">
+$loop(%albumartist%)$loop(%year%)$loop(%album%,1)			<div class="cover">
+				<img src="$replace(covers/$replace($validate(%albumartist%-%album%,-), ,_).$replace(%_cover_mimetype%,image/jpeg,jpg,image/jpg,jpg,image/png,png,image/gif,gif),&,&amp;,<,&lt;,>,&gt;,",&quot;)">
 			</div>
 $loopend()$loopend()$loopend()		</main>
 	</body>
