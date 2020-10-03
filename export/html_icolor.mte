@@ -24,17 +24,17 @@ main {
 	grid-auto-flow: row dense;
 	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
-div.cover {
+figure.cover {
 	position: relative;
 	box-sizing: border-box;
 	border: 1px solid #333;
 }
-div.cover::after {
+figure.cover::after {
 	content: "";
 	display: block;
 	padding-bottom: 100%%;
 }
-div.cover > img {
+figure.cover > img {
 	display: block;
 	position: absolute;
 	width: 100%%;
@@ -42,7 +42,7 @@ div.cover > img {
 	object-fit: cover;
 	object-position: center center;
 }
-div.detail {
+article.detail {
 	grid-column: 1 / -1;
 }
 		</style>
@@ -149,20 +149,19 @@ function change_color(color) {
 		</script>
 	</head>
 	<body>
-
 		<header>
+			<h1>Album List</h1>
 		</header>
 		<main>
-
 $loop(%albumartist%)$loop(%year%)$loop(%album%,1)					
-<div class="cover">
+<figure class="cover">
 <img src="$replace(covers/$replace($validate(%albumartist%-%album%,-), ,_).$replace(%_cover_mimetype%,image/jpeg,jpg,image/jpg,jpg,image/png,png,image/gif,gif),&,&amp;,<,&lt;,>,&gt;,",&quot;)">
-</div>
+</figure>
 
-<div class="detail">
+<article class="detail">
 
 
-									<h3 class="album">$replace(%album%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</h3>
+									<h2 class="album">$replace(%album%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</h2>
 
 									<table class="properties">
 										<tbody>
@@ -211,7 +210,7 @@ $loop(%discnumber%)$loop(%_filename_ext%)							<tr>
 							</tr>
 $loopend()$loopend()						</tbody>
 					</table>
-				</div>
+				</article>
 $loopend()$loopend()		
 $loopend()			</main>
 			<footer>
