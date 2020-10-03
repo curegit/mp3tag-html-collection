@@ -71,14 +71,14 @@ table.properties {
 table.properties tr {
 	width: 100%%;
 }
-table.properties tr > td {
+table.properties th {
 	width: 50%%;
 	border: none;
 	text-align: right;
 	font-weight: bold;
 	padding-right: 20px;
 }
-table.properties td + td {
+table.properties td {
 	text-align: left;
 	font-weight: normal;
 	padding-left: 20px;
@@ -178,15 +178,15 @@ function change_color(color) {
 					<table class="summary properties">
 						<tbody>
 							<tr>
-								<td>トラック数</td>
+								<th>トラック数</th>
 								<td>$replace(%_total_files%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
 							</tr>
 							<tr>
-								<td>演奏時間</td>
+								<th>演奏時間</th>
 								<td>$replace(%_total_time%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
 							</tr>
 							<tr>
-								<td>トータルサイズ</td>
+								<th>トータルサイズ</th>
 								<td>$replace(%_total_size%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
 							</tr>
 						</tbody>
@@ -211,27 +211,27 @@ $loop(%year%)$loop(%album%,1)					<table class="summary">
 									<table class="properties">
 										<tbody>
 											[<tr>
-												<td>日付</td>
+												<th>日付</th>
 												<td>$replace(%year%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
 											</tr>]
 											[<tr>
-												<td>ジャンル</td>
+												<th>ジャンル</th>
 												<td>$replace($meta_sep(genre,',' ),&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
 											</tr>]
 											[<tr>
-												<td>スタイル</td>
+												<th>スタイル</th>
 												<td>$replace($meta_sep(style,',' ),&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
 											</tr>]
 											<tr>
-												<td>トラック数</td>
+												<th>トラック数</th>
 												<td>$replace(%_total_files%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
 											</tr>
 											<tr>
-												<td>演奏時間</td>
+												<th>演奏時間</th>
 												<td>$replace(%_total_time%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
 											</tr>
 											<tr>
-												<td>データサイズ</td>
+												<th>データサイズ</th>
 												<td>$replace(%_total_size%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
 											</tr>
 										</tbody>
