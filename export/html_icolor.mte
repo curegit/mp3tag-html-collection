@@ -45,6 +45,14 @@ figure.cover > img {
 article.detail {
 	grid-column: 1 / -1;
 }
+
+
+article.detail {
+	height: 0;
+}
+article.detail.open {
+	height: auto;
+}
 		</style>
 		<script>
 function clamp(a, x, b) {
@@ -88,7 +96,7 @@ function img_to_pixels(img, width, height) {
 	ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 	return ctx.getImageData(0, 0, canvas.width, canvas.height).data;
 }
-function pick_colors(img, n, threshold = 0.016, merge = 0.032, distance = 0.09, contrast = 3.8, vivid = 4.4) {
+function pick_colors(img, n, threshold = 0.016, merge_threshold = 0.032, min_distance = 0.09, min_contrast = 3.8, dark_penalty = 0.2) {
 	const width = img.width < img.height ? Math.round(50 * img.width / img.height) : 50;
 	const height = img.width < img.height ? 50 : Math.round(50 * img.height / img.width);
 	const pixels = img_to_pixels(img, width, height);
@@ -108,7 +116,7 @@ function pick_colors(img, n, threshold = 0.016, merge = 0.032, distance = 0.09, 
 	buckets.sort((a, b) => b.count - a.count);
 	for (let i = 0; i < buckets.length; i++) {
 		for (let j = i + 1; j < buckets.length; j++) {
-			if (sqr_distance(buckets'['i']'.mean, buckets'['j']'.mean) < merge ** 2) {
+			if (sqr_distance(buckets'['i']'.mean, buckets'['j']'.mean) < merge_threshold ** 2) {
 				buckets'['i']'.count += buckets'['j']'.count;
 				buckets.splice(j--, 1);
 			}
@@ -121,30 +129,30 @@ function pick_colors(img, n, threshold = 0.016, merge = 0.032, distance = 0.09, 
 		while (buckets.length) {
 			const color = buckets.shift().mean;
 			const ratio = contrast_ratio(background, color);
-			if (ratio >= contrast && foregrounds.every(f => sqr_distance(f.color, color) >= distance ** 2)) {
-				foregrounds.push({ color: color, contrast: ratio });
+			if (ratio >= min_contrast && foregrounds.every(f => sqr_distance(f, color) >= min_distance ** 2)) {
+				foregrounds.push(color);
 				continue fg;
 			}
 		}
 		const dark = rgb_yuv('['0, 0, 0']');
 		const light = rgb_yuv('['1, 1, 1']');
-		const fallback = contrast_ratio(dark, background) > contrast_ratio(light, background) ? dark : light;
-		foregrounds.push({ color: fallback, contrast: contrast_ratio(fallback, background)});
+		foregrounds.push((1 - dark_penalty) * contrast_ratio(dark, background) > contrast_ratio(light, background) ? dark : light);
 	}
-	foregrounds.sort((a, b) => a.contrast >= vivid || b.contrast >= vivid ? 0 : b.contrast - a.contrast);
-	return '['background, ...foregrounds.map(f => f.color)']'.map(yuv_rgb).map(rgb_srgb);
+	return '['background, ...foregrounds']'.map(yuv_rgb).map(rgb_srgb);
 }
 
-function dc(img) {
-	let '['bg, f1, f2']' = pick_colors(img, 2);
-	console.log(bg);
-	let f = img.parentNode.parentNode.parentNode.parentNode.parentNode;
-	f.style.backgroundColor = `rgb('$'{bg'['0']'}, '$'{bg'['1']'}, '$'{bg'['2']'})`;
-	f.style.color = `rgb('$'{f1'['0']'}, '$'{f1'['1']'}, '$'{f1'['2']'})`;
-	f.firstElementChild.style.color = `rgb('$'{f2'['0']'}, '$'{f2'['1']'}, '$'{f2'['2']'})`;
+function set_color(img, target) {
+	const '['bg, f1, f2']' = pick_colors(img, 2);
+	target.style.backgroundColor = `rgb('$'{bg'['0']'}, '$'{bg'['1']'}, '$'{bg'['2']'})`;
+	target.style.color = `rgb('$'{f1'['0']'}, '$'{f1'['1']'}, '$'{f1'['2']'})`;
+	target.firstElementChild.style.color = `rgb('$'{f2'['0']'}, '$'{f2'['1']'}, '$'{f2'['2']'})`;
 }
-function change_color(color) {
-	document.getElementById("dynamic_css").innerHTML = "div.frame .headline { background-color: " + color + "; }";
+function toggle_detail(figure) {
+	const img = figure.firstElementChild;
+	const detail = figure.nextElementSibling;
+	set_color(img, detail);
+
+	detail.classList.toggle("open");
 }
 		</script>
 	</head>
@@ -154,7 +162,7 @@ function change_color(color) {
 		</header>
 		<main>
 $loop(%albumartist%)$loop(%year%)$loop(%album%,1)					
-<figure class="cover">
+<figure class="cover" onclick="toggle_detail(this)">
 <img src="$replace(covers/$replace($validate(%albumartist%-%album%,-), ,_).$replace(%_cover_mimetype%,image/jpeg,jpg,image/jpg,jpg,image/png,png,image/gif,gif),&,&amp;,<,&lt;,>,&gt;,",&quot;)">
 </figure>
 
@@ -166,50 +174,46 @@ $loop(%albumartist%)$loop(%year%)$loop(%album%,1)
 									<table class="properties">
 										<tbody>
 											[<tr>
-												<td>Year</td>
+												<th>Year</th>
 												<td>$replace(%year%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
 											</tr>]
 											[<tr>
-												<td>Genre</td>
+												<th>Genre</th>
 												<td>$replace($meta_sep(genre,',' ),&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
 											</tr>]
 											[<tr>
-												<td>Style</td>
+												<th>Style</th>
 												<td>$replace($meta_sep(style,',' ),&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
 											</tr>]
 											<tr>
-												<td>Tracks</td>
+												<th>Tracks</th>
 												<td>$replace(%_total_files%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
 											</tr>
 											<tr>
-												<td>Duration</td>
+												<th>Duration</th>
 												<td>$replace(%_total_time%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
 											</tr>
 											<tr>
-												<td>Size</td>
+												<th>Size</th>
 												<td>$replace(%_total_size%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
 											</tr>
 										</tbody>
 									</table>
 								</td>
-					<table class="tracks">
-						<tbody>
-							<tr>
-								<th class="track numerical">#</th>
-								<th class="title">Title</th>
-								<th class="artist">Artist</th>
-								<th class="duration numerical">Duration</th>
-								<th class="size numerical">Size</th>
-							</tr>
-$loop(%discnumber%)$loop(%_filename_ext%)							<tr>
-								<td class="track numerical">$replace($num(%track%,2),&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
-								<td class="title">$replace(%title%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
-								<td class="artist">$replace($meta_sep(artist,',' ),&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
-								<td class="duration numerical">$replace(%_length%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
-								<td class="size numerical">$replace(%_file_size%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
-							</tr>
-$loopend()$loopend()						</tbody>
-					</table>
+
+<img style="max-width: 400px" src="$replace(covers/$replace($validate(%albumartist%-%album%,-), ,_).$replace(%_cover_mimetype%,image/jpeg,jpg,image/jpg,jpg,image/png,png,image/gif,gif),&,&amp;,<,&lt;,>,&gt;,",&quot;)">
+
+
+<ol>
+$loop(%discnumber%)$loop(%_filename_ext%)							<li>
+								<span class="track numerical">$replace($num(%track%,2),&,&amp;,<,&lt;,>,&gt;,",&quot;)</span>
+								<span class="title">$replace(%title%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</span>
+								<span class="artist">$replace($meta_sep(artist,',' ),&,&amp;,<,&lt;,>,&gt;,",&quot;)</span>
+								<span class="duration numerical">$replace(%_length%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</span>
+								<span class="size numerical">$replace(%_file_size%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</span>
+</li>
+$loopend()$loopend()
+					</ol>
 				</article>
 $loopend()$loopend()		
 $loopend()			</main>
