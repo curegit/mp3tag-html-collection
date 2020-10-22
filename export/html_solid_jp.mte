@@ -39,14 +39,14 @@ tbody {
 	min-width: 960px;
 	margin: auto;
 }
-div.frame {
+.frame {
 	width: 100%%;
 	border: solid 1px #9c9c9c;
 	margin-bottom: 40px;
 	background-color: #191919;
 	box-sizing: border-box;
 }
-div.frame .headline {
+.frame .headline {
 	width: 100%%;
 	font-size: 180%%;
 	line-height: 1.5;
@@ -55,10 +55,10 @@ div.frame .headline {
 	text-decoration-line: underline;
 	text-decoration-color: #fffc;
 }
-div.frame hr {
+.frame hr {
 	margin: 25px 20px;
 }
-div.frame hr:last-child {
+.frame hr:last-child {
 	display: none;
 }
 table.properties {
@@ -160,13 +160,13 @@ table.tracks td.numerical {
 }
 		</style>
 		<style id="dynamic_css">
-div.frame .headline {
+.frame .headline {
 	background-color: #bb1276;
 }
 		</style>
 		<script>
 function change_color(color) {
-	document.getElementById("dynamic_css").innerHTML = "div.frame .headline { background-color: " + color + "; }";
+	document.getElementById("dynamic_css").innerHTML = ".frame .headline { background-color: " + color + "; }";
 }
 		</script>
 	</head>
@@ -194,72 +194,74 @@ function change_color(color) {
 				</div>
 			</header>
 			<main>
-$loop(%albumartist%)				<div class="frame">
+$loop(%albumartist%)				<article class="frame">
 					<h2 class="headline">$replace($meta_sep(albumartist,',' ),&,&amp;,<,&lt;,>,&gt;,",&quot;)</h2>
-$loop(%year%)$loop(%album%,1)					<table class="summary">
-						<tbody>
-							<tr>
-								<td rowspan="2" class="cover_cell">
-									<img class="cover" src="$replace(covers/$replace($validate(%albumartist%-%album%,-), ,_).$replace(%_cover_mimetype%,image/jpeg,jpg,image/jpg,jpg,image/png,png,image/gif,gif),&,&amp;,<,&lt;,>,&gt;,",&quot;)">
-								</td>
-								<td class="album_info_cell">
-									<h3 class="album">$replace(%album%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</h3>
-								</td>
-							</tr>
-							<tr>
-								<td class="album_info_cell">
-									<table class="properties">
-										<tbody>
-											[<tr>
-												<th>日付</th>
-												<td>$replace(%year%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
-											</tr>]
-											[<tr>
-												<th>ジャンル</th>
-												<td>$replace($meta_sep(genre,',' ),&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
-											</tr>]
-											[<tr>
-												<th>スタイル</th>
-												<td>$replace($meta_sep(style,',' ),&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
-											</tr>]
-											<tr>
-												<th>トラック数</th>
-												<td>$replace(%_total_files%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
-											</tr>
-											<tr>
-												<th>演奏時間</th>
-												<td>$replace(%_total_time%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
-											</tr>
-											<tr>
-												<th>データサイズ</th>
-												<td>$replace(%_total_size%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
-											</tr>
-										</tbody>
-									</table>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-					<table class="tracks">
-						<tbody>
-							<tr>
-								<th class="track numerical">#</th>
-								<th class="title">タイトル</th>
-								<th class="artist">アーティスト</th>
-								<th class="duration numerical">時間</th>
-								<th class="size numerical">サイズ</th>
-							</tr>
-$loop(%discnumber%)$loop(%_filename_ext%)							<tr>
-								<td class="track numerical">$replace($num(%track%,2),&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
-								<td class="title">$replace(%title%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
-								<td class="artist">$replace($meta_sep(artist,',' ),&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
-								<td class="duration numerical">$replace(%_length%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
-								<td class="size numerical">$replace(%_file_size%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
-							</tr>
-$loopend()$loopend()						</tbody>
-					</table>
+$loop(%year%)$loop(%album%,1)					<article>
+						<table class="summary">
+							<tbody>
+								<tr>
+									<td rowspan="2" class="cover_cell">
+										<img class="cover" src="$replace(covers/$replace($validate(%albumartist%-%album%,-), ,_).$replace(%_cover_mimetype%,image/jpeg,jpg,image/jpg,jpg,image/png,png,image/gif,gif),&,&amp;,<,&lt;,>,&gt;,",&quot;)">
+									</td>
+									<td class="album_info_cell">
+										<h3 class="album">$replace(%album%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</h3>
+									</td>
+								</tr>
+								<tr>
+									<td class="album_info_cell">
+										<table class="properties">
+											<tbody>
+												[<tr>
+													<th>日付</th>
+													<td>$replace(%year%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
+												</tr>]
+												[<tr>
+													<th>ジャンル</th>
+													<td>$replace($meta_sep(genre,',' ),&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
+												</tr>]
+												[<tr>
+													<th>スタイル</th>
+													<td>$replace($meta_sep(style,',' ),&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
+												</tr>]
+												<tr>
+													<th>トラック数</th>
+													<td>$replace(%_total_files%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
+												</tr>
+												<tr>
+													<th>演奏時間</th>
+													<td>$replace(%_total_time%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
+												</tr>
+												<tr>
+													<th>データサイズ</th>
+													<td>$replace(%_total_size%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
+												</tr>
+											</tbody>
+										</table>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<table class="tracks">
+							<tbody>
+								<tr>
+									<th class="track numerical">#</th>
+									<th class="title">タイトル</th>
+									<th class="artist">アーティスト</th>
+									<th class="duration numerical">時間</th>
+									<th class="size numerical">サイズ</th>
+								</tr>
+$loop(%discnumber%)$loop(%_filename_ext%)								<tr>
+									<td class="track numerical">$replace($num(%track%,2),&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
+									<td class="title">$replace(%title%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
+									<td class="artist">$replace($meta_sep(artist,',' ),&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
+									<td class="duration numerical">$replace(%_length%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
+									<td class="size numerical">$replace(%_file_size%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
+								</tr>
+$loopend()$loopend()							</tbody>
+						</table>
+					</article>
 					<hr>
-$loopend()$loopend()				</div>
+$loopend()$loopend()				</article>
 $loopend()			</main>
 			<footer>
 				<div>
