@@ -112,6 +112,9 @@ table.tracks {
 	margin: 20px auto;
 	table-layout: fixed;
 }
+table.tracks > tbody {
+	vertical-align: baseline;
+}
 table.tracks > tbody > tr:nth-child(1) {
 	background-color: #333333;
 	color: #929292;
