@@ -141,19 +141,19 @@ table.tracks td.numerical {
 	text-align: right;
 }
 .track {
-	width: 5%%;
+	width: 6%%;
 }
 .title {
 	width: 35%%;
 }
 .artist {
-	width: 30%%;
+	width: 35%%;
 }
 .duration {
-	width: 10%%;
+	width: 12%%;
 }
 .size {
-	width: 10%%;
+	width: 12%%;
 }
 .pallet {
 	display: inline-block;
