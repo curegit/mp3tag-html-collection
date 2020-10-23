@@ -26,6 +26,9 @@ header, main, footer {
 	margin: 20px auto;
 }
 hr {
+	height: 0;
+	border-width: 1px;
+	border-color: #eee;
 	margin: 20px auto;
 }
 table {
@@ -56,6 +59,9 @@ tbody {
 	text-decoration-color: #fffc;
 }
 .frame hr {
+	border-width: 0;
+	border-bottom-width: 1px;
+	border-color: #9c9c9c;
 	margin: 25px 20px;
 }
 .frame hr:last-child {
