@@ -337,7 +337,7 @@ $loopend()			</main>
 					<span class="pallet" onclick="change_color(''#d9d9d9'')" style="background-color: #d9d9d9;"></span>
 				</div>
 				<hr>
-				<p>Mp3tag - The Universal Tag Editor</p>
+				<p>Mp3tag – The Universal Tag Editor</p>
 			</footer>
 		</div>
 	</body>
