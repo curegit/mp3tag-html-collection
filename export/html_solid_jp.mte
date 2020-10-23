@@ -71,7 +71,7 @@ table.properties {
 	table-layout: fixed;
 	width: 100%%;
 	border: none;
-	font-size: 80%%;
+	font-size: 82%%;
 	font-weight: normal;
 }
 table.properties tr {
