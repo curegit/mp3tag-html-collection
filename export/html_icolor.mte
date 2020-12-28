@@ -43,15 +43,32 @@ figure.cover > img {
 	object-position: center center;
 }
 article.detail {
+	visibility: hidden;
 	grid-column: 1 / -1;
-}
-
-
-article.detail {
 	height: 0;
+	overflow-y: hidden;
+	/*transition-property: transform;
+	transition-duration: 0.5s;
+	transform: scaleY(0);
+	transform-origin: 0 0;*/
 }
+
+article.detail > * {
+	transition-property: transform;
+	transition-duration: 0.5s;
+	transform: scaleY(0);
+	transform-origin: 0 0;
+}
+
 article.detail.open {
+	visibility: visible;
 	height: auto;
+	/*transform: scaleY(1);*/
+}
+article.detail.open > * {
+	/*visibility: visible;
+	height: auto;*/
+	transform: scaleY(1);
 }
 		</style>
 		<script>
@@ -140,20 +157,40 @@ function pick_colors(img, n, threshold = 0.016, merge_threshold = 0.032, min_dis
 	}
 	return '['background, ...foregrounds']'.map(yuv_rgb).map(rgb_srgb);
 }
-
-function set_color(img, target) {
+function string_of_rgb('['r, g, b']') {
+	return `rgb('$'{r}, '$'{g}, '$'{b})`;
+}
+function set_colors(img, article) {
 	const '['bg, f1, f2']' = pick_colors(img, 2);
-	target.style.backgroundColor = `rgb('$'{bg'['0']'}, '$'{bg'['1']'}, '$'{bg'['2']'})`;
-	target.style.color = `rgb('$'{f1'['0']'}, '$'{f1'['1']'}, '$'{f1'['2']'})`;
-	target.firstElementChild.style.color = `rgb('$'{f2'['0']'}, '$'{f2'['1']'}, '$'{f2'['2']'})`;
+	article.style.backgroundColor = string_of_rgb(bg);
+	article.style.color = string_of_rgb(f1);
+	article.firstElementChild.style.color = string_of_rgb(f2);
 }
-function toggle_detail(figure) {
-	const img = figure.firstElementChild;
-	const detail = figure.nextElementSibling;
-	set_color(img, detail);
-
-	detail.classList.toggle("open");
-}
+const toggle_detail = (function() {
+	let open = null;
+	const colored = new Set();
+	return (function(figure) {
+		const img = figure.firstElementChild;
+		const detail = figure.nextElementSibling;
+		if (detail) {
+			if (img && img.complete && !colored.has(detail)) {
+				set_colors(img, detail);
+				colored.add(detail);
+			}
+			if (detail === open) {
+				open.classList.remove("open");
+				open = null;
+			} else if (open) {
+				open.classList.remove("open");
+				detail.classList.add("open");
+				open = detail;
+			} else {
+				detail.classList.add("open");
+				open = detail;
+			}
+		}
+	});
+})();
 		</script>
 	</head>
 	<body>
@@ -161,12 +198,12 @@ function toggle_detail(figure) {
 			<h1>Album List</h1>
 		</header>
 		<main>
-$loop(%albumartist%)$loop(%year%)$loop(%album%,1)					
-<figure class="cover" onclick="toggle_detail(this)">
+$loop(%albumartist%)$loop(%year%)$loop(%album%,1)			<figure class="cover" onclick="toggle_detail(this)">
 <img src="$replace(covers/$replace($validate(%albumartist%-%album%,-), ,_).$replace(%_cover_mimetype%,image/jpeg,jpg,image/jpg,jpg,image/png,png,image/gif,gif),&,&amp;,<,&lt;,>,&gt;,",&quot;)">
 </figure>
 
 <article class="detail">
+
 
 
 									<h2 class="album">$replace(%album%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</h2>
@@ -205,14 +242,14 @@ $loop(%albumartist%)$loop(%year%)$loop(%album%,1)
 
 
 <ol>
-$loop(%discnumber%)$loop(%_filename_ext%)							<li>
+$loop(%discnumber%)$loop(%track%)$loop(%_filename_ext%)							<li>
 								<span class="track numerical">$replace($num(%track%,2),&,&amp;,<,&lt;,>,&gt;,",&quot;)</span>
 								<span class="title">$replace(%title%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</span>
 								<span class="artist">$replace($meta_sep(artist,',' ),&,&amp;,<,&lt;,>,&gt;,",&quot;)</span>
 								<span class="duration numerical">$replace(%_length%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</span>
 								<span class="size numerical">$replace(%_file_size%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</span>
 </li>
-$loopend()$loopend()
+$loopend()$loopend()$loopend()
 					</ol>
 				</article>
 $loopend()$loopend()		
