@@ -11,23 +11,33 @@ $filename(html,utf-8)<!DOCTYPE html>
 }
 body {
 	min-width: 320px;
-	color: #000;
-	background-color: #fff;
+	color: #fff;
+	background-color: #000;
 	font-family: sans-serif;
 	font-size: 16px;
 	line-height: 1.6;
 	word-break: keep-all;
 	overflow-wrap: break-word;
 }
+header {
+	padding: 4px 12px;
+	background: linear-gradient(#656565, #222);
+}
 main {
 	display: grid;
 	grid-auto-flow: row dense;
 	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	background-color: #222;
+}
+footer {
+	padding: 12px;
+	background: linear-gradient(#222, #000);
+	text-align: center;
 }
 figure.cover {
 	position: relative;
 	box-sizing: border-box;
-	border: 1px solid #333;
+	border: 1px solid #222;
 }
 figure.cover::after {
 	content: "";
@@ -184,6 +194,7 @@ const toggle_detail = (function() {
 				open.classList.remove("open");
 				detail.classList.add("open");
 				open = detail;
+				figure.scrollIntoView({behavior: "smooth", block: "nearest"});
 			} else {
 				detail.classList.add("open");
 				open = detail;
@@ -199,8 +210,8 @@ const toggle_detail = (function() {
 		</header>
 		<main>
 $loop(%albumartist%)$loop(%year%)$loop(%album%,1)			<figure class="cover" onclick="toggle_detail(this)">
-<img src="$replace(covers/$replace($validate(%albumartist%-%album%,-), ,_).$replace(%_cover_mimetype%,image/jpeg,jpg,image/jpg,jpg,image/png,png,image/gif,gif),&,&amp;,<,&lt;,>,&gt;,",&quot;)">
-</figure>
+				<img src="$replace(covers/$replace($validate(%albumartist%-%album%,-), ,_).$replace(%_cover_mimetype%,image/jpeg,jpg,image/jpg,jpg,image/png,png,image/gif,gif),&,&amp;,<,&lt;,>,&gt;,",&quot;)">
+			</figure>
 
 <article class="detail">
 
@@ -242,21 +253,25 @@ $loop(%albumartist%)$loop(%year%)$loop(%album%,1)			<figure class="cover" onclic
 
 
 <ol>
-$loop(%discnumber%)$loop(%track%)$loop(%_filename_ext%)							<li>
+$loop(%discnumber%)<li><ol>
+
+$loop(%track%)$loop(%_filename_ext%)							<li>
 								<span class="track numerical">$replace($num(%track%,2),&,&amp;,<,&lt;,>,&gt;,",&quot;)</span>
 								<span class="title">$replace(%title%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</span>
 								<span class="artist">$replace($meta_sep(artist,',' ),&,&amp;,<,&lt;,>,&gt;,",&quot;)</span>
 								<span class="duration numerical">$replace(%_length%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</span>
 								<span class="size numerical">$replace(%_file_size%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</span>
 </li>
-$loopend()$loopend()$loopend()
-					</ol>
-				</article>
-$loopend()$loopend()		
-$loopend()			</main>
-			<footer>
-				<p>Mp3tag - The Universal Tag Editor</p>
-			</footer>
+$loopend()$loopend()
 
+</ol></li>
+$loopend()
+					</ol>
+</article>
+
+$loopend()$loopend()$loopend()		</main>
+		<footer>
+			<p>Mp3tag - The Universal Tag Editor</p>
+		</footer>
 	</body>
 </html>
