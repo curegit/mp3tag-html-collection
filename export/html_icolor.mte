@@ -71,6 +71,13 @@ article.detail.open {
 article.detail.open > * {
 	transform: scaleY(1);
 }
+ol.discs {
+	list-style: none;
+}
+ol.tracks {
+	column-width: 360px;
+	list-style: none;
+}
 		</style>
 		<script>
 function clamp(a, x, b) {
@@ -243,8 +250,8 @@ $loop(%albumartist%)$loop(%year%)$loop(%album%,1)			<figure class="cover" onclic
 <img style="max-width: 400px" src="$replace(covers/$replace($validate(%albumartist%-%album%,-), ,_).$replace(%_cover_mimetype%,image/jpeg,jpg,image/jpg,jpg,image/png,png,image/gif,gif),&,&amp;,<,&lt;,>,&gt;,",&quot;)">
 
 
-<ol>
-$loop(%discnumber%)<li><ol>
+<ol class="discs">
+$loop(%discnumber%)<li><ol class="tracks">
 
 $loop(%track%)$loop(%_filename_ext%)							<li>
 								<span class="track numerical">$replace($num(%track%,2),&,&amp;,<,&lt;,>,&gt;,",&quot;)</span>
