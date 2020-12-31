@@ -57,27 +57,18 @@ article.detail {
 	grid-column: 1 / -1;
 	height: 0;
 	overflow-y: hidden;
-	/*transition-property: transform;
-	transition-duration: 0.5s;
-	transform: scaleY(0);
-	transform-origin: 0 0;*/
 }
-
 article.detail > * {
 	transition-property: transform;
 	transition-duration: 0.5s;
 	transform: scaleY(0);
 	transform-origin: 0 0;
 }
-
 article.detail.open {
 	visibility: visible;
 	height: auto;
-	/*transform: scaleY(1);*/
 }
 article.detail.open > * {
-	/*visibility: visible;
-	height: auto;*/
 	transform: scaleY(1);
 }
 		</style>
