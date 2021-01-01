@@ -58,7 +58,7 @@ article.detail {
 	overflow-y: hidden;
 	transition-property: max-height;
 	transition-duration: 0.5s;
-	transition-timing-function: steps(2, start);
+	transition-timing-function: steps(100, end);
 }
 article.detail > * {
 	transition-property: transform;
