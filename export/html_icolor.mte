@@ -180,6 +180,7 @@ function set_colors(img, article) {
 }
 const toggle_detail = (function() {
 	let open = null;
+	let closing = null;
 	const colored = new Set();
 	return (function(figure) {
 		const img = figure.firstElementChild;
@@ -192,18 +193,25 @@ const toggle_detail = (function() {
 			if (detail === open) {
 				open.classList.remove("instant");
 				open.classList.remove("open");
+				closing = open;
 				open = null;
-			} else if (open) {
-				open.classList.add("instant");
-				open.classList.remove("open");
-				detail.classList.remove("instant");
-				detail.classList.add("open");
-				open = detail;
-				figure.scrollIntoView({behavior: "smooth", block: "nearest"});
 			} else {
-				detail.classList.remove("instant");
-				detail.classList.add("open");
-				open = detail;
+				if (closing && detail !== closing) {
+					closing.classList.add("instant");
+					closing = null;
+				}
+				if (open) {
+					open.classList.add("instant");
+					open.classList.remove("open");
+					detail.classList.remove("instant");
+					detail.classList.add("open");
+					open = detail;
+					figure.scrollIntoView({behavior: "smooth", block: "nearest"});
+				} else {
+					detail.classList.remove("instant");
+					detail.classList.add("open");
+					open = detail;
+				}
 			}
 		}
 	});
