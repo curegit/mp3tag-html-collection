@@ -53,10 +53,12 @@ figure.cover > img {
 	object-position: center center;
 }
 article.detail {
-	visibility: hidden;
 	grid-column: 1 / -1;
-	height: 0;
+	max-height: 0;
 	overflow-y: hidden;
+	transition-property: max-height;
+	transition-duration: 0.5s;
+	transition-timing-function: steps(2, start);
 }
 article.detail > * {
 	transition-property: transform;
@@ -65,11 +67,13 @@ article.detail > * {
 	transform-origin: 0 0;
 }
 article.detail.open {
-	visibility: visible;
-	height: auto;
+	max-height: 70305240902vh;
 }
 article.detail.open > * {
 	transform: scaleY(1);
+}
+article.detail.instant {
+	transition-property: none;
 }
 ol.discs {
 	list-style: none;
@@ -186,14 +190,18 @@ const toggle_detail = (function() {
 				colored.add(detail);
 			}
 			if (detail === open) {
+				open.classList.remove("instant");
 				open.classList.remove("open");
 				open = null;
 			} else if (open) {
+				open.classList.add("instant");
 				open.classList.remove("open");
+				detail.classList.remove("instant");
 				detail.classList.add("open");
 				open = detail;
 				figure.scrollIntoView({behavior: "smooth", block: "nearest"});
 			} else {
+				detail.classList.remove("instant");
 				detail.classList.add("open");
 				open = detail;
 			}
