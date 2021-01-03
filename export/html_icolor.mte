@@ -75,6 +75,25 @@ article.detail.open > * {
 article.detail.instant {
 	transition-property: none;
 }
+figure.artwork {
+	display: inline-flex;
+	position: relative;
+	color: transparent;
+}
+figure.artwork::after {
+	content: "";
+	display: block;
+	position: absolute;
+	top: -2px;
+	bottom: -2px;
+	left: -2px;
+	right: -2px;
+	border-radius: 8px;
+	box-shadow: 0 0 8px 8px currentcolor inset;
+}
+figure.artwork > img {
+	border-radius: 8px;
+}
 ol.discs {
 	list-style: none;
 }
@@ -175,6 +194,7 @@ function string_of_rgb('['r, g, b']') {
 function set_colors(img, article) {
 	const '['bg, f1, f2']' = pick_colors(img, 2);
 	article.style.backgroundColor = string_of_rgb(bg);
+	article.firstElementChild.nextElementSibling.nextElementSibling.style.color = string_of_rgb(bg);
 	article.style.color = string_of_rgb(f1);
 	article.firstElementChild.style.color = string_of_rgb(f2);
 }
@@ -263,8 +283,9 @@ $loop(%albumartist%)$loop(%year%)$loop(%album%,1)			<figure class="cover" onclic
 									</table>
 								</td>
 
+<figure class="artwork">
 <img style="max-width: 400px" src="$replace(covers/$replace($validate(%albumartist%-%album%,-), ,_).$replace(%_cover_mimetype%,image/jpeg,jpg,image/jpg,jpg,image/png,png,image/gif,gif),&,&amp;,<,&lt;,>,&gt;,",&quot;)">
-
+</figure>
 
 <ol class="discs">
 $loop(%discnumber%)<li><ol class="tracks">
