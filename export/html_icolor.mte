@@ -67,7 +67,7 @@ article.detail > * {
 	transform-origin: 0 0;
 }
 article.detail.open {
-	max-height: 70305240902vh;
+	max-height: 70305240902px;
 }
 article.detail.open > * {
 	transform: scaleY(1);
