@@ -19,7 +19,7 @@ body {
 	word-break: keep-all;
 	overflow-wrap: break-word;
 }
-header {
+body > header {
 	padding: 4px 12px;
 	background: linear-gradient(#656565, #222);
 }
@@ -60,7 +60,12 @@ article.detail {
 	transition-duration: 0.5s;
 	transition-timing-function: steps(200, start);
 }
-article.detail > * {
+article.detail > div {
+	display: grid;
+	grid-auto-rows: auto 1fr;
+	padding: 5px;
+}
+article.detail > div > * {
 	transition-property: transform;
 	transition-duration: 0.5s;
 	transform: scaleY(0);
@@ -69,7 +74,7 @@ article.detail > * {
 article.detail.open {
 	max-height: 70305240902px;
 }
-article.detail.open > * {
+article.detail.open > div > * {
 	transform: scaleY(1);
 }
 article.detail.instant {
@@ -101,6 +106,49 @@ ol.tracks {
 	column-width: 360px;
 	list-style: none;
 }
+
+
+@media (min-width: 540px) {
+	article.detail aside {
+		display: grid;
+		grid-template-columns: 3fr 2fr;
+	}
+	table.properties {
+		margin: auto;
+		align-self: center;
+	}
+}
+@media (min-width: 720px) {
+	article.detail > div {
+		grid-template-columns: 300px 1fr;
+	}
+	article.detail header {
+		grid-column: 2;
+	}
+	article.detail aside {
+		display: block;
+		grid-column: 1;
+		grid-row: 1 / span 2;
+	}
+	table.properties {
+		margin: 12px auto 0;
+	}
+	ol.discs {
+		grid-column: 2;
+	}
+}
+@media (min-width: 1280px) {
+	article.detail > div {
+		grid-template-columns: 400px 1fr;
+	}
+}
+@media (min-width: 1920px) {
+	article.detail > div {
+		grid-template-columns: 500px 1fr;
+	}
+}
+
+
 		</style>
 		<script>
 function clamp(a, x, b) {
