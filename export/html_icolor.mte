@@ -194,7 +194,7 @@ function string_of_rgb('['r, g, b']') {
 function set_colors(img, article) {
 	const '['bg, f1, f2']' = pick_colors(img, 2);
 	article.style.backgroundColor = string_of_rgb(bg);
-	article.firstElementChild.nextElementSibling.nextElementSibling.style.color = string_of_rgb(bg);
+	article.firstElementChild.firstElementChild.nextElementSibling.nextElementSibling.style.color = string_of_rgb(bg);
 	article.style.color = string_of_rgb(f1);
 	article.firstElementChild.style.color = string_of_rgb(f2);
 }
@@ -246,46 +246,45 @@ const toggle_detail = (function() {
 $loop(%albumartist%)$loop(%year%)$loop(%album%,1)			<figure class="cover" onclick="toggle_detail(this)">
 				<img src="$replace(covers/$replace($validate(%albumartist%-%album%,-), ,_).$replace(%_cover_mimetype%,image/jpeg,jpg,image/jpg,jpg,image/png,png,image/gif,gif),&,&amp;,<,&lt;,>,&gt;,",&quot;)">
 			</figure>
-
-<article class="detail">
-
-
-
-									<h2 class="album">$replace(%album%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</h2>
-
-									<table class="properties">
-										<tbody>
-											[<tr>
-												<th>Year</th>
-												<td>$replace(%year%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
-											</tr>]
-											[<tr>
-												<th>Genre</th>
-												<td>$replace($meta_sep(genre,',' ),&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
-											</tr>]
-											[<tr>
-												<th>Style</th>
-												<td>$replace($meta_sep(style,',' ),&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
-											</tr>]
-											<tr>
-												<th>Tracks</th>
-												<td>$replace(%_total_files%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
-											</tr>
-											<tr>
-												<th>Duration</th>
-												<td>$replace(%_total_time%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
-											</tr>
-											<tr>
-												<th>Size</th>
-												<td>$replace(%_total_size%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
-											</tr>
-										</tbody>
-									</table>
-								</td>
-
-<figure class="artwork">
-<img style="max-width: 400px" src="$replace(covers/$replace($validate(%albumartist%-%album%,-), ,_).$replace(%_cover_mimetype%,image/jpeg,jpg,image/jpg,jpg,image/png,png,image/gif,gif),&,&amp;,<,&lt;,>,&gt;,",&quot;)">
-</figure>
+			<article class="detail">
+				<div>
+					<header>
+						<h2 class="album">$replace(%album%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</h2>
+						<div class="albumartist">$replace(%albumartist%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</div>
+					</header>
+					<aside>
+						<figure class="artwork">
+							<img src="$replace(covers/$replace($validate(%albumartist%-%album%,-), ,_).$replace(%_cover_mimetype%,image/jpeg,jpg,image/jpg,jpg,image/png,png,image/gif,gif),&,&amp;,<,&lt;,>,&gt;,",&quot;)">
+						</figure>
+						<table class="properties">
+							<tbody>
+								[<tr>
+									<th>Year</th>
+									<td>$replace(%year%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
+								</tr>]
+								[<tr>
+									<th>Genre</th>
+									<td>$replace($meta_sep(genre,',' ),&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
+								</tr>]
+								[<tr>
+									<th>Style</th>
+									<td>$replace($meta_sep(style,',' ),&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
+								</tr>]
+								<tr>
+									<th>Tracks</th>
+									<td>$replace(%_total_files%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
+								</tr>
+								<tr>
+									<th>Duration</th>
+									<td>$replace(%_total_time%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
+								</tr>
+								<tr>
+									<th>Size</th>
+									<td>$replace(%_total_size%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
+								</tr>
+							</tbody>
+						</table>
+					</aside>
 
 <ol class="discs">
 $loop(%discnumber%)<li><ol class="tracks">
@@ -301,7 +300,7 @@ $loopend()$loopend()
 
 </ol></li>
 $loopend()
-					</ol>
+					</ol></div>
 </article>
 
 $loopend()$loopend()$loopend()		</main>
