@@ -23,6 +23,10 @@ body > header {
 	padding: 4px 12px;
 	background: linear-gradient(#656565, #222);
 }
+h1 {
+	font-size: 1.8em;
+	font-weight: bold;
+}
 main {
 	display: grid;
 	grid-auto-flow: row dense;
@@ -63,7 +67,7 @@ article.detail {
 article.detail > div {
 	display: grid;
 	grid-auto-rows: auto 1fr;
-	padding: 5px;
+	padding: 8px 5px;
 }
 article.detail > div > * {
 	transition-property: transform;
@@ -80,8 +84,28 @@ article.detail.open > div > * {
 article.detail.instant {
 	transition-property: none;
 }
+
+
+
+
+article.detail header {
+	padding: 8px 10px 4px;
+}
+article.detail aside {
+	padding: 8px;
+}
+h2.album {
+	font-size: 1.5em;
+	font-weight: bold;
+	line-height: 1.4;
+}
+div.albumartist {
+	font-size: 1.1em;
+	padding-left: 15px;
+}
+
 figure.artwork {
-	display: inline-flex;
+	display: flex;
 	position: relative;
 	color: transparent;
 }
@@ -97,7 +121,11 @@ figure.artwork::after {
 	box-shadow: 0 0 8px 8px currentcolor inset;
 }
 figure.artwork > img {
+	width: 100%%;
 	border-radius: 8px;
+}
+table.properties {
+	margin: 12px auto 0;
 }
 ol.discs {
 	list-style: none;
