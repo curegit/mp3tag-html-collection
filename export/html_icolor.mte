@@ -66,7 +66,7 @@ article.detail {
 }
 article.detail > div {
 	display: grid;
-	grid-auto-rows: auto 1fr;
+	grid-template-rows: auto 1fr;
 	padding: 8px 5px;
 }
 article.detail > div > * {
