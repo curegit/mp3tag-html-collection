@@ -128,11 +128,32 @@ table.properties {
 	margin: 12px auto 0;
 }
 ol.discs {
-	list-style: none;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+}
+ol.discs > li {
+	display: block;
 }
 ol.tracks {
-	column-width: 360px;
-	list-style: none;
+}
+ol.tracks > li {
+	display: grid;
+	grid-template-rows: auto auto;
+	grid-template-columns: auto 1fr auto;
+}
+div.track {
+	
+}
+div.title {
+	
+}
+div.artist {
+	grid-row: 2;
+	grid-column: 2 / span 2;
+}
+div.duration {
+	grid-row: 1;
+	grid-column: 3;
 }
 
 
@@ -366,11 +387,10 @@ $loop(%albumartist%)$loop(%year%)$loop(%album%,1)			<figure class="cover" onclic
 $loop(%discnumber%)<li><ol class="tracks">
 
 $loop(%track%)$loop(%_filename_ext%)							<li>
-								<span class="track numerical">$replace($num(%track%,2),&,&amp;,<,&lt;,>,&gt;,",&quot;)</span>
-								<span class="title">$replace(%title%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</span>
-								<span class="artist">$replace($meta_sep(artist,',' ),&,&amp;,<,&lt;,>,&gt;,",&quot;)</span>
-								<span class="duration numerical">$replace(%_length%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</span>
-								<span class="size numerical">$replace(%_file_size%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</span>
+								<div class="track numerical">$replace($num(%track%,2),&,&amp;,<,&lt;,>,&gt;,",&quot;)</div>
+								<div class="title">$replace(%title%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</div>
+								<div class="artist">$replace($meta_sep(artist,',' ),&,&amp;,<,&lt;,>,&gt;,",&quot;)</div>
+								<div class="duration numerical">$replace(%_length%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</div>
 </li>
 $loopend()$loopend()
 
