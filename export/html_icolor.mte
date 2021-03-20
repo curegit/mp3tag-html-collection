@@ -340,7 +340,7 @@ const toggle_detail = (function() {
 			<h1>Album List</h1>
 		</header>
 		<main>
-$loop(%albumartist%)$loop(%year%)$loop(%album%,1)			<figure class="cover" onclick="toggle_detail(this)">
+$loop($meta_sep(albumartist,',' ))$loop(%year%)$loop(%album%,1)			<figure class="cover" onclick="toggle_detail(this)">
 				<img src="$replace(covers/$replace($validate(%albumartist%-%album%,-), ,_).$replace(%_cover_mimetype%,image/jpeg,jpg,image/jpg,jpg,image/png,png,image/gif,gif),&,&amp;,<,&lt;,>,&gt;,",&quot;)">
 			</figure>
 			<article class="detail">
