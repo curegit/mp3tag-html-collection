@@ -291,7 +291,7 @@ function string_of_rgb('['r, g, b']') {
 function set_colors(img, article) {
 	const '['bg, f1, f2']' = pick_colors(img, 2);
 	article.style.backgroundColor = string_of_rgb(bg);
-	article.firstElementChild.firstElementChild.nextElementSibling.nextElementSibling.style.color = string_of_rgb(bg);
+	//article.firstElementChild.firstElementChild.nextElementSibling.nextElementSibling.style.color = string_of_rgb(bg);
 	article.style.color = string_of_rgb(f1);
 	article.firstElementChild.style.color = string_of_rgb(f2);
 }
