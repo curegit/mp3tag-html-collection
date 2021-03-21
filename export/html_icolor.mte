@@ -347,7 +347,7 @@ $loop($meta_sep(albumartist,',' ))$loop(%year%)$loop(%album%,1)			<figure class=
 				<div>
 					<header>
 						<h2 class="album">$replace(%album%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</h2>
-						<div class="albumartist">$replace(%albumartist%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</div>
+						<div class="albumartist">$replace($meta_sep(albumartist,',' ),&,&amp;,<,&lt;,>,&gt;,",&quot;)</div>
 					</header>
 					<aside>
 						<figure class="artwork">
@@ -384,12 +384,15 @@ $loop($meta_sep(albumartist,',' ))$loop(%year%)$loop(%album%,1)			<figure class=
 					</aside>
 
 <ol class="discs">
-$loop(%discnumber%)<li><ol class="tracks">
+$loop(%discnumber%)<li>
+[<h3 class="disc">Disc $replace(%discnumber%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</h3>]
+
+<ol class="tracks">
 
 $loop(%track%)$loop(%_filename_ext%)							<li>
 								<div class="track numerical">$replace($num(%track%,2),&,&amp;,<,&lt;,>,&gt;,",&quot;)</div>
 								<div class="title">$replace(%title%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</div>
-								<div class="artist">$replace($meta_sep(artist,',' ),&,&amp;,<,&lt;,>,&gt;,",&quot;)</div>
+								<div class="artist $if($strcmp($meta_sep(artist,',' ),$meta_sep(albumartist,',' )),same,different)">$replace($meta_sep(artist,',' ),&,&amp;,<,&lt;,>,&gt;,",&quot;)</div>
 								<div class="duration numerical">$replace(%_length%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</div>
 </li>
 $loopend()$loopend()
