@@ -105,7 +105,6 @@ div.albumartist {
 }
 
 figure.artwork {
-	display: flex;
 	position: relative;
 	color: transparent;
 }
@@ -121,6 +120,7 @@ figure.artwork::after {
 	box-shadow: 0 0 8px 8px currentcolor inset;
 }
 figure.artwork > img {
+	display: block;
 	width: 100%%;
 	border-radius: 8px;
 }
@@ -320,7 +320,7 @@ function string_of_rgb('['r, g, b']') {
 function set_colors(img, article) {
 	const '['bg, f1, f2']' = pick_colors(img, 2);
 	article.style.backgroundColor = string_of_rgb(bg);
-	//article.firstElementChild.firstElementChild.nextElementSibling.nextElementSibling.style.color = string_of_rgb(bg);
+	article.firstElementChild.firstElementChild.nextElementSibling.firstElementChild.style.color = string_of_rgb(bg);
 	article.style.color = string_of_rgb(f1);
 	article.firstElementChild.style.color = string_of_rgb(f2);
 }
