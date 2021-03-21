@@ -89,7 +89,7 @@ article.detail.instant {
 
 
 article.detail header {
-	padding: 8px 10px 4px;
+	padding: 12px 10px 4px;
 }
 article.detail aside {
 	padding: 8px;
@@ -142,6 +142,7 @@ ol.tracks > li {
 	display: grid;
 	grid-template-rows: auto auto;
 	grid-template-columns: auto 1fr auto;
+	margin-bottom: 7px;
 }
 
 h3.disc {
