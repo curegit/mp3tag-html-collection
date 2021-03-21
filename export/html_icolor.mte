@@ -130,30 +130,59 @@ table.properties {
 ol.discs {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+	padding: 8px 10px;
 }
 ol.discs > li {
 	display: block;
 }
 ol.tracks {
+	line-height: 1.56;
 }
 ol.tracks > li {
 	display: grid;
 	grid-template-rows: auto auto;
 	grid-template-columns: auto 1fr auto;
 }
+
+h3.disc {
+	padding-bottom: 4px;
+	font-size: 1.18em;
+	font-weight: bold;
+}
+
+ol.discs > li:first-child:last-child {
+	padding-top: 10px;
+}
+ol.discs > li:first-child:last-child > h3.disc {
+	display: none;
+}
+ol.tracks > li {
+	margin-bottom: 8px;
+}
 div.track {
 	
 }
 div.title {
-	
+	padding: 0 12px;
 }
 div.artist {
 	grid-row: 2;
 	grid-column: 2 / span 2;
+	margin-top: -2px;
+	padding-left: 22px;
+	font-size: 0.9em;
+}
+div.artist.same {
+	display: none;
 }
 div.duration {
 	grid-row: 1;
 	grid-column: 3;
+	font-size: 0.95em;
+}
+div.numerical {
+	font-size: 0.96em;
+	line-height: 1.625;
 }
 
 
