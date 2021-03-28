@@ -157,9 +157,6 @@ ol.discs > li:first-child:last-child {
 ol.discs > li:first-child:last-child > h3.disc {
 	display: none;
 }
-ol.tracks > li {
-	margin-bottom: 8px;
-}
 div.track {
 	
 }
