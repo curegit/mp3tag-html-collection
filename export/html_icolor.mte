@@ -130,6 +130,7 @@ table.properties {
 ol.discs {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+	gap: 12px 32px;
 	padding: 8px 10px;
 }
 ol.discs > li {
