@@ -149,6 +149,7 @@ ol.discs > li {
 	display: block;
 }
 ol.tracks {
+	max-width: 620px;
 	line-height: 1.56;
 	padding: 0 10px 0 15px;
 }
