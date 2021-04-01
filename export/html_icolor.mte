@@ -8,6 +8,7 @@ $filename(html,utf-8)<!DOCTYPE html>
 * {
 	margin: 0px;
 	padding: 0px;
+	box-sizing: border-box;
 }
 body {
 	min-width: 320px;
@@ -156,15 +157,18 @@ ol.tracks > li {
 	grid-template-rows: auto auto;
 	grid-template-columns: auto 1fr auto;
 	margin-bottom: 7px;
+	break-inside: avoid;
 }
 
 h3.disc {
+	column-span: all;
 	padding: 0 0 4px 6px;
 	font-size: 1.18em;
 	font-weight: bold;
 }
 
 ol.discs > li:first-child:last-child {
+	grid-column: 1 / -1;
 	padding-top: 10px;
 }
 ol.discs > li:first-child:last-child > h3.disc {
@@ -229,6 +233,28 @@ div.numerical {
 @media (min-width: 1280px) {
 	article.detail > div {
 		grid-template-columns: 400px 1fr;
+	}
+}
+@media (min-width: 1366px) {
+
+	article.detail.large ol.discs > li:first-child:last-child {
+		width: 100%%;
+		max-width: 1080px;
+		column-count: 2;
+		column-gap: 32px;
+		column-rule: solid 1px currentcolor;
+		margin-right: auto;
+	}
+	article.detail.large.unbalanced ol.discs {
+		width: 100%%;
+		max-width: 1080px;
+		margin-right: auto;
+	}
+	article.detail.large.unbalanced ol.discs > li {
+		grid-column: 1 / -1;
+		column-count: 2;
+		column-gap: 32px;
+		column-rule: solid 1px currentcolor;
 	}
 }
 @media (min-width: 1920px) {
@@ -335,10 +361,26 @@ function set_colors(img, article) {
 	article.style.color = string_of_rgb(f1);
 	article.firstElementChild.style.color = string_of_rgb(f2);
 }
+function adjust_layout(article) {
+	const l1 = article.getElementsByClassName("same").length;
+	const l2 = article.getElementsByClassName("different").length * 1.6;
+	if (l1 + l2 >= 18) {
+		article.classList.add("large");
+	}
+	const discs = article.getElementsByClassName("tracks");
+	if (discs.length === 2) {
+		const i1 = discs'['0']'.getElementsByClassName("track").length;
+		const i2 = discs'['1']'.getElementsByClassName("track").length;
+		if (i1 / i2 >= 3 || i1 / i2 <= 1 / 3) {
+			article.classList.add("unbalanced");
+		}
+	}
+}
 const toggle_detail = (function() {
 	let open = null;
 	let closing = null;
 	const colored = new Set();
+	const adjusted = new Set();
 	return (function(figure) {
 		const img = figure.firstElementChild;
 		const detail = figure.nextElementSibling;
@@ -369,6 +411,10 @@ const toggle_detail = (function() {
 					detail.classList.add("open");
 					open = detail;
 				}
+			}
+			if (!adjusted.has(detail)) {
+				adjust_layout(detail);
+				adjusted.add(detail);
 			}
 		}
 	});
