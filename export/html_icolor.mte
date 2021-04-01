@@ -11,7 +11,7 @@ $filename(html,utf-8)<!DOCTYPE html>
 	box-sizing: border-box;
 }
 body {
-	min-width: 320px;
+	min-width: 480px;
 	color: #fff;
 	background-color: #000;
 	font-family: sans-serif;
