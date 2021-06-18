@@ -197,6 +197,7 @@ div.duration {
 	font-size: 0.95em;
 }
 div.numerical {
+	opacity: 0.9;
 	font-size: 0.96em;
 	line-height: 1.625;
 }
