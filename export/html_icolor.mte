@@ -86,10 +86,6 @@ article.detail.open > div > * {
 article.detail.instant {
 	transition-property: none;
 }
-
-
-
-
 article.detail header {
 	padding: 12px 10px 4px;
 }
@@ -105,7 +101,6 @@ div.albumartist {
 	font-size: 1.1em;
 	padding-left: 15px;
 }
-
 figure.artwork {
 	position: relative;
 	color: transparent;
@@ -160,23 +155,18 @@ ol.tracks > li {
 	margin-bottom: 7px;
 	break-inside: avoid;
 }
-
 h3.disc {
 	column-span: all;
 	padding: 0 0 4px 6px;
 	font-size: 1.18em;
 	font-weight: bold;
 }
-
 ol.discs > li:first-child:last-child {
 	grid-column: 1 / -1;
 	padding-top: 10px;
 }
 ol.discs > li:first-child:last-child > h3.disc {
 	display: none;
-}
-div.track {
-	
 }
 div.title {
 	padding: 0 12px;
@@ -201,8 +191,6 @@ div.numerical {
 	font-size: 0.96em;
 	line-height: 1.625;
 }
-
-
 @media (min-width: 540px) {
 	article.detail aside {
 		display: grid;
@@ -238,7 +226,6 @@ div.numerical {
 	}
 }
 @media (min-width: 1366px) {
-
 	article.detail.large ol.discs > li:first-child:last-child {
 		width: 100%%;
 		max-width: 1080px;
@@ -264,8 +251,6 @@ div.numerical {
 		grid-template-columns: 500px 1fr;
 	}
 }
-
-
 		</style>
 		<script>
 function clamp(a, x, b) {
