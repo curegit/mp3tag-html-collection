@@ -452,16 +452,16 @@ $loop($meta_sep(albumartist,',' ))$loop(%year%)$loop(%album%,1)			<figure class=
 							<img src="$replace(covers/$replace($validate($replace(%albumartist%-%album%.$replace(%_cover_mimetype%,image/jpeg,jpg,image/jpg,jpg,image/png,png,image/gif,gif), ,_,\,-),-),%%,%%25,#,%%23,@,%%40,'[',%%5B,']',%%5D,'$',%%24,&,%%26,+,%%2B,',',%%2C,;,%%3B,=,%%3D),<,&lt;,>,&gt;,",&quot;)">
 						</figure>
 						<table class="properties secondary">
-							<tbody>
-								[<tr>
+							<tbody>[
+								<tr>
 									<th>Year</th>
 									<td>$replace(%year%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
-								</tr>]
-								[<tr>
+								</tr>][
+								<tr>
 									<th>Genre</th>
 									<td>$replace($meta_sep(genre,',' ),&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
-								</tr>]
-								[<tr>
+								</tr>][
+								<tr>
 									<th>Style</th>
 									<td>$replace($meta_sep(style,',' ),&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
 								</tr>]
