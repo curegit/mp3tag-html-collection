@@ -298,9 +298,9 @@ function img_to_pixels(img, width, height) {
 	ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 	return ctx.getImageData(0, 0, canvas.width, canvas.height).data;
 }
-function pick_colors(img, n, threshold = 0.016, merge_threshold = 0.032, min_distance = 0.09, min_contrast = 3.8, dark_penalty = 0.2) {
-	const width = img.width < img.height ? Math.round(50 * img.width / img.height) : 50;
-	const height = img.width < img.height ? 50 : Math.round(50 * img.height / img.width);
+function pick_colors(img, n, threshold = 0.018, merge_threshold = 0.036, min_distance = 0.11, min_contrast = 3.72, dark_penalty = 0.2) {
+	const width = img.width < img.height ? Math.round(64 * img.width / img.height) : 64;
+	const height = img.width < img.height ? 64 : Math.round(64 * img.height / img.width);
 	const pixels = img_to_pixels(img, width, height);
 	const buckets = '['']';
 	pix: for (let i = 0; i < pixels.length; i += 4) {
