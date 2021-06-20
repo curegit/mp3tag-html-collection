@@ -200,7 +200,7 @@ div.numerical {
 		align-self: center;
 	}
 }
-@media (min-width: 720px) {
+@media (min-width: 768px) {
 	article.detail > div {
 		grid-template-columns: 300px 1fr;
 	}
@@ -219,7 +219,7 @@ div.numerical {
 		grid-column: 2;
 	}
 }
-@media (min-width: 1280px) {
+@media (min-width: 1320px) {
 	article.detail > div {
 		grid-template-columns: 400px 1fr;
 	}
