@@ -1,0 +1,503 @@
+$filename(html,utf-8)<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Album List | Mp3tag</title>
+		<meta name="description" content="Created with Mp3tag">
+		<style>
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+body {
+	min-width: 480px;
+	color: #fff;
+	background-color: #000;
+	font-family: sans-serif;
+	font-size: 16px;
+	line-height: 1.6;
+	word-break: keep-all;
+	overflow-wrap: break-word;
+}
+body > header {
+	padding: 4px 12px;
+	background: linear-gradient(#656565, #222);
+}
+h1 {
+	font-size: 1.8em;
+	font-weight: bold;
+}
+main {
+	display: grid;
+	grid-auto-flow: row dense;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	background-color: #222;
+}
+footer {
+	padding: 12px;
+	background: linear-gradient(#222, #000);
+	text-align: center;
+}
+figure.cover {
+	position: relative;
+	box-sizing: border-box;
+	border: 1px solid #222;
+}
+figure.cover::after {
+	content: "";
+	display: block;
+	padding-bottom: 100%%;
+}
+figure.cover > img {
+	display: block;
+	position: absolute;
+	width: 100%%;
+	height: 100%%;
+	object-fit: cover;
+	object-position: center center;
+}
+article.detail {
+	grid-column: 1 / -1;
+	max-height: 0;
+	overflow-y: hidden;
+	transition-property: max-height;
+	transition-duration: 0.5s;
+	transition-timing-function: steps(200, start);
+}
+article.detail > div {
+	display: grid;
+	grid-template-rows: auto 1fr;
+	padding: 8px 5px 12px 5px;
+}
+article.detail.dark > div {
+	background: linear-gradient(300deg, #ffffff16, transparent);
+}
+article.detail.light > div {
+	background: linear-gradient(300deg, #00000024, transparent);
+}
+article.detail > div > * {
+	transition-property: transform;
+	transition-duration: 0.5s;
+	transform: scaleY(0);
+	transform-origin: 0 0;
+}
+article.detail.open {
+	max-height: 70305240902px;
+}
+article.detail.open > div > * {
+	transform: scaleY(1);
+}
+article.detail.instant {
+	transition-property: none;
+}
+article.detail header {
+	padding: 12px 10px 4px;
+}
+article.detail aside {
+	padding: 8px;
+}
+h2.album {
+	font-size: 1.5em;
+	font-weight: bold;
+	line-height: 1.4;
+}
+div.albumartist {
+	font-size: 1.1em;
+	padding-left: 15px;
+}
+figure.artwork {
+	position: relative;
+	color: transparent;
+}
+figure.artwork::after {
+	content: "";
+	display: block;
+	position: absolute;
+	top: -2px;
+	bottom: -2px;
+	left: -2px;
+	right: -2px;
+	border-radius: 8px;
+	box-shadow: 0 0 8px 8px currentcolor inset;
+}
+figure.artwork > img {
+	display: block;
+	width: 100%%;
+	border-radius: 8px;
+}
+table.properties {
+	margin: 12px auto 0;
+	border-collapse: separate;
+	border-spacing: 8px 1px;
+	font-size: 0.92em;
+}
+table.properties th {
+	text-align: center;
+	font-weight: bold;
+}
+table.properties td {
+	text-align: left;
+}
+ol.discs {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+	gap: 12px 32px;
+	padding: 8px 10px 12px;
+}
+ol.discs > li {
+	display: block;
+}
+ol.tracks {
+	max-width: 620px;
+	line-height: 1.56;
+	padding: 0 10px 0 15px;
+}
+ol.tracks > li {
+	display: grid;
+	grid-template-rows: auto auto;
+	grid-template-columns: auto 1fr auto;
+	margin-bottom: 7px;
+	break-inside: avoid;
+}
+h3.disc {
+	column-span: all;
+	padding: 0 0 4px 6px;
+	font-size: 1.18em;
+	font-weight: bold;
+}
+ol.discs > li:first-child:last-child {
+	grid-column: 1 / -1;
+	padding-top: 10px;
+}
+ol.discs > li:first-child:last-child > h3.disc {
+	display: none;
+}
+div.title {
+	padding: 0 12px;
+}
+div.artist {
+	grid-row: 2;
+	grid-column: 2 / span 2;
+	margin-top: -2px;
+	padding: 0 4px 0 22px;
+	font-size: 0.9em;
+}
+div.artist.same {
+	display: none;
+}
+div.duration {
+	grid-row: 1;
+	grid-column: 3;
+	font-size: 0.95em;
+}
+div.numerical {
+	opacity: 0.9;
+	font-size: 0.96em;
+	line-height: 1.625;
+}
+@media (min-width: 540px) {
+	article.detail aside {
+		display: grid;
+		grid-template-columns: 3fr 2fr;
+	}
+	table.properties {
+		margin: auto;
+		align-self: center;
+	}
+}
+@media (min-width: 768px) {
+	article.detail > div {
+		grid-template-columns: 300px 1fr;
+	}
+	article.detail header {
+		grid-column: 2;
+	}
+	article.detail aside {
+		display: block;
+		grid-column: 1;
+		grid-row: 1 / span 2;
+	}
+	table.properties {
+		margin: 12px auto 0;
+	}
+	ol.discs {
+		grid-column: 2;
+	}
+}
+@media (min-width: 1320px) {
+	article.detail > div {
+		grid-template-columns: 400px 1fr;
+	}
+}
+@media (min-width: 1366px) {
+	article.detail.large ol.discs > li:first-child:last-child {
+		width: 100%%;
+		max-width: 1080px;
+		column-count: 2;
+		column-gap: 32px;
+		column-rule: solid 1px currentcolor;
+		margin-right: auto;
+	}
+	article.detail.large.unbalanced ol.discs {
+		width: 100%%;
+		max-width: 1080px;
+		margin-right: auto;
+	}
+	article.detail.large.unbalanced ol.discs > li {
+		grid-column: 1 / -1;
+		column-count: 2;
+		column-gap: 32px;
+		column-rule: solid 1px currentcolor;
+	}
+}
+@media (min-width: 1920px) {
+	article.detail > div {
+		grid-template-columns: 500px 1fr;
+	}
+}
+		</style>
+		<script>
+function clamp(a, x, b) {
+	return x < a ? a : x < b ? x : b;
+}
+function gamma_forward(x) {
+	return x <= 0.0031308 ? 12.92 * x : 1.055 * x ** (1 / 2.4) - 0.055;
+}
+function gamma_reverse(x) {
+	return x <= 0.04045 ? x / 12.92 : ((x + 0.055) / 1.055) ** 2.4;
+}
+function srgb_rgb('['r, g, b']') {
+	return '['clamp(0, gamma_reverse(r / 255), 1), clamp(0, gamma_reverse(g / 255), 1), clamp(0, gamma_reverse(b / 255), 1)']';
+}
+function rgb_srgb('['r, g, b']') {
+	return '['clamp(0, 255 * gamma_forward(r), 255), clamp(0, 255 * gamma_forward(g), 255), clamp(0, 255 * gamma_forward(b), 255)']';
+}
+function rgb_yuv('['r, g, b']') {
+	return '['0.2126 * r + 0.7152 * g + 0.0722 * b, -0.114572 * r - 0.385428 * g + 0.5 * b, 0.5 * r - 0.454153 * g - 0.045847 * b']';
+}
+function yuv_rgb('['y, u, v']') {
+	return '['y + 1.5748 * v, y - 0.187324 * u - 0.468124 * v, y + 1.8556 * u']';
+}
+function color_add('['y1, u1, v1']', '['y2, u2, v2']') {
+	return '['y1 + y2, u1 + u2, v1 + v2']';
+}
+function color_multiply(a, '['y, u, v']') {
+	return '['a * y, a * u, a * v']';
+}
+function sqr_distance('['y1, u1, v1']', '['y2, u2, v2']') {
+	return (y1 - y2) ** 2 + (u1 - u2) ** 2 + (v1 - v2) ** 2;
+}
+function contrast_ratio('['y1, u1, v1']', '['y2, u2, v2']') {
+	return y1 > y2 ? (y1 + 0.05) / (y2 + 0.05) : (y2 + 0.05) / (y1 + 0.05);
+}
+function modified_contrast_ratio(color, background, dark_penalty = 0.2) {
+	const '['y1, u1, v1']' = color;
+	const '['y2, u2, v2']' = background;
+	return (y1 > y2 ? 1 : 1 - dark_penalty) * contrast_ratio(color, background);
+}
+function img_to_pixels(img, width, height) {
+	const canvas = document.createElement("canvas");
+	canvas.width = width;
+	canvas.height = height;
+	const ctx = canvas.getContext("2d");
+	ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+	return ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+}
+function pick_colors(img, n, threshold = 0.018, merge_threshold = 0.036, min_distance = 0.11, min_contrast = 3.72, dark_penalty = 0.2) {
+	const width = img.width < img.height ? Math.round(64 * img.width / img.height) : 64;
+	const height = img.width < img.height ? 64 : Math.round(64 * img.height / img.width);
+	const pixels = img_to_pixels(img, width, height);
+	const buckets = '['']';
+	pix: for (let i = 0; i < pixels.length; i += 4) {
+		const color = rgb_yuv(srgb_rgb(pixels.slice(i, i + 3)));
+		for (let j = 0; j < buckets.length; j++) {
+			if (sqr_distance(color, buckets'['j']'.mean) < threshold ** 2) {
+				const sum = color_add(color_multiply(buckets'['j']'.count, buckets'['j']'.mean), color);
+				buckets'['j']'.count += 1;
+				buckets'['j']'.mean = color_multiply(1 / buckets'['j']'.count, sum);
+				continue pix;
+			}
+		}
+		buckets.push({ count: 1, mean: color });
+	}
+	buckets.sort((a, b) => b.count - a.count);
+	for (let i = 0; i < buckets.length; i++) {
+		for (let j = i + 1; j < buckets.length; j++) {
+			if (sqr_distance(buckets'['i']'.mean, buckets'['j']'.mean) < merge_threshold ** 2) {
+				buckets'['i']'.count += buckets'['j']'.count;
+				buckets.splice(j--, 1);
+			}
+		}
+	}
+	buckets.sort((a, b) => b.count - a.count);
+	const background = buckets.shift().mean;
+	const foregrounds = '['']';
+	fg: for (let i = 0; i < n; i++) {
+		while (buckets.length) {
+			const color = buckets.shift().mean;
+			const ratio = contrast_ratio(background, color);
+			if (ratio >= min_contrast && foregrounds.every(f => sqr_distance(f, color) >= min_distance ** 2)) {
+				foregrounds.push(color);
+				continue fg;
+			}
+		}
+		const dark = rgb_yuv('['0.04, 0.04, 0.04']');
+		const light = rgb_yuv('['0.96, 0.96, 0.96']');
+		foregrounds.push(modified_contrast_ratio(dark, background, dark_penalty) > modified_contrast_ratio(light, background, dark_penalty) ? dark : light);
+	}
+	return '['background, ...foregrounds']'.map(yuv_rgb).map(rgb_srgb);
+}
+function sort_by_contrast(background, ...colors) {
+	const bg = rgb_yuv(srgb_rgb(background));
+	return colors.map(srgb_rgb).map(rgb_yuv).sort((a, b) => modified_contrast_ratio(b, bg) - modified_contrast_ratio(a, bg)).map(yuv_rgb).map(rgb_srgb);
+}
+function dark_or_light(color) {
+	yuv = rgb_yuv(srgb_rgb(color));
+	dark = rgb_yuv('['0, 0, 0']');
+	light = rgb_yuv('['1, 1, 1']');
+	return contrast_ratio(dark, yuv) < contrast_ratio(light, yuv) ? "dark" : "light";
+}
+function string_of_rgb('['r, g, b']') {
+	return `rgb('$'{r}, '$'{g}, '$'{b})`;
+}
+function set_colors(img, article) {
+	const '['bg, f1, f2']' = pick_colors(img, 2);
+	const '['pc, sc']' = sort_by_contrast(bg, f1, f2);
+	article.classList.add(dark_or_light(bg));
+	article.style.backgroundColor = string_of_rgb(bg);
+	article.getElementsByTagName("figure")'['0']'.style.color = string_of_rgb(bg);
+	article.style.color = string_of_rgb(pc);
+	const secondary = article.getElementsByClassName("secondary");
+	for (let i = 0; i < secondary.length; i++) {
+		secondary'['i']'.style.color = string_of_rgb(sc);
+	}
+}
+function adjust_layout(article) {
+	const l1 = article.getElementsByClassName("same").length;
+	const l2 = article.getElementsByClassName("different").length * 1.6;
+	if (l1 + l2 >= 18) {
+		article.classList.add("large");
+	}
+	const discs = article.getElementsByClassName("tracks");
+	if (discs.length === 2) {
+		const i1 = discs'['0']'.getElementsByClassName("track").length;
+		const i2 = discs'['1']'.getElementsByClassName("track").length;
+		if (i1 / i2 >= 3 || i1 / i2 <= 1 / 3) {
+			article.classList.add("unbalanced");
+		}
+	}
+}
+const toggle_detail = (function() {
+	let open = null;
+	let closing = null;
+	const colored = new Set();
+	const adjusted = new Set();
+	return (function(figure) {
+		const img = figure.firstElementChild;
+		const detail = figure.nextElementSibling;
+		if (detail) {
+			if (img && img.complete && !colored.has(detail)) {
+				set_colors(img, detail);
+				colored.add(detail);
+			}
+			if (detail === open) {
+				open.classList.remove("instant");
+				open.classList.remove("open");
+				closing = open;
+				open = null;
+			} else {
+				if (closing && detail !== closing) {
+					closing.classList.add("instant");
+					closing = null;
+				}
+				if (open) {
+					open.classList.add("instant");
+					open.classList.remove("open");
+					detail.classList.remove("instant");
+					detail.classList.add("open");
+					open = detail;
+					figure.scrollIntoView({behavior: "smooth", block: "nearest"});
+				} else {
+					detail.classList.remove("instant");
+					detail.classList.add("open");
+					open = detail;
+				}
+			}
+			if (!adjusted.has(detail)) {
+				adjust_layout(detail);
+				adjusted.add(detail);
+			}
+		}
+	});
+})();
+		</script>
+	</head>
+	<body>
+		<header>
+			<h1>Album List</h1>
+		</header>
+		<main>
+$loop($meta_sep(albumartist,',' ))$loop(%year%)$loop(%album%,1)			<figure class="cover" onclick="toggle_detail(this)">
+				<img src="$replace(covers/$replace($validate($replace(%albumartist%-%album%.$replace(%_cover_mimetype%,image/jpeg,jpg,image/jpg,jpg,image/png,png,image/gif,gif), ,_,\,-),-),%%,%%25,#,%%23,@,%%40,'[',%%5B,']',%%5D,'$',%%24,&,%%26,+,%%2B,',',%%2C,;,%%3B,=,%%3D),<,&lt;,>,&gt;,",&quot;)">
+			</figure>
+			<article class="detail">
+				<div>
+					<header>
+						<h2 class="album">$replace(%album%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</h2>
+						<div class="albumartist secondary">$replace($meta_sep(albumartist,',' ),&,&amp;,<,&lt;,>,&gt;,",&quot;)</div>
+					</header>
+					<aside>
+						<figure class="artwork">
+							<img src="$replace(covers/$replace($validate($replace(%albumartist%-%album%.$replace(%_cover_mimetype%,image/jpeg,jpg,image/jpg,jpg,image/png,png,image/gif,gif), ,_,\,-),-),%%,%%25,#,%%23,@,%%40,'[',%%5B,']',%%5D,'$',%%24,&,%%26,+,%%2B,',',%%2C,;,%%3B,=,%%3D),<,&lt;,>,&gt;,",&quot;)">
+						</figure>
+						<table class="properties secondary">
+							<tbody>
+								[<tr>
+									<th>Year</th>
+									<td>$replace(%year%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
+								</tr>]
+								[<tr>
+									<th>Genre</th>
+									<td>$replace($meta_sep(genre,',' ),&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
+								</tr>]
+								[<tr>
+									<th>Style</th>
+									<td>$replace($meta_sep(style,',' ),&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
+								</tr>]
+								<tr>
+									<th>Tracks</th>
+									<td>$replace(%_total_files%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
+								</tr>
+								<tr>
+									<th>Duration</th>
+									<td>$replace(%_total_time%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
+								</tr>
+								<tr>
+									<th>Size</th>
+									<td>$replace(%_total_size%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</td>
+								</tr>
+							</tbody>
+						</table>
+					</aside>
+					<ol class="discs">
+$loop(%discnumber%)						<li>[
+							<h3 class="disc">Disc $replace(%discnumber%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</h3>]
+							<ol class="tracks">
+$loop(%track%)$loop(%_filename_ext%)								<li>
+									<div class="track numerical secondary">$replace($num(%track%,2),&,&amp;,<,&lt;,>,&gt;,",&quot;)</div>
+									<div class="title">$replace(%title%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</div>
+									<div class="artist secondary $if($strcmp($meta_sep(artist,',' ),$meta_sep(albumartist,',' )),same,different)">$replace($meta_sep(artist,',' ),&,&amp;,<,&lt;,>,&gt;,",&quot;)</div>
+									<div class="duration numerical secondary">$replace(%_length%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</div>
+								</li>
+$loopend()$loopend()							</ol>
+						</li>
+$loopend()					</ol>
+				</div>
+			</article>
+$loopend()$loopend()$loopend()		</main>
+		<footer>
+			<p>Mp3tag – The Universal Tag Editor</p>
+		</footer>
+	</body>
+</html>
