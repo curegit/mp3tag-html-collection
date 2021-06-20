@@ -4,11 +4,15 @@
 
 ## プレビュー
 
+- [iColor](https://curegit.github.io/mp3tag-html-collection/icolor.html)
+- [iColor (gradient)](https://curegit.github.io/mp3tag-html-collection/icolor_grad.html)
 - [Solid (jp)](https://curegit.github.io/mp3tag-html-collection/solid_jp.html)
 - [Solid (en)](https://curegit.github.io/mp3tag-html-collection/solid_en.html)
 - [Stretch 3](https://curegit.github.io/mp3tag-html-collection/stretch_3.html)
 - [Stretch 5](https://curegit.github.io/mp3tag-html-collection/stretch_5.html)
 - [Stretch 8](https://curegit.github.io/mp3tag-html-collection/stretch_8.html)
+- [Tile](https://curegit.github.io/mp3tag-html-collection/tile.html)
+- [Tile (border)](https://curegit.github.io/mp3tag-html-collection/tile_border.html)
 
 ## インストール
 
