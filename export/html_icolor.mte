@@ -337,8 +337,8 @@ function pick_colors(img, n, threshold = 0.016, merge_threshold = 0.032, min_dis
 				continue fg;
 			}
 		}
-		const dark = rgb_yuv('['0, 0, 0']');
-		const light = rgb_yuv('['1, 1, 1']');
+		const dark = rgb_yuv('['0.04, 0.04, 0.04']');
+		const light = rgb_yuv('['0.96, 0.96, 0.96']');
 		foregrounds.push(modified_contrast_ratio(dark, background, dark_penalty) > modified_contrast_ratio(light, background, dark_penalty) ? dark : light);
 	}
 	return '['background, ...foregrounds']'.map(yuv_rgb).map(rgb_srgb);
