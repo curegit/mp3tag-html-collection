@@ -168,7 +168,11 @@ table.tracks td.numerical {
 	border: solid 1px #9c9c9c;
 }
 		</style>
-		<style id="dynamic_css"></style>
+		<style id="dynamic_css">
+.frame .headline {
+	background-color: #bb1276;
+}
+		</style>
 		<script>
 const style_element = document.getElementById("dynamic_css");
 function test_color(color) {
