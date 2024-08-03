@@ -68,7 +68,7 @@ article.detail {
 article.detail > div {
 	display: grid;
 	grid-template-rows: auto 1fr;
-	padding: 8px 5px 12px 5px;
+	padding: 20px 5px 24px 18px;
 }
 article.detail > div > * {
 	transition-property: transform;
