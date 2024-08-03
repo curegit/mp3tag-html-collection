@@ -210,7 +210,7 @@ $loop(%year%)$loop(%album%,1)					<article>
 							<tbody>
 								<tr>
 									<td rowspan="2" class="cover_cell">
-										<img class="cover" src="$replace(covers/$replace($validate($replace(%albumartist%-%album%.$replace(%_cover_mimetype%,image/jpeg,jpg,image/jpg,jpg,image/png,png,image/gif,gif), ,_,\,-),-),%%,%%25,#,%%23,@,%%40,'[',%%5B,']',%%5D,'$',%%24,&,%%26,+,%%2B,',',%%2C,;,%%3B,=,%%3D),<,&lt;,>,&gt;,",&quot;)">
+										<img class="cover" src="$replace(covers/$replace($validate($replace($replace(%albumartist%-%album%,.,',').$replace(%_cover_mimetype%,image/jpeg,jpg,image/jpg,jpg,image/png,png,image/gif,gif), ,_,\,-),-),%%,%%25,#,%%23,@,%%40,'[',%%5B,']',%%5D,'$',%%24,&,%%26,+,%%2B,',',%%2C,;,%%3B,=,%%3D),<,&lt;,>,&gt;,",&quot;)">
 									</td>
 									<td class="album_info_cell">
 										<h3 class="album">$replace(%album%,&,&amp;,<,&lt;,>,&gt;,",&quot;)</h3>

@@ -41,7 +41,7 @@ figure.cover > img {
 	<body>
 		<main>
 $loop(%albumartist%)$loop(%year%)$loop(%album%,1)			<figure class="cover">
-				<img src="$replace(covers/$replace($validate($replace(%albumartist%-%album%.$replace(%_cover_mimetype%,image/jpeg,jpg,image/jpg,jpg,image/png,png,image/gif,gif), ,_,\,-),-),%%,%%25,#,%%23,@,%%40,'[',%%5B,']',%%5D,'$',%%24,&,%%26,+,%%2B,',',%%2C,;,%%3B,=,%%3D),<,&lt;,>,&gt;,",&quot;)">
+				<img src="$replace(covers/$replace($validate($replace($replace(%albumartist%-%album%,.,',').$replace(%_cover_mimetype%,image/jpeg,jpg,image/jpg,jpg,image/png,png,image/gif,gif), ,_,\,-),-),%%,%%25,#,%%23,@,%%40,'[',%%5B,']',%%5D,'$',%%24,&,%%26,+,%%2B,',',%%2C,;,%%3B,=,%%3D),<,&lt;,>,&gt;,",&quot;)">
 			</figure>
 $loopend()$loopend()$loopend()		</main>
 	</body>
