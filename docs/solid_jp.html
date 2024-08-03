@@ -174,9 +174,36 @@ table.tracks td.numerical {
 }
 		</style>
 		<script>
-function change_color(color) {
-	document.getElementById("dynamic_css").innerHTML = ".frame .headline { background-color: " + color + "; }";
+const style_element = document.getElementById("dynamic_css");
+function test_color(color) {
+	return /^#[a-f0-9]{6}$/.test(color);
 }
+function main() {
+	let color = new URL(window.location).searchParams.get("color");
+	if (color === null) {
+		color = "#bb1276";
+	}
+	if (test_color(color)) {
+		style_element.innerHTML = ".frame .headline { background-color: " + color + "; }";
+	}
+}
+function change_color(color) {
+	const params = new URL(window.location).searchParams;
+	if (color) {
+		params.set("color", color);
+	} else {
+		params.delete("color");
+	}
+	const paramStr = params.toString();
+	if (history.state?.color !== color) {
+		history.pushState({color: color}, "", paramStr ? "?" + paramStr : ".");
+	}
+	main();
+}
+window.addEventListener("popstate", (e) => {
+	main();
+});
+main();
 		</script>
 	</head>
 	<body>
@@ -188,15 +215,15 @@ function change_color(color) {
 						<tbody>
 							<tr>
 								<th>トラック数</th>
-								<td>979</td>
+								<td>1002</td>
 							</tr>
 							<tr>
 								<th>演奏時間</th>
-								<td>2 日(複数), 19:13:21</td>
+								<td>2 日(複数), 20:15:17</td>
 							</tr>
 							<tr>
 								<th>トータルサイズ</th>
-								<td>25.75 GB</td>
+								<td>26.05 GB</td>
 							</tr>
 						</tbody>
 					</table>
@@ -210,7 +237,7 @@ function change_color(color) {
 							<tbody>
 								<tr>
 									<td rowspan="2" class="cover_cell">
-										<img class="cover" src="covers/2Pac-The_Prophet-_The_Best_Of_The_Works....jpg">
+										<img class="cover" src="covers/2Pac-The_Prophet-_The_Best_Of_The_Works%2C%2C%2C.jpg">
 									</td>
 									<td class="album_info_cell">
 										<h3 class="album">The Prophet: The Best Of The Works...</h3>
@@ -997,6 +1024,169 @@ function change_color(color) {
 							<tbody>
 								<tr>
 									<td rowspan="2" class="cover_cell">
+										<img class="cover" src="covers/Bad_Religion-No_Control.jpg">
+									</td>
+									<td class="album_info_cell">
+										<h3 class="album">No Control</h3>
+									</td>
+								</tr>
+								<tr>
+									<td class="album_info_cell">
+										<table class="properties">
+											<tbody>
+												<tr>
+													<th>日付</th>
+													<td>1989/11/02</td>
+												</tr>
+												<tr>
+													<th>ジャンル</th>
+													<td>Rock</td>
+												</tr>
+												<tr>
+													<th>スタイル</th>
+													<td>Punk Rock</td>
+												</tr>
+												<tr>
+													<th>トラック数</th>
+													<td>15</td>
+												</tr>
+												<tr>
+													<th>演奏時間</th>
+													<td>00:26:25</td>
+												</tr>
+												<tr>
+													<th>データサイズ</th>
+													<td>55.55 MB</td>
+												</tr>
+											</tbody>
+										</table>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<table class="tracks">
+							<tbody>
+								<tr>
+									<th class="track numerical">#</th>
+									<th class="title">タイトル</th>
+									<th class="artist">アーティスト</th>
+									<th class="duration numerical">時間</th>
+									<th class="size numerical">サイズ</th>
+								</tr>
+								<tr>
+									<td class="track numerical">01</td>
+									<td class="title">Change Of Ideas</td>
+									<td class="artist">Bad Religion</td>
+									<td class="duration numerical">00:55</td>
+									<td class="size numerical">1.99 MB</td>
+								</tr>
+								<tr>
+									<td class="track numerical">02</td>
+									<td class="title">Big Bang</td>
+									<td class="artist">Bad Religion</td>
+									<td class="duration numerical">01:42</td>
+									<td class="size numerical">3.63 MB</td>
+								</tr>
+								<tr>
+									<td class="track numerical">03</td>
+									<td class="title">No Control</td>
+									<td class="artist">Bad Religion</td>
+									<td class="duration numerical">01:47</td>
+									<td class="size numerical">3.78 MB</td>
+								</tr>
+								<tr>
+									<td class="track numerical">04</td>
+									<td class="title">Sometimes I Feel Like</td>
+									<td class="artist">Bad Religion</td>
+									<td class="duration numerical">01:35</td>
+									<td class="size numerical">3.39 MB</td>
+								</tr>
+								<tr>
+									<td class="track numerical">05</td>
+									<td class="title">Automatic Man</td>
+									<td class="artist">Bad Religion</td>
+									<td class="duration numerical">01:41</td>
+									<td class="size numerical">3.50 MB</td>
+								</tr>
+								<tr>
+									<td class="track numerical">06</td>
+									<td class="title">I Want To Conquer The World</td>
+									<td class="artist">Bad Religion</td>
+									<td class="duration numerical">02:18</td>
+									<td class="size numerical">4.78 MB</td>
+								</tr>
+								<tr>
+									<td class="track numerical">07</td>
+									<td class="title">Sanity</td>
+									<td class="artist">Bad Religion</td>
+									<td class="duration numerical">02:45</td>
+									<td class="size numerical">5.85 MB</td>
+								</tr>
+								<tr>
+									<td class="track numerical">08</td>
+									<td class="title">Henchman</td>
+									<td class="artist">Bad Religion</td>
+									<td class="duration numerical">01:08</td>
+									<td class="size numerical">2.37 MB</td>
+								</tr>
+								<tr>
+									<td class="track numerical">09</td>
+									<td class="title">It Must Look Pretty Appealing</td>
+									<td class="artist">Bad Religion</td>
+									<td class="duration numerical">01:22</td>
+									<td class="size numerical">2.91 MB</td>
+								</tr>
+								<tr>
+									<td class="track numerical">10</td>
+									<td class="title">You</td>
+									<td class="artist">Bad Religion</td>
+									<td class="duration numerical">02:07</td>
+									<td class="size numerical">4.43 MB</td>
+								</tr>
+								<tr>
+									<td class="track numerical">11</td>
+									<td class="title">Progress</td>
+									<td class="artist">Bad Religion</td>
+									<td class="duration numerical">02:15</td>
+									<td class="size numerical">4.78 MB</td>
+								</tr>
+								<tr>
+									<td class="track numerical">12</td>
+									<td class="title">I Want Something More</td>
+									<td class="artist">Bad Religion</td>
+									<td class="duration numerical">00:48</td>
+									<td class="size numerical">1.74 MB</td>
+								</tr>
+								<tr>
+									<td class="track numerical">13</td>
+									<td class="title">Anxiety</td>
+									<td class="artist">Bad Religion</td>
+									<td class="duration numerical">02:09</td>
+									<td class="size numerical">4.37 MB</td>
+								</tr>
+								<tr>
+									<td class="track numerical">14</td>
+									<td class="title">Billy</td>
+									<td class="artist">Bad Religion</td>
+									<td class="duration numerical">01:55</td>
+									<td class="size numerical">3.98 MB</td>
+								</tr>
+								<tr>
+									<td class="track numerical">15</td>
+									<td class="title">The World Won't Stop</td>
+									<td class="artist">Bad Religion</td>
+									<td class="duration numerical">01:58</td>
+									<td class="size numerical">4.06 MB</td>
+								</tr>
+							</tbody>
+						</table>
+					</article>
+					<hr>
+					<article>
+						<table class="summary">
+							<tbody>
+								<tr>
+									<td rowspan="2" class="cover_cell">
 										<img class="cover" src="covers/Bad_Religion-New_Maps_Of_Hell.jpg">
 									</td>
 									<td class="album_info_cell">
@@ -1453,7 +1643,7 @@ function change_color(color) {
 							<tbody>
 								<tr>
 									<td rowspan="2" class="cover_cell">
-										<img class="cover" src="covers/Dr._Dre-The_Chronic.jpg">
+										<img class="cover" src="covers/Dr%2C_Dre-The_Chronic.jpg">
 									</td>
 									<td class="album_info_cell">
 										<h3 class="album">The Chronic</h3>
@@ -1623,7 +1813,7 @@ function change_color(color) {
 							<tbody>
 								<tr>
 									<td rowspan="2" class="cover_cell">
-										<img class="cover" src="covers/Dr._Dre-2001.jpg">
+										<img class="cover" src="covers/Dr%2C_Dre-2001.jpg">
 									</td>
 									<td class="album_info_cell">
 										<h3 class="album">2001</h3>
@@ -1835,7 +2025,7 @@ function change_color(color) {
 							<tbody>
 								<tr>
 									<td rowspan="2" class="cover_cell">
-										<img class="cover" src="covers/Dr._Dre-Compton.jpg">
+										<img class="cover" src="covers/Dr%2C_Dre-Compton.jpg">
 									</td>
 									<td class="album_info_cell">
 										<h3 class="album">Compton</h3>
@@ -2105,158 +2295,6 @@ function change_color(color) {
 									<td class="artist">Hadouken!</td>
 									<td class="duration numerical">06:43</td>
 									<td class="size numerical">6.25 MB</td>
-								</tr>
-							</tbody>
-						</table>
-					</article>
-					<hr>
-				</article>
-				<article class="frame">
-					<h2 class="headline">Icona Pop</h2>
-					<article>
-						<table class="summary">
-							<tbody>
-								<tr>
-									<td rowspan="2" class="cover_cell">
-										<img class="cover" src="covers/Icona_Pop-Icona_Pop.jpg">
-									</td>
-									<td class="album_info_cell">
-										<h3 class="album">Icona Pop</h3>
-									</td>
-								</tr>
-								<tr>
-									<td class="album_info_cell">
-										<table class="properties">
-											<tbody>
-												<tr>
-													<th>日付</th>
-													<td>2012</td>
-												</tr>
-												<tr>
-													<th>ジャンル</th>
-													<td>Electronic</td>
-												</tr>
-												<tr>
-													<th>スタイル</th>
-													<td>Synthpop</td>
-												</tr>
-												<tr>
-													<th>トラック数</th>
-													<td>13</td>
-												</tr>
-												<tr>
-													<th>演奏時間</th>
-													<td>00:40:25</td>
-												</tr>
-												<tr>
-													<th>データサイズ</th>
-													<td>297.97 MB</td>
-												</tr>
-											</tbody>
-										</table>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-						<table class="tracks">
-							<tbody>
-								<tr>
-									<th class="track numerical">#</th>
-									<th class="title">タイトル</th>
-									<th class="artist">アーティスト</th>
-									<th class="duration numerical">時間</th>
-									<th class="size numerical">サイズ</th>
-								</tr>
-								<tr>
-									<td class="track numerical">01</td>
-									<td class="title">Sun Goes Down</td>
-									<td class="artist">Icona Pop Feat. The Knocks &amp; St Lucia</td>
-									<td class="duration numerical">03:14</td>
-									<td class="size numerical">22.89 MB</td>
-								</tr>
-								<tr>
-									<td class="track numerical">02</td>
-									<td class="title">I Love It</td>
-									<td class="artist">Icona Pop Feat. Charli XCX</td>
-									<td class="duration numerical">02:37</td>
-									<td class="size numerical">20.59 MB</td>
-								</tr>
-								<tr>
-									<td class="track numerical">03</td>
-									<td class="title">We Got The World</td>
-									<td class="artist">Icona Pop</td>
-									<td class="duration numerical">03:08</td>
-									<td class="size numerical">24.35 MB</td>
-								</tr>
-								<tr>
-									<td class="track numerical">04</td>
-									<td class="title">Downtown</td>
-									<td class="artist">Icona Pop</td>
-									<td class="duration numerical">02:37</td>
-									<td class="size numerical">19.90 MB</td>
-								</tr>
-								<tr>
-									<td class="track numerical">05</td>
-									<td class="title">Ready For The Weekend</td>
-									<td class="artist">Icona Pop</td>
-									<td class="duration numerical">02:41</td>
-									<td class="size numerical">19.00 MB</td>
-								</tr>
-								<tr>
-									<td class="track numerical">06</td>
-									<td class="title">Wanna B With Somebody</td>
-									<td class="artist">Icona Pop</td>
-									<td class="duration numerical">03:01</td>
-									<td class="size numerical">22.37 MB</td>
-								</tr>
-								<tr>
-									<td class="track numerical">07</td>
-									<td class="title">Good For You</td>
-									<td class="artist">Icona Pop</td>
-									<td class="duration numerical">03:34</td>
-									<td class="size numerical">27.03 MB</td>
-								</tr>
-								<tr>
-									<td class="track numerical">08</td>
-									<td class="title">Manners</td>
-									<td class="artist">Icona Pop</td>
-									<td class="duration numerical">03:30</td>
-									<td class="size numerical">24.23 MB</td>
-								</tr>
-								<tr>
-									<td class="track numerical">09</td>
-									<td class="title">Top Rated</td>
-									<td class="artist">Icona Pop</td>
-									<td class="duration numerical">02:59</td>
-									<td class="size numerical">22.09 MB</td>
-								</tr>
-								<tr>
-									<td class="track numerical">10</td>
-									<td class="title">Lovers To Friends</td>
-									<td class="artist">Icona Pop</td>
-									<td class="duration numerical">03:00</td>
-									<td class="size numerical">22.08 MB</td>
-								</tr>
-								<tr>
-									<td class="track numerical">11</td>
-									<td class="title">My Party</td>
-									<td class="artist">Icona Pop Feat. Smiler</td>
-									<td class="duration numerical">03:48</td>
-									<td class="size numerical">28.85 MB</td>
-								</tr>
-								<tr>
-									<td class="track numerical">12</td>
-									<td class="title">Nights Like This</td>
-									<td class="artist">Icona Pop</td>
-									<td class="duration numerical">03:27</td>
-									<td class="size numerical">24.45 MB</td>
-								</tr>
-								<tr>
-									<td class="track numerical">13</td>
-									<td class="title">Flashback</td>
-									<td class="artist">Icona Pop</td>
-									<td class="duration numerical">02:49</td>
-									<td class="size numerical">20.14 MB</td>
 								</tr>
 							</tbody>
 						</table>
@@ -2693,7 +2731,7 @@ function change_color(color) {
 							<tbody>
 								<tr>
 									<td rowspan="2" class="cover_cell">
-										<img class="cover" src="covers/Röyksopp-Melody_A.M..jpg">
+										<img class="cover" src="covers/Röyksopp-Melody_A%2CM%2C.jpg">
 									</td>
 									<td class="album_info_cell">
 										<h3 class="album">Melody A.M.</h3>
@@ -3069,9 +3107,12 @@ function change_color(color) {
 												</tr>
 												<tr>
 													<th>ジャンル</th>
+													<td>Pop</td>
+												</tr>
+												<tr>
+													<th>スタイル</th>
 													<td>Anime</td>
 												</tr>
-												
 												<tr>
 													<th>トラック数</th>
 													<td>6</td>
@@ -4480,7 +4521,7 @@ function change_color(color) {
 							<tbody>
 								<tr>
 									<td rowspan="2" class="cover_cell">
-										<img class="cover" src="covers/Various_Artists-Grand_Theft_Auto-_San_Andreas_O.S.T._Box_Set_-_Bounce_FM.jpg">
+										<img class="cover" src="covers/Various_Artists-Grand_Theft_Auto-_San_Andreas_O%2CS%2CT%2C_Box_Set_-_Bounce_FM.jpg">
 									</td>
 									<td class="album_info_cell">
 										<h3 class="album">Grand Theft Auto: San Andreas O.S.T. Box Set - Bounce FM</h3>
@@ -4496,7 +4537,7 @@ function change_color(color) {
 												</tr>
 												<tr>
 													<th>ジャンル</th>
-													<td>R&amp;B</td>
+													<td>Soul</td>
 												</tr>
 												<tr>
 													<th>スタイル</th>
@@ -4643,7 +4684,177 @@ function change_color(color) {
 							<tbody>
 								<tr>
 									<td rowspan="2" class="cover_cell">
-										<img class="cover" src="covers/Various_Artists-Grand_Theft_Auto-_San_Andreas_O.S.T._Box_Set_-_K-JAH_West.jpg">
+										<img class="cover" src="covers/Various_Artists-Grand_Theft_Auto-_San_Andreas_O%2CS%2CT%2C_Box_Set_-_CSR_103-9.jpg">
+									</td>
+									<td class="album_info_cell">
+										<h3 class="album">Grand Theft Auto: San Andreas O.S.T. Box Set - CSR 103:9</h3>
+									</td>
+								</tr>
+								<tr>
+									<td class="album_info_cell">
+										<table class="properties">
+											<tbody>
+												<tr>
+													<th>日付</th>
+													<td>2004</td>
+												</tr>
+												<tr>
+													<th>ジャンル</th>
+													<td>Soul</td>
+												</tr>
+												<tr>
+													<th>スタイル</th>
+													<td>New Jack Swing</td>
+												</tr>
+												<tr>
+													<th>トラック数</th>
+													<td>16</td>
+												</tr>
+												<tr>
+													<th>演奏時間</th>
+													<td>00:53:10</td>
+												</tr>
+												<tr>
+													<th>データサイズ</th>
+													<td>385.97 MB</td>
+												</tr>
+											</tbody>
+										</table>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<table class="tracks">
+							<tbody>
+								<tr>
+									<th class="track numerical">#</th>
+									<th class="title">タイトル</th>
+									<th class="artist">アーティスト</th>
+									<th class="duration numerical">時間</th>
+									<th class="size numerical">サイズ</th>
+								</tr>
+								<tr>
+									<td class="track numerical">01</td>
+									<td class="title">CSR 103:9 Intro</td>
+									<td class="artist">Danita Davis, Jay Wright, Vanessa Grullon</td>
+									<td class="duration numerical">00:10</td>
+									<td class="size numerical">1.32 MB</td>
+								</tr>
+								<tr>
+									<td class="track numerical">02</td>
+									<td class="title">Groove Me</td>
+									<td class="artist">Guy</td>
+									<td class="duration numerical">04:30</td>
+									<td class="size numerical">32.89 MB</td>
+								</tr>
+								<tr>
+									<td class="track numerical">03</td>
+									<td class="title">I Got The Feeling</td>
+									<td class="artist">Today</td>
+									<td class="duration numerical">03:47</td>
+									<td class="size numerical">27.67 MB</td>
+								</tr>
+								<tr>
+									<td class="track numerical">04</td>
+									<td class="title">Don't Be Cruel</td>
+									<td class="artist">Bobby Brown</td>
+									<td class="duration numerical">06:47</td>
+									<td class="size numerical">50.58 MB</td>
+								</tr>
+								<tr>
+									<td class="track numerical">05</td>
+									<td class="title">My Lovin' (Never Gonna Get It)</td>
+									<td class="artist">En Vogue</td>
+									<td class="duration numerical">04:41</td>
+									<td class="size numerical">34.70 MB</td>
+								</tr>
+								<tr>
+									<td class="track numerical">06</td>
+									<td class="title">New Jack Swing</td>
+									<td class="artist">Wrecks-N-Effect</td>
+									<td class="duration numerical">03:37</td>
+									<td class="size numerical">25.22 MB</td>
+								</tr>
+								<tr>
+									<td class="track numerical">07</td>
+									<td class="title">Motownphilly</td>
+									<td class="artist">Boyz II Men</td>
+									<td class="duration numerical">03:55</td>
+									<td class="size numerical">30.87 MB</td>
+								</tr>
+								<tr>
+									<td class="track numerical">08</td>
+									<td class="title">You're On CSR 103:9</td>
+									<td class="artist">Danita Davis, Jay Wright, Vanessa Grullon</td>
+									<td class="duration numerical">00:10</td>
+									<td class="size numerical">1.33 MB</td>
+								</tr>
+								<tr>
+									<td class="track numerical">09</td>
+									<td class="title">Poison</td>
+									<td class="artist">Bell Biv Devoe</td>
+									<td class="duration numerical">04:22</td>
+									<td class="size numerical">29.56 MB</td>
+								</tr>
+								<tr>
+									<td class="track numerical">10</td>
+									<td class="title">So You Like What You See</td>
+									<td class="artist">Samuelle</td>
+									<td class="duration numerical">04:57</td>
+									<td class="size numerical">38.96 MB</td>
+								</tr>
+								<tr>
+									<td class="track numerical">11</td>
+									<td class="title">I'm So Into You</td>
+									<td class="artist">SWV</td>
+									<td class="duration numerical">04:37</td>
+									<td class="size numerical">31.77 MB</td>
+								</tr>
+								<tr>
+									<td class="track numerical">12</td>
+									<td class="title">Don't Be Afraid</td>
+									<td class="artist">Aaron Hall</td>
+									<td class="duration numerical">05:18</td>
+									<td class="size numerical">36.69 MB</td>
+								</tr>
+								<tr>
+									<td class="track numerical">13</td>
+									<td class="title">Sensitivity</td>
+									<td class="artist">Ralph Tresvant</td>
+									<td class="duration numerical">04:39</td>
+									<td class="size numerical">34.05 MB</td>
+								</tr>
+								<tr>
+									<td class="track numerical">14</td>
+									<td class="title">That Was CSR 103:9</td>
+									<td class="artist">Danita Davis, Jay Wright, Vanessa Grullon</td>
+									<td class="duration numerical">00:08</td>
+									<td class="size numerical">1.02 MB</td>
+								</tr>
+								<tr>
+									<td class="track numerical">15</td>
+									<td class="title">Renegade Cologne</td>
+									<td class="artist">Ayana Osada, Hillary Cannon, Jeff Berlin, Laura Bykowski, Patricia Foxx, Pete Gustin</td>
+									<td class="duration numerical">00:49</td>
+									<td class="size numerical">5.25 MB</td>
+								</tr>
+								<tr>
+									<td class="track numerical">16</td>
+									<td class="title">The Epsilon Program - Covet</td>
+									<td class="artist">Fred Melamed</td>
+									<td class="duration numerical">00:43</td>
+									<td class="size numerical">4.08 MB</td>
+								</tr>
+							</tbody>
+						</table>
+					</article>
+					<hr>
+					<article>
+						<table class="summary">
+							<tbody>
+								<tr>
+									<td rowspan="2" class="cover_cell">
+										<img class="cover" src="covers/Various_Artists-Grand_Theft_Auto-_San_Andreas_O%2CS%2CT%2C_Box_Set_-_K-JAH_West.jpg">
 									</td>
 									<td class="album_info_cell">
 										<h3 class="album">Grand Theft Auto: San Andreas O.S.T. Box Set - K-JAH West</h3>
@@ -4813,7 +5024,7 @@ function change_color(color) {
 							<tbody>
 								<tr>
 									<td rowspan="2" class="cover_cell">
-										<img class="cover" src="covers/Various_Artists-Grand_Theft_Auto-_San_Andreas_O.S.T._Box_Set_-_K-Rose.jpg">
+										<img class="cover" src="covers/Various_Artists-Grand_Theft_Auto-_San_Andreas_O%2CS%2CT%2C_Box_Set_-_K-Rose.jpg">
 									</td>
 									<td class="album_info_cell">
 										<h3 class="album">Grand Theft Auto: San Andreas O.S.T. Box Set - K-Rose</h3>
@@ -4976,7 +5187,7 @@ function change_color(color) {
 							<tbody>
 								<tr>
 									<td rowspan="2" class="cover_cell">
-										<img class="cover" src="covers/Various_Artists-Grand_Theft_Auto-_San_Andreas_O.S.T._Box_Set_-_Master_Sounds_98.3.jpg">
+										<img class="cover" src="covers/Various_Artists-Grand_Theft_Auto-_San_Andreas_O%2CS%2CT%2C_Box_Set_-_Master_Sounds_98%2C3.jpg">
 									</td>
 									<td class="album_info_cell">
 										<h3 class="album">Grand Theft Auto: San Andreas O.S.T. Box Set - Master Sounds 98.3</h3>
@@ -4992,7 +5203,7 @@ function change_color(color) {
 												</tr>
 												<tr>
 													<th>ジャンル</th>
-													<td>R&amp;B</td>
+													<td>Soul</td>
 												</tr>
 												<tr>
 													<th>スタイル</th>
@@ -5423,7 +5634,7 @@ function change_color(color) {
 							<tbody>
 								<tr>
 									<td rowspan="2" class="cover_cell">
-										<img class="cover" src="covers/Various_Artists-Super_Hatsune_Beat_Vol._1.jpg">
+										<img class="cover" src="covers/Various_Artists-Super_Hatsune_Beat_Vol%2C_1.jpg">
 									</td>
 									<td class="album_info_cell">
 										<h3 class="album">Super Hatsune Beat Vol. 1</h3>
@@ -5544,7 +5755,7 @@ function change_color(color) {
 								</tr>
 								<tr>
 									<td class="track numerical">11</td>
-									<td class="title">崩壊歌姫 -disruptive diva-  (ねぎぶえP Euro Arrange)</td>
+									<td class="title">崩壊歌姫 -disruptive diva- (ねぎぶえP Euro Arrange)</td>
 									<td class="artist">初音ミク</td>
 									<td class="duration numerical">04:27</td>
 									<td class="size numerical">33.19 MB</td>
@@ -8321,7 +8532,7 @@ function change_color(color) {
 							<tbody>
 								<tr>
 									<td rowspan="2" class="cover_cell">
-										<img class="cover" src="covers/根岸貴幸-東京ミュウミュウ_オリジナルサウンドトラック_vol.2.jpg">
+										<img class="cover" src="covers/根岸貴幸-東京ミュウミュウ_オリジナルサウンドトラック_vol%2C2.jpg">
 									</td>
 									<td class="album_info_cell">
 										<h3 class="album">東京ミュウミュウ オリジナルサウンドトラック vol.2</h3>
@@ -9061,7 +9272,7 @@ function change_color(color) {
 								</tr>
 								<tr>
 									<td class="track numerical">03</td>
-									<td class="title">ミ・アモーレ〔Meu amor é･･･〕</td>
+									<td class="title">ミ・アモーレ〔Meu amor é…〕</td>
 									<td class="artist">中森明菜</td>
 									<td class="duration numerical">03:52</td>
 									<td class="size numerical">27.58 MB</td>
@@ -9390,6 +9601,102 @@ function change_color(color) {
 									<td class="artist">ホンダタカノブ</td>
 									<td class="duration numerical">03:09</td>
 									<td class="size numerical">7.60 MB</td>
+								</tr>
+							</tbody>
+						</table>
+					</article>
+					<hr>
+				</article>
+				<article class="frame">
+					<h2 class="headline">桃宮いちご（中島沙樹）</h2>
+					<article>
+						<table class="summary">
+							<tbody>
+								<tr>
+									<td rowspan="2" class="cover_cell">
+										<img class="cover" src="covers/桃宮いちご（中島沙樹）-キラメキの海を超えて.jpg">
+									</td>
+									<td class="album_info_cell">
+										<h3 class="album">キラメキの海を超えて</h3>
+									</td>
+								</tr>
+								<tr>
+									<td class="album_info_cell">
+										<table class="properties">
+											<tbody>
+												<tr>
+													<th>日付</th>
+													<td>2003/02/26</td>
+												</tr>
+												<tr>
+													<th>ジャンル</th>
+													<td>Pop</td>
+												</tr>
+												<tr>
+													<th>スタイル</th>
+													<td>Anime</td>
+												</tr>
+												<tr>
+													<th>トラック数</th>
+													<td>5</td>
+												</tr>
+												<tr>
+													<th>演奏時間</th>
+													<td>00:22:46</td>
+												</tr>
+												<tr>
+													<th>データサイズ</th>
+													<td>162.39 MB</td>
+												</tr>
+											</tbody>
+										</table>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<table class="tracks">
+							<tbody>
+								<tr>
+									<th class="track numerical">#</th>
+									<th class="title">タイトル</th>
+									<th class="artist">アーティスト</th>
+									<th class="duration numerical">時間</th>
+									<th class="size numerical">サイズ</th>
+								</tr>
+								<tr>
+									<td class="track numerical">01</td>
+									<td class="title">キラメキの海を超えて</td>
+									<td class="artist">桃宮いちご（中島沙樹）</td>
+									<td class="duration numerical">04:44</td>
+									<td class="size numerical">36.81 MB</td>
+								</tr>
+								<tr>
+									<td class="track numerical">02</td>
+									<td class="title">rondo</td>
+									<td class="artist">桃宮いちご（中島沙樹）</td>
+									<td class="duration numerical">04:16</td>
+									<td class="size numerical">31.27 MB</td>
+								</tr>
+								<tr>
+									<td class="track numerical">03</td>
+									<td class="title">いちごと沙樹のストロベリートーク</td>
+									<td class="artist">桃宮いちご（中島沙樹）</td>
+									<td class="duration numerical">04:45</td>
+									<td class="size numerical">26.65 MB</td>
+								</tr>
+								<tr>
+									<td class="track numerical">04</td>
+									<td class="title">キラメキの海を超えて（オリジナル・カラオケ）</td>
+									<td class="artist">横井公博</td>
+									<td class="duration numerical">04:46</td>
+									<td class="size numerical">36.61 MB</td>
+								</tr>
+								<tr>
+									<td class="track numerical">05</td>
+									<td class="title">rondo（オリジナル・カラオケ）</td>
+									<td class="artist">UZA</td>
+									<td class="duration numerical">04:15</td>
+									<td class="size numerical">31.06 MB</td>
 								</tr>
 							</tbody>
 						</table>
