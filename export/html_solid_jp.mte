@@ -174,9 +174,31 @@ table.tracks td.numerical {
 }
 		</style>
 		<script>
-function change_color(color) {
-	document.getElementById("dynamic_css").innerHTML = ".frame .headline { background-color: " + color + "; }";
+const style_element = document.getElementById("dynamic_css");
+function test_color(color) {
+	return /^#'['a-f0-9']'{6}'$'/.test(color);
 }
+function main() {
+	const color = new URL(window.location).searchParams.get("color");
+	if (color !== null && test_color(color)) {
+		style_element.innerHTML = ".frame .headline { background-color: " + color + "; }";
+	}
+}
+function change_color(color) {
+	const params = new URL(window.location).searchParams;
+	if (color) {
+		params.set("color", color);
+	} else {
+		params.delete("color");
+	}
+	const paramStr = params.toString();
+	history.pushState({}, "", paramStr ? "?" + paramStr : ".");
+	main();
+}
+window.addEventListener("popstate", (e) => {
+	main();
+});
+main();
 		</script>
 	</head>
 	<body>
