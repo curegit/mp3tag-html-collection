@@ -192,7 +192,9 @@ function change_color(color) {
 		params.delete("color");
 	}
 	const paramStr = params.toString();
-	history.pushState({}, "", paramStr ? "?" + paramStr : ".");
+	if (history.state?.color !== color) {
+		history.pushState({color: color}, "", paramStr ? "?" + paramStr : ".");
+	}
 	main();
 }
 window.addEventListener("popstate", (e) => {
