@@ -3,22 +3,37 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Album List | Mp3tag</title>
+		<meta name="viewport" content="width=device-width, viewport-fit=cover">
 		<meta name="description" content="Created with Mp3tag">
+		<meta name="generator" content="Mp3tag">
 		<style>
 * {
-	margin: 0px;
-	padding: 0px;
+	margin: 0;
+	padding: 0;
 	box-sizing: border-box;
+}
+html {
+	text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+}
+html, body {
+	overscroll-behavior: none auto;
+	scroll-behavior: smooth;
+	scroll-padding-top: 25px;
 }
 body {
 	min-width: 480px;
 	color: #fff;
 	background-color: #000;
 	font-family: sans-serif;
+	font-kerning: auto;
+	font-feature-settings: "pkna" 1;
 	font-size: 16px;
 	line-height: 1.6;
 	word-break: keep-all;
 	overflow-wrap: break-word;
+	text-wrap: pretty;
 }
 body > header {
 	padding: 4px 12px;
@@ -28,7 +43,12 @@ h1 {
 	font-size: 1.8em;
 	font-weight: bold;
 }
+h1, h2, h3, h4, h5, h6 {
+	font-kerning: normal;
+	font-feature-settings: "palt" 1;
+}
 main {
+	container-type: inline-size;
 	display: grid;
 	grid-auto-flow: row dense;
 	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -190,7 +210,7 @@ div.numerical {
 	font-size: 0.96em;
 	line-height: 1.625;
 }
-@media (min-width: 540px) {
+@container (min-width: 540px) {
 	article.detail aside {
 		display: grid;
 		grid-template-columns: 3fr 2fr;
@@ -200,7 +220,7 @@ div.numerical {
 		align-self: center;
 	}
 }
-@media (min-width: 768px) {
+@container (min-width: 768px) {
 	article.detail > div {
 		grid-template-columns: 300px 1fr;
 	}
@@ -219,12 +239,12 @@ div.numerical {
 		grid-column: 2;
 	}
 }
-@media (min-width: 1320px) {
+@container (min-width: 1320px) {
 	article.detail > div {
 		grid-template-columns: 400px 1fr;
 	}
 }
-@media (min-width: 1366px) {
+@container (min-width: 1366px) {
 	article.detail.large ol.discs > li:first-child:last-child {
 		width: 100%;
 		max-width: 1080px;
@@ -245,7 +265,7 @@ div.numerical {
 		column-rule: solid 1px currentcolor;
 	}
 }
-@media (min-width: 1920px) {
+@container (min-width: 1920px) {
 	article.detail > div {
 		grid-template-columns: 500px 1fr;
 	}
@@ -462,7 +482,7 @@ const toggle_detail = (function() {
 								</tr>
 								<tr>
 									<th>Size</th>
-									<td>535.89 MB</td>
+									<td>72.63 MB</td>
 								</tr>
 							</tbody>
 						</table>
@@ -572,218 +592,6 @@ const toggle_detail = (function() {
 				</div>
 			</article>
 			<figure class="cover" onclick="toggle_detail(this)">
-				<img src="covers/Asian_Dub_Foundation-Enemy_Of_The_Enemy.jpg">
-			</figure>
-			<article class="detail">
-				<div>
-					<header>
-						<h2 class="album">Enemy Of The Enemy</h2>
-						<div class="albumartist secondary">Asian Dub Foundation</div>
-					</header>
-					<aside>
-						<figure class="artwork">
-							<img src="covers/Asian_Dub_Foundation-Enemy_Of_The_Enemy.jpg">
-						</figure>
-						<table class="properties secondary">
-							<tbody>
-								<tr>
-									<th>Year</th>
-									<td>2003</td>
-								</tr>
-								<tr>
-									<th>Genre</th>
-									<td>Reggae</td>
-								</tr>
-								<tr>
-									<th>Style</th>
-									<td>Dub</td>
-								</tr>
-								<tr>
-									<th>Tracks</th>
-									<td>26</td>
-								</tr>
-								<tr>
-									<th>Duration</th>
-									<td>01:58:24</td>
-								</tr>
-								<tr>
-									<th>Size</th>
-									<td>779.90 MB</td>
-								</tr>
-							</tbody>
-						</table>
-					</aside>
-					<ol class="discs">
-						<li>
-							<h3 class="disc">Disc 1</h3>
-							<ol class="tracks">
-								<li>
-									<div class="track numerical secondary">01</div>
-									<div class="title">Fortress Europe</div>
-									<div class="artist secondary same">Asian Dub Foundation</div>
-									<div class="duration numerical secondary">03:53</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">02</div>
-									<div class="title">Rise To The Challenge</div>
-									<div class="artist secondary same">Asian Dub Foundation</div>
-									<div class="duration numerical secondary">04:25</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">03</div>
-									<div class="title">La Haine</div>
-									<div class="artist secondary same">Asian Dub Foundation</div>
-									<div class="duration numerical secondary">03:54</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">04</div>
-									<div class="title">1000 Mirrors</div>
-									<div class="artist secondary different">Asian Dub Foundation Feat. Sinead O'Connor</div>
-									<div class="duration numerical secondary">04:55</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">05</div>
-									<div class="title">19 Rebellions</div>
-									<div class="artist secondary same">Asian Dub Foundation</div>
-									<div class="duration numerical secondary">05:22</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">06</div>
-									<div class="title">Blowback</div>
-									<div class="artist secondary same">Asian Dub Foundation</div>
-									<div class="duration numerical secondary">02:56</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">07</div>
-									<div class="title">2 Face</div>
-									<div class="artist secondary same">Asian Dub Foundation</div>
-									<div class="duration numerical secondary">05:14</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">08</div>
-									<div class="title">Power To The Small Massive</div>
-									<div class="artist secondary same">Asian Dub Foundation</div>
-									<div class="duration numerical secondary">04:23</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">09</div>
-									<div class="title">Dhol Rinse</div>
-									<div class="artist secondary same">Asian Dub Foundation</div>
-									<div class="duration numerical secondary">03:18</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">10</div>
-									<div class="title">Basta</div>
-									<div class="artist secondary same">Asian Dub Foundation</div>
-									<div class="duration numerical secondary">04:33</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">11</div>
-									<div class="title">Cyberabad</div>
-									<div class="artist secondary same">Asian Dub Foundation</div>
-									<div class="duration numerical secondary">05:02</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">12</div>
-									<div class="title">Enemy Of The Enemy</div>
-									<div class="artist secondary same">Asian Dub Foundation</div>
-									<div class="duration numerical secondary">04:43</div>
-								</li>
-							</ol>
-						</li>
-						<li>
-							<h3 class="disc">Disc 2</h3>
-							<ol class="tracks">
-								<li>
-									<div class="track numerical secondary">01</div>
-									<div class="title">One Thousand Mirrors (Visionary Underground Mix)</div>
-									<div class="artist secondary different">Asian Dub Foundation Feat. Sinead O'Connor</div>
-									<div class="duration numerical secondary">05:20</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">02</div>
-									<div class="title">Fortress Europe (Jazzwad Remix 1)</div>
-									<div class="artist secondary same">Asian Dub Foundation</div>
-									<div class="duration numerical secondary">06:08</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">03</div>
-									<div class="title">19 Rebellions (Al Scott Version)</div>
-									<div class="artist secondary same">Asian Dub Foundation</div>
-									<div class="duration numerical secondary">05:32</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">04</div>
-									<div class="title">Assatta Dub (Original Version)</div>
-									<div class="artist secondary same">Asian Dub Foundation</div>
-									<div class="duration numerical secondary">04:51</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">05</div>
-									<div class="title">La Haine (The Bug Remix)</div>
-									<div class="artist secondary same">Asian Dub Foundation</div>
-									<div class="duration numerical secondary">04:27</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">06</div>
-									<div class="title">Fortress Europe (DJ Mehdi Remix 1)</div>
-									<div class="artist secondary same">Asian Dub Foundation</div>
-									<div class="duration numerical secondary">04:43</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">07</div>
-									<div class="title">Collective Mode (Audio Active Version)</div>
-									<div class="artist secondary same">Asian Dub Foundation</div>
-									<div class="duration numerical secondary">06:30</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">08</div>
-									<div class="title">Jungle Bass (ADF / Indigenious Resistance)</div>
-									<div class="artist secondary same">Asian Dub Foundation</div>
-									<div class="duration numerical secondary">04:30</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">09</div>
-									<div class="title">Thousand Mirrors (ILS Remix Club Version)</div>
-									<div class="artist secondary same">Asian Dub Foundation</div>
-									<div class="duration numerical secondary">03:16</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">10</div>
-									<div class="title">Make Trade Fair (Original Version)</div>
-									<div class="artist secondary same">Asian Dub Foundation</div>
-									<div class="duration numerical secondary">03:44</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">11</div>
-									<div class="title">Power To The Small Massive (Sun J Remix)</div>
-									<div class="artist secondary same">Asian Dub Foundation</div>
-									<div class="duration numerical secondary">04:35</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">12</div>
-									<div class="title">Fortress Europe (Adrian Sherwood Dub Mix)</div>
-									<div class="artist secondary same">Asian Dub Foundation</div>
-									<div class="duration numerical secondary">04:09</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">13</div>
-									<div class="title">La Haine (The Bug Mash Up Mix)</div>
-									<div class="artist secondary same">Asian Dub Foundation</div>
-									<div class="duration numerical secondary">04:01</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">14</div>
-									<div class="title">Police On My Back (Live With Zebda)</div>
-									<div class="artist secondary same">Asian Dub Foundation</div>
-									<div class="duration numerical secondary">04:00</div>
-								</li>
-							</ol>
-						</li>
-					</ol>
-				</div>
-			</article>
-			<figure class="cover" onclick="toggle_detail(this)">
 				<img src="covers/Avicii-Stories.jpg">
 			</figure>
 			<article class="detail">
@@ -820,7 +628,7 @@ const toggle_detail = (function() {
 								</tr>
 								<tr>
 									<th>Size</th>
-									<td>568.00 MB</td>
+									<td>78.38 MB</td>
 								</tr>
 							</tbody>
 						</table>
@@ -996,7 +804,7 @@ const toggle_detail = (function() {
 								</tr>
 								<tr>
 									<th>Size</th>
-									<td>181.28 MB</td>
+									<td>30.12 MB</td>
 								</tr>
 							</tbody>
 						</table>
@@ -1240,23 +1048,23 @@ const toggle_detail = (function() {
 				</div>
 			</article>
 			<figure class="cover" onclick="toggle_detail(this)">
-				<img src="covers/Bad_Religion-New_Maps_Of_Hell.jpg">
+				<img src="covers/Bad_Religion-Against_The_Grain.jpg">
 			</figure>
 			<article class="detail">
 				<div>
 					<header>
-						<h2 class="album">New Maps Of Hell</h2>
+						<h2 class="album">Against The Grain</h2>
 						<div class="albumartist secondary">Bad Religion</div>
 					</header>
 					<aside>
 						<figure class="artwork">
-							<img src="covers/Bad_Religion-New_Maps_Of_Hell.jpg">
+							<img src="covers/Bad_Religion-Against_The_Grain.jpg">
 						</figure>
 						<table class="properties secondary">
 							<tbody>
 								<tr>
 									<th>Year</th>
-									<td>2007</td>
+									<td>1990</td>
 								</tr>
 								<tr>
 									<th>Genre</th>
@@ -1268,15 +1076,15 @@ const toggle_detail = (function() {
 								</tr>
 								<tr>
 									<th>Tracks</th>
-									<td>24</td>
+									<td>17</td>
 								</tr>
 								<tr>
 									<th>Duration</th>
-									<td>00:57:51</td>
+									<td>00:35:05</td>
 								</tr>
 								<tr>
 									<th>Size</th>
-									<td>406.77 MB</td>
+									<td>42.94 MB</td>
 								</tr>
 							</tbody>
 						</table>
@@ -1286,147 +1094,245 @@ const toggle_detail = (function() {
 							<ol class="tracks">
 								<li>
 									<div class="track numerical secondary">01</div>
-									<div class="title">52 Seconds</div>
+									<div class="title">Modern Man</div>
 									<div class="artist secondary same">Bad Religion</div>
-									<div class="duration numerical secondary">00:58</div>
+									<div class="duration numerical secondary">01:57</div>
 								</li>
 								<li>
 									<div class="track numerical secondary">02</div>
-									<div class="title">Heroes &amp; Martyrs</div>
+									<div class="title">Turn On The Light</div>
 									<div class="artist secondary same">Bad Religion</div>
-									<div class="duration numerical secondary">01:26</div>
+									<div class="duration numerical secondary">01:24</div>
 								</li>
 								<li>
 									<div class="track numerical secondary">03</div>
-									<div class="title">Germs Of Perfection</div>
+									<div class="title">Get Off</div>
 									<div class="artist secondary same">Bad Religion</div>
-									<div class="duration numerical secondary">01:28</div>
+									<div class="duration numerical secondary">01:42</div>
 								</li>
 								<li>
 									<div class="track numerical secondary">04</div>
-									<div class="title">New Dark Ages</div>
+									<div class="title">Blenderhead</div>
 									<div class="artist secondary same">Bad Religion</div>
-									<div class="duration numerical secondary">02:48</div>
+									<div class="duration numerical secondary">01:12</div>
 								</li>
 								<li>
 									<div class="track numerical secondary">05</div>
-									<div class="title">Requiem For Dissent</div>
+									<div class="title">The Positive Aspect Of Negative Thinking</div>
 									<div class="artist secondary same">Bad Religion</div>
-									<div class="duration numerical secondary">02:08</div>
+									<div class="duration numerical secondary">00:57</div>
 								</li>
 								<li>
 									<div class="track numerical secondary">06</div>
-									<div class="title">Before You Die</div>
+									<div class="title">Anesthesia</div>
 									<div class="artist secondary same">Bad Religion</div>
-									<div class="duration numerical secondary">02:35</div>
+									<div class="duration numerical secondary">03:03</div>
 								</li>
 								<li>
 									<div class="track numerical secondary">07</div>
-									<div class="title">Honest Goodbye</div>
+									<div class="title">Flat Earth Society</div>
 									<div class="artist secondary same">Bad Religion</div>
-									<div class="duration numerical secondary">02:52</div>
+									<div class="duration numerical secondary">02:22</div>
 								</li>
 								<li>
 									<div class="track numerical secondary">08</div>
-									<div class="title">Dearly Beloved</div>
-									<div class="artist secondary same">Bad Religion</div>
-									<div class="duration numerical secondary">02:20</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">09</div>
-									<div class="title">Grains Of Wrath</div>
-									<div class="artist secondary same">Bad Religion</div>
-									<div class="duration numerical secondary">03:01</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">10</div>
-									<div class="title">Murder</div>
-									<div class="artist secondary same">Bad Religion</div>
-									<div class="duration numerical secondary">01:19</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">11</div>
-									<div class="title">Scrutiny</div>
-									<div class="artist secondary same">Bad Religion</div>
-									<div class="duration numerical secondary">02:37</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">12</div>
-									<div class="title">Prodigal Son</div>
-									<div class="artist secondary same">Bad Religion</div>
-									<div class="duration numerical secondary">03:08</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">13</div>
-									<div class="title">The Grand Delusion</div>
-									<div class="artist secondary same">Bad Religion</div>
-									<div class="duration numerical secondary">02:11</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">14</div>
-									<div class="title">Lost Pilgrim</div>
-									<div class="artist secondary same">Bad Religion</div>
-									<div class="duration numerical secondary">02:28</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">15</div>
-									<div class="title">Submission Complete</div>
-									<div class="artist secondary same">Bad Religion</div>
-									<div class="duration numerical secondary">03:41</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">16</div>
-									<div class="title">Fields Of Mars</div>
+									<div class="title">Faith Alone</div>
 									<div class="artist secondary same">Bad Religion</div>
 									<div class="duration numerical secondary">03:38</div>
 								</li>
 								<li>
+									<div class="track numerical secondary">09</div>
+									<div class="title">Entropy</div>
+									<div class="artist secondary same">Bad Religion</div>
+									<div class="duration numerical secondary">02:24</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">10</div>
+									<div class="title">Against The Grain</div>
+									<div class="artist secondary same">Bad Religion</div>
+									<div class="duration numerical secondary">02:08</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">11</div>
+									<div class="title">Operation Rescue</div>
+									<div class="artist secondary same">Bad Religion</div>
+									<div class="duration numerical secondary">02:07</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">12</div>
+									<div class="title">God Song</div>
+									<div class="artist secondary same">Bad Religion</div>
+									<div class="duration numerical secondary">01:38</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">13</div>
+									<div class="title">21st Century (Digital Boy)</div>
+									<div class="artist secondary same">Bad Religion</div>
+									<div class="duration numerical secondary">02:49</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">14</div>
+									<div class="title">Misery And Famine</div>
+									<div class="artist secondary same">Bad Religion</div>
+									<div class="duration numerical secondary">02:34</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">15</div>
+									<div class="title">Unacceptable</div>
+									<div class="artist secondary same">Bad Religion</div>
+									<div class="duration numerical secondary">01:45</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">16</div>
+									<div class="title">Quality Or Quantity</div>
+									<div class="artist secondary same">Bad Religion</div>
+									<div class="duration numerical secondary">01:34</div>
+								</li>
+								<li>
 									<div class="track numerical secondary">17</div>
-									<div class="title">Silent Track</div>
+									<div class="title">Walk Away</div>
 									<div class="artist secondary same">Bad Religion</div>
-									<div class="duration numerical secondary">00:04</div>
+									<div class="duration numerical secondary">01:51</div>
+								</li>
+							</ol>
+						</li>
+					</ol>
+				</div>
+			</article>
+			<figure class="cover" onclick="toggle_detail(this)">
+				<img src="covers/Bad_Religion-Age_Of_Unreason.jpg">
+			</figure>
+			<article class="detail">
+				<div>
+					<header>
+						<h2 class="album">Age Of Unreason</h2>
+						<div class="albumartist secondary">Bad Religion</div>
+					</header>
+					<aside>
+						<figure class="artwork">
+							<img src="covers/Bad_Religion-Age_Of_Unreason.jpg">
+						</figure>
+						<table class="properties secondary">
+							<tbody>
+								<tr>
+									<th>Year</th>
+									<td>2019</td>
+								</tr>
+								<tr>
+									<th>Genre</th>
+									<td>Rock</td>
+								</tr>
+								<tr>
+									<th>Style</th>
+									<td>Punk Rock</td>
+								</tr>
+								<tr>
+									<th>Tracks</th>
+									<td>15</td>
+								</tr>
+								<tr>
+									<th>Duration</th>
+									<td>00:38:16</td>
+								</tr>
+								<tr>
+									<th>Size</th>
+									<td>36.14 MB</td>
+								</tr>
+							</tbody>
+						</table>
+					</aside>
+					<ol class="discs">
+						<li>
+							<ol class="tracks">
+								<li>
+									<div class="track numerical secondary">01</div>
+									<div class="title">Chaos From Within</div>
+									<div class="artist secondary same">Bad Religion</div>
+									<div class="duration numerical secondary">01:50</div>
 								</li>
 								<li>
-									<div class="track numerical secondary">18</div>
-									<div class="title">Won't Somebody (Acoustic)</div>
+									<div class="track numerical secondary">02</div>
+									<div class="title">My Sanity</div>
 									<div class="artist secondary same">Bad Religion</div>
-									<div class="duration numerical secondary">03:08</div>
+									<div class="duration numerical secondary">02:58</div>
 								</li>
 								<li>
-									<div class="track numerical secondary">19</div>
-									<div class="title">Adam's Atoms (Acoustic)</div>
+									<div class="track numerical secondary">03</div>
+									<div class="title">Do The Paranoid Style</div>
 									<div class="artist secondary same">Bad Religion</div>
-									<div class="duration numerical secondary">02:37</div>
+									<div class="duration numerical secondary">01:46</div>
 								</li>
 								<li>
-									<div class="track numerical secondary">20</div>
-									<div class="title">Sorrow (Acoustic)</div>
+									<div class="track numerical secondary">04</div>
+									<div class="title">The Approach</div>
 									<div class="artist secondary same">Bad Religion</div>
-									<div class="duration numerical secondary">03:12</div>
+									<div class="duration numerical secondary">02:26</div>
 								</li>
 								<li>
-									<div class="track numerical secondary">21</div>
-									<div class="title">God Song (Acoustic)</div>
+									<div class="track numerical secondary">05</div>
+									<div class="title">Lose Your Head</div>
 									<div class="artist secondary same">Bad Religion</div>
-									<div class="duration numerical secondary">02:40</div>
+									<div class="duration numerical secondary">02:51</div>
 								</li>
 								<li>
-									<div class="track numerical secondary">22</div>
-									<div class="title">Dearly Beloved (Acoustic)</div>
+									<div class="track numerical secondary">06</div>
+									<div class="title">End Of History</div>
 									<div class="artist secondary same">Bad Religion</div>
-									<div class="duration numerical secondary">02:37</div>
+									<div class="duration numerical secondary">02:47</div>
 								</li>
 								<li>
-									<div class="track numerical secondary">23</div>
-									<div class="title">Chronophobia (Acoustic)</div>
+									<div class="track numerical secondary">07</div>
+									<div class="title">Age Of Unreason</div>
 									<div class="artist secondary same">Bad Religion</div>
-									<div class="duration numerical secondary">01:55</div>
+									<div class="duration numerical secondary">02:41</div>
 								</li>
 								<li>
-									<div class="track numerical secondary">24</div>
-									<div class="title">Skyscraper (Acoustic)</div>
+									<div class="track numerical secondary">08</div>
+									<div class="title">Candidate</div>
 									<div class="artist secondary same">Bad Religion</div>
-									<div class="duration numerical secondary">03:00</div>
+									<div class="duration numerical secondary">02:45</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">09</div>
+									<div class="title">Faces Of Grief</div>
+									<div class="artist secondary same">Bad Religion</div>
+									<div class="duration numerical secondary">01:05</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">10</div>
+									<div class="title">Old Regime</div>
+									<div class="artist secondary same">Bad Religion</div>
+									<div class="duration numerical secondary">02:42</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">11</div>
+									<div class="title">Big Black Dog</div>
+									<div class="artist secondary same">Bad Religion</div>
+									<div class="duration numerical secondary">02:06</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">12</div>
+									<div class="title">Downfall</div>
+									<div class="artist secondary same">Bad Religion</div>
+									<div class="duration numerical secondary">02:36</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">13</div>
+									<div class="title">Since Now</div>
+									<div class="artist secondary same">Bad Religion</div>
+									<div class="duration numerical secondary">01:44</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">14</div>
+									<div class="title">What Tomorrow Brings / The Kids Are Alt-Right</div>
+									<div class="artist secondary same">Bad Religion</div>
+									<div class="duration numerical secondary">05:52</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">15</div>
+									<div class="title">The Profane Rights Of Man (Bonus)</div>
+									<div class="artist secondary same">Bad Religion</div>
+									<div class="duration numerical secondary">02:07</div>
 								</li>
 							</ol>
 						</li>
@@ -1470,7 +1376,7 @@ const toggle_detail = (function() {
 								</tr>
 								<tr>
 									<th>Size</th>
-									<td>261.71 MB</td>
+									<td>39.56 MB</td>
 								</tr>
 							</tbody>
 						</table>
@@ -1592,7 +1498,7 @@ const toggle_detail = (function() {
 								</tr>
 								<tr>
 									<th>Size</th>
-									<td>137.07 MB</td>
+									<td>17.62 MB</td>
 								</tr>
 							</tbody>
 						</table>
@@ -1660,7 +1566,7 @@ const toggle_detail = (function() {
 								</tr>
 								<tr>
 									<th>Size</th>
-									<td>428.12 MB</td>
+									<td>61.60 MB</td>
 								</tr>
 							</tbody>
 						</table>
@@ -1806,7 +1712,7 @@ const toggle_detail = (function() {
 								</tr>
 								<tr>
 									<th>Size</th>
-									<td>439.32 MB</td>
+									<td>65.06 MB</td>
 								</tr>
 							</tbody>
 						</table>
@@ -1988,7 +1894,7 @@ const toggle_detail = (function() {
 								</tr>
 								<tr>
 									<th>Size</th>
-									<td>445.94 MB</td>
+									<td>62.34 MB</td>
 								</tr>
 							</tbody>
 						</table>
@@ -2098,6 +2004,110 @@ const toggle_detail = (function() {
 				</div>
 			</article>
 			<figure class="cover" onclick="toggle_detail(this)">
+				<img src="covers/Eric_Prydz-Pjanoo.jpg">
+			</figure>
+			<article class="detail">
+				<div>
+					<header>
+						<h2 class="album">Pjanoo</h2>
+						<div class="albumartist secondary">Eric Prydz</div>
+					</header>
+					<aside>
+						<figure class="artwork">
+							<img src="covers/Eric_Prydz-Pjanoo.jpg">
+						</figure>
+						<table class="properties secondary">
+							<tbody>
+								<tr>
+									<th>Year</th>
+									<td>2008</td>
+								</tr>
+								<tr>
+									<th>Genre</th>
+									<td>Electronic</td>
+								</tr>
+								<tr>
+									<th>Style</th>
+									<td>Tech House</td>
+								</tr>
+								<tr>
+									<th>Tracks</th>
+									<td>9</td>
+								</tr>
+								<tr>
+									<th>Duration</th>
+									<td>00:51:45</td>
+								</tr>
+								<tr>
+									<th>Size</th>
+									<td>55.06 MB</td>
+								</tr>
+							</tbody>
+						</table>
+					</aside>
+					<ol class="discs">
+						<li>
+							<ol class="tracks">
+								<li>
+									<div class="track numerical secondary">01</div>
+									<div class="title">Pjanoo (Radio Edit)</div>
+									<div class="artist secondary same">Eric Prydz</div>
+									<div class="duration numerical secondary">02:38</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">02</div>
+									<div class="title">Pjanoo (Club Mix)</div>
+									<div class="artist secondary same">Eric Prydz</div>
+									<div class="duration numerical secondary">07:31</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">03</div>
+									<div class="title">Pjanoo (Fred Falke Remix)</div>
+									<div class="artist secondary same">Eric Prydz</div>
+									<div class="duration numerical secondary">06:24</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">04</div>
+									<div class="title">Pjanoo (High Contrast Remix)</div>
+									<div class="artist secondary same">Eric Prydz</div>
+									<div class="duration numerical secondary">07:04</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">05</div>
+									<div class="title">Pjanoo (Afterlife Remix)</div>
+									<div class="artist secondary same">Eric Prydz</div>
+									<div class="duration numerical secondary">05:38</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">06</div>
+									<div class="title">Pjanoo (Guy J Remix)</div>
+									<div class="artist secondary same">Eric Prydz</div>
+									<div class="duration numerical secondary">07:43</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">07</div>
+									<div class="title">Pjanoo (Dana Bergquist And Peder G Remix)</div>
+									<div class="artist secondary same">Eric Prydz</div>
+									<div class="duration numerical secondary">09:04</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">08</div>
+									<div class="title">Pjanoo (Afterlife Radio Edit)</div>
+									<div class="artist secondary same">Eric Prydz</div>
+									<div class="duration numerical secondary">02:50</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">09</div>
+									<div class="title">Pjanoo (Video Edit)</div>
+									<div class="artist secondary same">Eric Prydz</div>
+									<div class="duration numerical secondary">02:53</div>
+								</li>
+							</ol>
+						</li>
+					</ol>
+				</div>
+			</article>
+			<figure class="cover" onclick="toggle_detail(this)">
 				<img src="covers/Hadouken!-Oxygen.jpg">
 			</figure>
 			<article class="detail">
@@ -2130,7 +2140,7 @@ const toggle_detail = (function() {
 								</tr>
 								<tr>
 									<th>Duration</th>
-									<td>00:35:01</td>
+									<td>00:34:57</td>
 								</tr>
 								<tr>
 									<th>Size</th>
@@ -2146,7 +2156,7 @@ const toggle_detail = (function() {
 									<div class="track numerical secondary">01</div>
 									<div class="title">Oxygen</div>
 									<div class="artist secondary same">Hadouken!</div>
-									<div class="duration numerical secondary">04:27</div>
+									<div class="duration numerical secondary">04:26</div>
 								</li>
 								<li>
 									<div class="track numerical secondary">02</div>
@@ -2164,7 +2174,7 @@ const toggle_detail = (function() {
 									<div class="track numerical secondary">04</div>
 									<div class="title">Oxygen (Gemini Remix)</div>
 									<div class="artist secondary same">Hadouken!</div>
-									<div class="duration numerical secondary">04:43</div>
+									<div class="duration numerical secondary">04:42</div>
 								</li>
 								<li>
 									<div class="track numerical secondary">05</div>
@@ -2176,13 +2186,13 @@ const toggle_detail = (function() {
 									<div class="track numerical secondary">06</div>
 									<div class="title">Oxygen (Slugz And Joe London Remix)</div>
 									<div class="artist secondary same">Hadouken!</div>
-									<div class="duration numerical secondary">06:03</div>
+									<div class="duration numerical secondary">06:02</div>
 								</li>
 								<li>
 									<div class="track numerical secondary">07</div>
 									<div class="title">Mecha Love (Nova Remix)</div>
 									<div class="artist secondary same">Hadouken!</div>
-									<div class="duration numerical secondary">06:43</div>
+									<div class="duration numerical secondary">06:42</div>
 								</li>
 							</ol>
 						</li>
@@ -2226,7 +2236,7 @@ const toggle_detail = (function() {
 								</tr>
 								<tr>
 									<th>Size</th>
-									<td>499.35 MB</td>
+									<td>76.41 MB</td>
 								</tr>
 							</tbody>
 						</table>
@@ -2384,7 +2394,7 @@ const toggle_detail = (function() {
 								</tr>
 								<tr>
 									<th>Size</th>
-									<td>945.27 MB</td>
+									<td>133.13 MB</td>
 								</tr>
 							</tbody>
 						</table>
@@ -2602,116 +2612,6 @@ const toggle_detail = (function() {
 				</div>
 			</article>
 			<figure class="cover" onclick="toggle_detail(this)">
-				<img src="covers/Pat_Benatar-Live_From_Earth.jpg">
-			</figure>
-			<article class="detail">
-				<div>
-					<header>
-						<h2 class="album">Live From Earth</h2>
-						<div class="albumartist secondary">Pat Benatar</div>
-					</header>
-					<aside>
-						<figure class="artwork">
-							<img src="covers/Pat_Benatar-Live_From_Earth.jpg">
-						</figure>
-						<table class="properties secondary">
-							<tbody>
-								<tr>
-									<th>Year</th>
-									<td>1983</td>
-								</tr>
-								<tr>
-									<th>Genre</th>
-									<td>Rock</td>
-								</tr>
-								<tr>
-									<th>Style</th>
-									<td>Pop Rock</td>
-								</tr>
-								<tr>
-									<th>Tracks</th>
-									<td>10</td>
-								</tr>
-								<tr>
-									<th>Duration</th>
-									<td>00:43:05</td>
-								</tr>
-								<tr>
-									<th>Size</th>
-									<td>269.94 MB</td>
-								</tr>
-							</tbody>
-						</table>
-					</aside>
-					<ol class="discs">
-						<li>
-							<ol class="tracks">
-								<li>
-									<div class="track numerical secondary">01</div>
-									<div class="title">Fire And Ice</div>
-									<div class="artist secondary same">Pat Benatar</div>
-									<div class="duration numerical secondary">03:48</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">02</div>
-									<div class="title">Looking For A Stranger</div>
-									<div class="artist secondary same">Pat Benatar</div>
-									<div class="duration numerical secondary">03:28</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">03</div>
-									<div class="title">I Want Out</div>
-									<div class="artist secondary same">Pat Benatar</div>
-									<div class="duration numerical secondary">04:05</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">04</div>
-									<div class="title">We Live For Love</div>
-									<div class="artist secondary same">Pat Benatar</div>
-									<div class="duration numerical secondary">03:41</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">05</div>
-									<div class="title">Hell Is For Children</div>
-									<div class="artist secondary same">Pat Benatar</div>
-									<div class="duration numerical secondary">06:05</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">06</div>
-									<div class="title">Hit Me With Your Best Shot</div>
-									<div class="artist secondary same">Pat Benatar</div>
-									<div class="duration numerical secondary">03:08</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">07</div>
-									<div class="title">Promises In The Dark</div>
-									<div class="artist secondary same">Pat Benatar</div>
-									<div class="duration numerical secondary">05:14</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">08</div>
-									<div class="title">Heartbreaker</div>
-									<div class="artist secondary same">Pat Benatar</div>
-									<div class="duration numerical secondary">04:20</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">09</div>
-									<div class="title">Love Is A Battlefield</div>
-									<div class="artist secondary same">Pat Benatar</div>
-									<div class="duration numerical secondary">05:25</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">10</div>
-									<div class="title">Lipstick Lies</div>
-									<div class="artist secondary same">Pat Benatar</div>
-									<div class="duration numerical secondary">03:51</div>
-								</li>
-							</ol>
-						</li>
-					</ol>
-				</div>
-			</article>
-			<figure class="cover" onclick="toggle_detail(this)">
 				<img src="covers/Röyksopp-Melody_A%2CM%2C.jpg">
 			</figure>
 			<article class="detail">
@@ -2748,7 +2648,7 @@ const toggle_detail = (function() {
 								</tr>
 								<tr>
 									<th>Size</th>
-									<td>345.78 MB</td>
+									<td>60.79 MB</td>
 								</tr>
 							</tbody>
 						</table>
@@ -2846,188 +2746,6 @@ const toggle_detail = (function() {
 				</div>
 			</article>
 			<figure class="cover" onclick="toggle_detail(this)">
-				<img src="covers/Skindred-Babylon.jpg">
-			</figure>
-			<article class="detail">
-				<div>
-					<header>
-						<h2 class="album">Babylon</h2>
-						<div class="albumartist secondary">Skindred</div>
-					</header>
-					<aside>
-						<figure class="artwork">
-							<img src="covers/Skindred-Babylon.jpg">
-						</figure>
-						<table class="properties secondary">
-							<tbody>
-								<tr>
-									<th>Year</th>
-									<td>2004</td>
-								</tr>
-								<tr>
-									<th>Genre</th>
-									<td>Reggae</td>
-								</tr>
-								<tr>
-									<th>Style</th>
-									<td>Dub</td>
-								</tr>
-								<tr>
-									<th>Tracks</th>
-									<td>21</td>
-								</tr>
-								<tr>
-									<th>Duration</th>
-									<td>00:57:52</td>
-								</tr>
-								<tr>
-									<th>Size</th>
-									<td>417.42 MB</td>
-								</tr>
-							</tbody>
-						</table>
-					</aside>
-					<ol class="discs">
-						<li>
-							<h3 class="disc">Disc 1</h3>
-							<ol class="tracks">
-								<li>
-									<div class="track numerical secondary">01</div>
-									<div class="title">Intro</div>
-									<div class="artist secondary same">Skindred</div>
-									<div class="duration numerical secondary">00:29</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">02</div>
-									<div class="title">Nobody</div>
-									<div class="artist secondary same">Skindred</div>
-									<div class="duration numerical secondary">03:56</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">03</div>
-									<div class="title">Pressure</div>
-									<div class="artist secondary same">Skindred</div>
-									<div class="duration numerical secondary">03:29</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">04</div>
-									<div class="title">Start First</div>
-									<div class="artist secondary same">Skindred</div>
-									<div class="duration numerical secondary">02:49</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">05</div>
-									<div class="title">Interlude 1</div>
-									<div class="artist secondary same">Skindred</div>
-									<div class="duration numerical secondary">00:17</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">06</div>
-									<div class="title">Selector</div>
-									<div class="artist secondary same">Skindred</div>
-									<div class="duration numerical secondary">02:24</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">07</div>
-									<div class="title">Bruises</div>
-									<div class="artist secondary same">Skindred</div>
-									<div class="duration numerical secondary">02:42</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">08</div>
-									<div class="title">We Want</div>
-									<div class="artist secondary same">Skindred</div>
-									<div class="duration numerical secondary">03:01</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">09</div>
-									<div class="title">Interlude 2</div>
-									<div class="artist secondary same">Skindred</div>
-									<div class="duration numerical secondary">00:28</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">10</div>
-									<div class="title">Set It Off</div>
-									<div class="artist secondary same">Skindred</div>
-									<div class="duration numerical secondary">03:04</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">11</div>
-									<div class="title">Firing The Love</div>
-									<div class="artist secondary same">Skindred</div>
-									<div class="duration numerical secondary">03:38</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">12</div>
-									<div class="title">Tears</div>
-									<div class="artist secondary same">Skindred</div>
-									<div class="duration numerical secondary">03:01</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">13</div>
-									<div class="title">World Domination</div>
-									<div class="artist secondary same">Skindred</div>
-									<div class="duration numerical secondary">02:24</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">14</div>
-									<div class="title">The Fear</div>
-									<div class="artist secondary same">Skindred</div>
-									<div class="duration numerical secondary">03:46</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">15</div>
-									<div class="title">Interlude 3</div>
-									<div class="artist secondary same">Skindred</div>
-									<div class="duration numerical secondary">00:26</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">16</div>
-									<div class="title">Babylon</div>
-									<div class="artist secondary same">Skindred</div>
-									<div class="duration numerical secondary">03:34</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">17</div>
-									<div class="title">The Beginning Of Sorrows</div>
-									<div class="artist secondary same">Skindred</div>
-									<div class="duration numerical secondary">03:51</div>
-								</li>
-							</ol>
-						</li>
-						<li>
-							<h3 class="disc">Disc 2</h3>
-							<ol class="tracks">
-								<li>
-									<div class="track numerical secondary">01</div>
-									<div class="title">Start First (Acoustic Version)</div>
-									<div class="artist secondary same">Skindred</div>
-									<div class="duration numerical secondary">03:07</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">02</div>
-									<div class="title">Pressure (Acoustic Version)</div>
-									<div class="artist secondary same">Skindred</div>
-									<div class="duration numerical secondary">03:52</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">03</div>
-									<div class="title">Set It Off (Acoustic Version)</div>
-									<div class="artist secondary same">Skindred</div>
-									<div class="duration numerical secondary">03:57</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">04</div>
-									<div class="title">Nobody (Acoustic Version)</div>
-									<div class="artist secondary same">Skindred</div>
-									<div class="duration numerical secondary">03:37</div>
-								</li>
-							</ol>
-						</li>
-					</ol>
-				</div>
-			</article>
-			<figure class="cover" onclick="toggle_detail(this)">
 				<img src="covers/STAR☆ANIS-Signalize!.jpg">
 			</figure>
 			<article class="detail">
@@ -3064,7 +2782,7 @@ const toggle_detail = (function() {
 								</tr>
 								<tr>
 									<th>Size</th>
-									<td>156.59 MB</td>
+									<td>18.17 MB</td>
 								</tr>
 							</tbody>
 						</table>
@@ -3138,7 +2856,7 @@ const toggle_detail = (function() {
 								</tr>
 								<tr>
 									<th>Size</th>
-									<td>192.97 MB</td>
+									<td>24.18 MB</td>
 								</tr>
 							</tbody>
 						</table>
@@ -3188,6 +2906,92 @@ const toggle_detail = (function() {
 				</div>
 			</article>
 			<figure class="cover" onclick="toggle_detail(this)">
+				<img src="covers/STAR☆ANIS-Third_Action!.jpg">
+			</figure>
+			<article class="detail">
+				<div>
+					<header>
+						<h2 class="album">Third Action!</h2>
+						<div class="albumartist secondary">STAR☆ANIS</div>
+					</header>
+					<aside>
+						<figure class="artwork">
+							<img src="covers/STAR☆ANIS-Third_Action!.jpg">
+						</figure>
+						<table class="properties secondary">
+							<tbody>
+								<tr>
+									<th>Year</th>
+									<td>2013/02/27</td>
+								</tr>
+								<tr>
+									<th>Genre</th>
+									<td>Pop</td>
+								</tr>
+								<tr>
+									<th>Style</th>
+									<td>Anime</td>
+								</tr>
+								<tr>
+									<th>Tracks</th>
+									<td>6</td>
+								</tr>
+								<tr>
+									<th>Duration</th>
+									<td>00:31:22</td>
+								</tr>
+								<tr>
+									<th>Size</th>
+									<td>30.30 MB</td>
+								</tr>
+							</tbody>
+						</table>
+					</aside>
+					<ol class="discs">
+						<li>
+							<ol class="tracks">
+								<li>
+									<div class="track numerical secondary">01</div>
+									<div class="title">真夜中のスカイハイ</div>
+									<div class="artist secondary different">りすこ from STAR☆ANIS</div>
+									<div class="duration numerical secondary">04:04</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">02</div>
+									<div class="title">Thrilling Dream</div>
+									<div class="artist secondary different">すなお・りすこ from STAR☆ANIS</div>
+									<div class="duration numerical secondary">05:13</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">03</div>
+									<div class="title">硝子ドール</div>
+									<div class="artist secondary different">もえ・すなお from STAR☆ANIS</div>
+									<div class="duration numerical secondary">06:25</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">04</div>
+									<div class="title">真夜中のスカイハイ OFF VOCAL</div>
+									<div class="artist secondary different">田中秀和 (MONACA)</div>
+									<div class="duration numerical secondary">04:04</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">05</div>
+									<div class="title">Thrilling Dream OFF VOCAL</div>
+									<div class="artist secondary different">石濱翔 (MONACA)</div>
+									<div class="duration numerical secondary">05:13</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">06</div>
+									<div class="title">硝子ドール OFF VOCAL</div>
+									<div class="artist secondary different">帆足圭吾 (MONACA)</div>
+									<div class="duration numerical secondary">06:23</div>
+								</li>
+							</ol>
+						</li>
+					</ol>
+				</div>
+			</article>
+			<figure class="cover" onclick="toggle_detail(this)">
 				<img src="covers/STAR☆ANIS-COOL_MODE.jpg">
 			</figure>
 			<article class="detail">
@@ -3224,7 +3028,7 @@ const toggle_detail = (function() {
 								</tr>
 								<tr>
 									<th>Size</th>
-									<td>193.60 MB</td>
+									<td>24.73 MB</td>
 								</tr>
 							</tbody>
 						</table>
@@ -3310,7 +3114,7 @@ const toggle_detail = (function() {
 								</tr>
 								<tr>
 									<th>Size</th>
-									<td>115.24 MB</td>
+									<td>14.74 MB</td>
 								</tr>
 							</tbody>
 						</table>
@@ -3342,23 +3146,23 @@ const toggle_detail = (function() {
 				</div>
 			</article>
 			<figure class="cover" onclick="toggle_detail(this)">
-				<img src="covers/Stevie_Nicks-Timespace-_The_Best_Of_Stevie_Nicks.jpg">
+				<img src="covers/The_Alan_Parsons_Project-The_Turn_Of_A_Friendly_Card_(Deluxe_Anniversary_Edition).jpg">
 			</figure>
 			<article class="detail">
 				<div>
 					<header>
-						<h2 class="album">Timespace: The Best Of Stevie Nicks</h2>
-						<div class="albumartist secondary">Stevie Nicks</div>
+						<h2 class="album">The Turn Of A Friendly Card (Deluxe Anniversary Edition)</h2>
+						<div class="albumartist secondary">The Alan Parsons Project</div>
 					</header>
 					<aside>
 						<figure class="artwork">
-							<img src="covers/Stevie_Nicks-Timespace-_The_Best_Of_Stevie_Nicks.jpg">
+							<img src="covers/The_Alan_Parsons_Project-The_Turn_Of_A_Friendly_Card_(Deluxe_Anniversary_Edition).jpg">
 						</figure>
 						<table class="properties secondary">
 							<tbody>
 								<tr>
 									<th>Year</th>
-									<td>1991</td>
+									<td>2015</td>
 								</tr>
 								<tr>
 									<th>Genre</th>
@@ -3366,109 +3170,253 @@ const toggle_detail = (function() {
 								</tr>
 								<tr>
 									<th>Style</th>
-									<td>Pop Rock</td>
+									<td>Progressive Rock</td>
 								</tr>
 								<tr>
 									<th>Tracks</th>
-									<td>14</td>
+									<td>37</td>
 								</tr>
 								<tr>
 									<th>Duration</th>
-									<td>01:06:20</td>
+									<td>02:14:41</td>
 								</tr>
 								<tr>
 									<th>Size</th>
-									<td>448.64 MB</td>
+									<td>134.81 MB</td>
 								</tr>
 							</tbody>
 						</table>
 					</aside>
 					<ol class="discs">
 						<li>
+							<h3 class="disc">Disc 1</h3>
 							<ol class="tracks">
 								<li>
 									<div class="track numerical secondary">01</div>
-									<div class="title">Sometimes It's A Bitch</div>
-									<div class="artist secondary same">Stevie Nicks</div>
-									<div class="duration numerical secondary">04:39</div>
+									<div class="title">May Be A Price To Pay</div>
+									<div class="artist secondary same">The Alan Parsons Project</div>
+									<div class="duration numerical secondary">05:00</div>
 								</li>
 								<li>
 									<div class="track numerical secondary">02</div>
-									<div class="title">Stop Draggin' My Heart Around</div>
-									<div class="artist secondary same">Stevie Nicks</div>
-									<div class="duration numerical secondary">04:05</div>
+									<div class="title">Games People Play</div>
+									<div class="artist secondary same">The Alan Parsons Project</div>
+									<div class="duration numerical secondary">04:26</div>
 								</li>
 								<li>
 									<div class="track numerical secondary">03</div>
-									<div class="title">Whole Lotta Trouble</div>
-									<div class="artist secondary same">Stevie Nicks</div>
-									<div class="duration numerical secondary">04:32</div>
+									<div class="title">Time</div>
+									<div class="artist secondary same">The Alan Parsons Project</div>
+									<div class="duration numerical secondary">05:15</div>
 								</li>
 								<li>
 									<div class="track numerical secondary">04</div>
-									<div class="title">Talk To Me</div>
-									<div class="artist secondary same">Stevie Nicks</div>
-									<div class="duration numerical secondary">04:12</div>
+									<div class="title">I Don't Wanna Go Home</div>
+									<div class="artist secondary same">The Alan Parsons Project</div>
+									<div class="duration numerical secondary">04:52</div>
 								</li>
 								<li>
 									<div class="track numerical secondary">05</div>
-									<div class="title">Stand Back</div>
-									<div class="artist secondary same">Stevie Nicks</div>
-									<div class="duration numerical secondary">04:57</div>
+									<div class="title">The Gold Bug</div>
+									<div class="artist secondary same">The Alan Parsons Project</div>
+									<div class="duration numerical secondary">04:35</div>
 								</li>
 								<li>
 									<div class="track numerical secondary">06</div>
-									<div class="title">Beauty And The Beast</div>
-									<div class="artist secondary same">Stevie Nicks</div>
-									<div class="duration numerical secondary">06:05</div>
+									<div class="title">The Turn Of A Friendly Card, Pt. 1</div>
+									<div class="artist secondary same">The Alan Parsons Project</div>
+									<div class="duration numerical secondary">02:44</div>
 								</li>
 								<li>
 									<div class="track numerical secondary">07</div>
-									<div class="title">If Anyone Falls</div>
-									<div class="artist secondary same">Stevie Nicks</div>
-									<div class="duration numerical secondary">04:09</div>
+									<div class="title">Snake Eyes</div>
+									<div class="artist secondary same">The Alan Parsons Project</div>
+									<div class="duration numerical secondary">03:15</div>
 								</li>
 								<li>
 									<div class="track numerical secondary">08</div>
-									<div class="title">Rooms On Fire</div>
-									<div class="artist secondary same">Stevie Nicks</div>
-									<div class="duration numerical secondary">04:40</div>
+									<div class="title">The Ace Of Swords</div>
+									<div class="artist secondary same">The Alan Parsons Project</div>
+									<div class="duration numerical secondary">02:58</div>
 								</li>
 								<li>
 									<div class="track numerical secondary">09</div>
-									<div class="title">Love's A Hard Game To Play</div>
-									<div class="artist secondary same">Stevie Nicks</div>
-									<div class="duration numerical secondary">05:04</div>
+									<div class="title">Nothing Left To Lose</div>
+									<div class="artist secondary same">The Alan Parsons Project</div>
+									<div class="duration numerical secondary">04:07</div>
 								</li>
 								<li>
 									<div class="track numerical secondary">10</div>
-									<div class="title">Edge Of Seventeen</div>
-									<div class="artist secondary same">Stevie Nicks</div>
-									<div class="duration numerical secondary">05:28</div>
+									<div class="title">The Turn Of A Friendly Card, Pt. 2</div>
+									<div class="artist secondary same">The Alan Parsons Project</div>
+									<div class="duration numerical secondary">03:32</div>
 								</li>
 								<li>
 									<div class="track numerical secondary">11</div>
-									<div class="title">Leather And Lace</div>
-									<div class="artist secondary different">Stevie Nicks, Don Henley</div>
-									<div class="duration numerical secondary">03:49</div>
+									<div class="title">May Be A Price To Pay (Intro - Demo)</div>
+									<div class="artist secondary same">The Alan Parsons Project</div>
+									<div class="duration numerical secondary">01:32</div>
 								</li>
 								<li>
 									<div class="track numerical secondary">12</div>
-									<div class="title">I Can't Wait</div>
-									<div class="artist secondary same">Stevie Nicks</div>
-									<div class="duration numerical secondary">04:38</div>
+									<div class="title">Nothing Left To Lose (Basic Backing Track)</div>
+									<div class="artist secondary same">The Alan Parsons Project</div>
+									<div class="duration numerical secondary">04:36</div>
 								</li>
 								<li>
 									<div class="track numerical secondary">13</div>
-									<div class="title">Has Anyone Ever Written Anything For You</div>
-									<div class="artist secondary same">Stevie Nicks</div>
-									<div class="duration numerical secondary">04:40</div>
+									<div class="title">Nothing Left To Lose (Chris Rainbow Overdub Vocal Compilation)</div>
+									<div class="artist secondary same">The Alan Parsons Project</div>
+									<div class="duration numerical secondary">02:02</div>
 								</li>
 								<li>
 									<div class="track numerical secondary">14</div>
-									<div class="title">Desert Angel</div>
-									<div class="artist secondary same">Stevie Nicks</div>
-									<div class="duration numerical secondary">05:22</div>
+									<div class="title">Nothing Left To Lose (Early Studio Version With Eric's Guide Vocal)</div>
+									<div class="artist secondary same">The Alan Parsons Project</div>
+									<div class="duration numerical secondary">03:12</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">15</div>
+									<div class="title">Time (Early Studio Attempt)</div>
+									<div class="artist secondary same">The Alan Parsons Project</div>
+									<div class="duration numerical secondary">04:43</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">16</div>
+									<div class="title">Games People Play (Rough Mix)</div>
+									<div class="artist secondary same">The Alan Parsons Project</div>
+									<div class="duration numerical secondary">04:33</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">17</div>
+									<div class="title">The Gold Bug (Demo)</div>
+									<div class="artist secondary same">The Alan Parsons Project</div>
+									<div class="duration numerical secondary">02:50</div>
+								</li>
+							</ol>
+						</li>
+						<li>
+							<h3 class="disc">Disc 2</h3>
+							<ol class="tracks">
+								<li>
+									<div class="track numerical secondary">01</div>
+									<div class="title">May Be A Price To Pay (Eric's Songwriting Diary)</div>
+									<div class="artist secondary same">The Alan Parsons Project</div>
+									<div class="duration numerical secondary">03:26</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">02</div>
+									<div class="title">Games People Play (Eric's Songwriting Diary)</div>
+									<div class="artist secondary same">The Alan Parsons Project</div>
+									<div class="duration numerical secondary">03:06</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">03</div>
+									<div class="title">Time (Eric's Songwriting Diary)</div>
+									<div class="artist secondary same">The Alan Parsons Project</div>
+									<div class="duration numerical secondary">04:07</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">04</div>
+									<div class="title">I Don't Wanna Go Home (Eric's Songwriting Diary)</div>
+									<div class="artist secondary same">The Alan Parsons Project</div>
+									<div class="duration numerical secondary">02:13</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">05</div>
+									<div class="title">The Turn Of A Friendly Card (Eric's Songwriting Diary)</div>
+									<div class="artist secondary same">The Alan Parsons Project</div>
+									<div class="duration numerical secondary">03:19</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">06</div>
+									<div class="title">Snake Eyes (Eric's Songwriting Diary)</div>
+									<div class="artist secondary same">The Alan Parsons Project</div>
+									<div class="duration numerical secondary">03:14</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">07</div>
+									<div class="title">Nothing Left To Lose (Eric's Songwriting Diary)</div>
+									<div class="artist secondary same">The Alan Parsons Project</div>
+									<div class="duration numerical secondary">02:46</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">08</div>
+									<div class="title">TOFC / Snake Eyes / I Don't Wanna Go Home (Eric's Songwriting Diary)</div>
+									<div class="artist secondary same">The Alan Parsons Project</div>
+									<div class="duration numerical secondary">04:33</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">09</div>
+									<div class="title">May Be A Price To Pay (Early Version, Eric Guide Vocals &amp; Unused Guitar Solo)</div>
+									<div class="artist secondary same">The Alan Parsons Project</div>
+									<div class="duration numerical secondary">05:03</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">10</div>
+									<div class="title">Games People Play (Early Version, Eric Guide Vocal)</div>
+									<div class="artist secondary same">The Alan Parsons Project</div>
+									<div class="duration numerical secondary">04:33</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">11</div>
+									<div class="title">Time (Orchestra &amp; Chris Rainbow Backing Vocals)</div>
+									<div class="artist secondary same">The Alan Parsons Project</div>
+									<div class="duration numerical secondary">04:19</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">12</div>
+									<div class="title">The Gold Bug (Early Reference Version)</div>
+									<div class="artist secondary same">The Alan Parsons Project</div>
+									<div class="duration numerical secondary">05:09</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">13</div>
+									<div class="title">The Turn Of A Friendly Card, Pt. 1 (Early Backing Track)</div>
+									<div class="artist secondary same">The Alan Parsons Project</div>
+									<div class="duration numerical secondary">02:19</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">14</div>
+									<div class="title">Snake Eyes (Early Version, Eric Guide Vocal)</div>
+									<div class="artist secondary same">The Alan Parsons Project</div>
+									<div class="duration numerical secondary">03:21</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">15</div>
+									<div class="title">The Ace Of Swords (Early Version With Synch &quot;Orchestration&quot;)</div>
+									<div class="artist secondary same">The Alan Parsons Project</div>
+									<div class="duration numerical secondary">03:03</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">16</div>
+									<div class="title">The Ace Of Swords (Early Version With Piano On Melody)</div>
+									<div class="artist secondary same">The Alan Parsons Project</div>
+									<div class="duration numerical secondary">02:40</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">17</div>
+									<div class="title">The Turn Of A Friendly Card, Pt. 2 (Eric Guide Vocal And Extended Guitar Solo)</div>
+									<div class="artist secondary same">The Alan Parsons Project</div>
+									<div class="duration numerical secondary">03:32</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">18</div>
+									<div class="title">Games People Play (Single Edit)</div>
+									<div class="artist secondary same">The Alan Parsons Project</div>
+									<div class="duration numerical secondary">03:35</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">19</div>
+									<div class="title">The Turn Of A Friendly Card (Single Edit)</div>
+									<div class="artist secondary same">The Alan Parsons Project</div>
+									<div class="duration numerical secondary">03:45</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">20</div>
+									<div class="title">Snake Eyes (Single Edit)</div>
+									<div class="artist secondary same">The Alan Parsons Project</div>
+									<div class="duration numerical secondary">02:26</div>
 								</li>
 							</ol>
 						</li>
@@ -3512,7 +3460,7 @@ const toggle_detail = (function() {
 								</tr>
 								<tr>
 									<th>Size</th>
-									<td>428.26 MB</td>
+									<td>66.92 MB</td>
 								</tr>
 							</tbody>
 						</table>
@@ -3610,116 +3558,6 @@ const toggle_detail = (function() {
 				</div>
 			</article>
 			<figure class="cover" onclick="toggle_detail(this)">
-				<img src="covers/The_Chemical_Brothers-Come_With_Us.jpg">
-			</figure>
-			<article class="detail">
-				<div>
-					<header>
-						<h2 class="album">Come With Us</h2>
-						<div class="albumartist secondary">The Chemical Brothers</div>
-					</header>
-					<aside>
-						<figure class="artwork">
-							<img src="covers/The_Chemical_Brothers-Come_With_Us.jpg">
-						</figure>
-						<table class="properties secondary">
-							<tbody>
-								<tr>
-									<th>Year</th>
-									<td>2002</td>
-								</tr>
-								<tr>
-									<th>Genre</th>
-									<td>Electronic</td>
-								</tr>
-								<tr>
-									<th>Style</th>
-									<td>Techno</td>
-								</tr>
-								<tr>
-									<th>Tracks</th>
-									<td>10</td>
-								</tr>
-								<tr>
-									<th>Duration</th>
-									<td>00:54:48</td>
-								</tr>
-								<tr>
-									<th>Size</th>
-									<td>370.18 MB</td>
-								</tr>
-							</tbody>
-						</table>
-					</aside>
-					<ol class="discs">
-						<li>
-							<ol class="tracks">
-								<li>
-									<div class="track numerical secondary">01</div>
-									<div class="title">Come With Us</div>
-									<div class="artist secondary same">The Chemical Brothers</div>
-									<div class="duration numerical secondary">04:58</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">02</div>
-									<div class="title">It Began In Afrika</div>
-									<div class="artist secondary same">The Chemical Brothers</div>
-									<div class="duration numerical secondary">06:16</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">03</div>
-									<div class="title">Galaxy Bounce</div>
-									<div class="artist secondary same">The Chemical Brothers</div>
-									<div class="duration numerical secondary">03:28</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">04</div>
-									<div class="title">Star Guitar</div>
-									<div class="artist secondary same">The Chemical Brothers</div>
-									<div class="duration numerical secondary">06:27</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">05</div>
-									<div class="title">Hoops</div>
-									<div class="artist secondary same">The Chemical Brothers</div>
-									<div class="duration numerical secondary">06:32</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">06</div>
-									<div class="title">My Elastic Eye</div>
-									<div class="artist secondary same">The Chemical Brothers</div>
-									<div class="duration numerical secondary">03:42</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">07</div>
-									<div class="title">The State We're In</div>
-									<div class="artist secondary same">The Chemical Brothers</div>
-									<div class="duration numerical secondary">06:27</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">08</div>
-									<div class="title">Denmark</div>
-									<div class="artist secondary same">The Chemical Brothers</div>
-									<div class="duration numerical secondary">05:07</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">09</div>
-									<div class="title">Pioneer Skies</div>
-									<div class="artist secondary same">The Chemical Brothers</div>
-									<div class="duration numerical secondary">04:05</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">10</div>
-									<div class="title">The Test</div>
-									<div class="artist secondary same">The Chemical Brothers</div>
-									<div class="duration numerical secondary">07:46</div>
-								</li>
-							</ol>
-						</li>
-					</ol>
-				</div>
-			</article>
-			<figure class="cover" onclick="toggle_detail(this)">
 				<img src="covers/The_Offspring-Ixnay_On_The_Hombre.jpg">
 			</figure>
 			<article class="detail">
@@ -3756,7 +3594,7 @@ const toggle_detail = (function() {
 								</tr>
 								<tr>
 									<th>Size</th>
-									<td>304.23 MB</td>
+									<td>40.91 MB</td>
 								</tr>
 							</tbody>
 						</table>
@@ -3890,7 +3728,7 @@ const toggle_detail = (function() {
 								</tr>
 								<tr>
 									<th>Size</th>
-									<td>496.77 MB</td>
+									<td>71.84 MB</td>
 								</tr>
 							</tbody>
 						</table>
@@ -4128,7 +3966,7 @@ const toggle_detail = (function() {
 								</tr>
 								<tr>
 									<th>Size</th>
-									<td>575.04 MB</td>
+									<td>69.58 MB</td>
 								</tr>
 							</tbody>
 						</table>
@@ -4256,7 +4094,7 @@ const toggle_detail = (function() {
 								</tr>
 								<tr>
 									<th>Size</th>
-									<td>1.11 GB</td>
+									<td>173.67 MB</td>
 								</tr>
 							</tbody>
 						</table>
@@ -4503,7 +4341,7 @@ const toggle_detail = (function() {
 								</tr>
 								<tr>
 									<th>Size</th>
-									<td>420.97 MB</td>
+									<td>62.63 MB</td>
 								</tr>
 							</tbody>
 						</table>
@@ -4643,7 +4481,7 @@ const toggle_detail = (function() {
 								</tr>
 								<tr>
 									<th>Size</th>
-									<td>532.36 MB</td>
+									<td>76.31 MB</td>
 								</tr>
 							</tbody>
 						</table>
@@ -4765,7 +4603,7 @@ const toggle_detail = (function() {
 								</tr>
 								<tr>
 									<th>Size</th>
-									<td>404.71 MB</td>
+									<td>58.75 MB</td>
 								</tr>
 							</tbody>
 						</table>
@@ -4913,7 +4751,7 @@ const toggle_detail = (function() {
 								</tr>
 								<tr>
 									<th>Duration</th>
-									<td>00:45:34</td>
+									<td>00:45:32</td>
 								</tr>
 								<tr>
 									<th>Size</th>
@@ -4941,7 +4779,7 @@ const toggle_detail = (function() {
 									<div class="track numerical secondary">03</div>
 									<div class="title">Legend of Mermaid</div>
 									<div class="artist secondary different">中田あすみ, 寺門仁美, 浅野まゆみ</div>
-									<div class="duration numerical secondary">04:36</div>
+									<div class="duration numerical secondary">04:35</div>
 								</li>
 								<li>
 									<div class="track numerical secondary">04</div>
@@ -4977,7 +4815,7 @@ const toggle_detail = (function() {
 									<div class="track numerical secondary">09</div>
 									<div class="title">黒の協奏曲〜concerto〜</div>
 									<div class="artist secondary different">土屋実紀・下屋則子（シェシェ・ミミ）</div>
-									<div class="duration numerical secondary">04:30</div>
+									<div class="duration numerical secondary">04:29</div>
 								</li>
 								<li>
 									<div class="track numerical secondary">10</div>
@@ -5039,7 +4877,7 @@ const toggle_detail = (function() {
 								</tr>
 								<tr>
 									<th>Size</th>
-									<td>335.90 MB</td>
+									<td>48.56 MB</td>
 								</tr>
 							</tbody>
 						</table>
@@ -5179,7 +5017,7 @@ const toggle_detail = (function() {
 								</tr>
 								<tr>
 									<th>Size</th>
-									<td>344.69 MB</td>
+									<td>51.42 MB</td>
 								</tr>
 							</tbody>
 						</table>
@@ -5325,7 +5163,7 @@ const toggle_detail = (function() {
 								</tr>
 								<tr>
 									<th>Size</th>
-									<td>194.68 MB</td>
+									<td>33.83 MB</td>
 								</tr>
 							</tbody>
 						</table>
@@ -5465,7 +5303,7 @@ const toggle_detail = (function() {
 								</tr>
 								<tr>
 									<th>Size</th>
-									<td>350.06 MB</td>
+									<td>52.75 MB</td>
 								</tr>
 							</tbody>
 						</table>
@@ -5607,7 +5445,7 @@ const toggle_detail = (function() {
 								</tr>
 								<tr>
 									<th>Duration</th>
-									<td>00:48:21</td>
+									<td>00:48:18</td>
 								</tr>
 								<tr>
 									<th>Size</th>
@@ -5647,7 +5485,7 @@ const toggle_detail = (function() {
 									<div class="track numerical secondary">05</div>
 									<div class="title">夢のその先へ（波音ソロバージョン）</div>
 									<div class="artist secondary different">寺門仁美（宝生波音）</div>
-									<div class="duration numerical secondary">04:50</div>
+									<div class="duration numerical secondary">04:49</div>
 								</li>
 								<li>
 									<div class="track numerical secondary">06</div>
@@ -5659,7 +5497,7 @@ const toggle_detail = (function() {
 									<div class="track numerical secondary">07</div>
 									<div class="title">Return to the Sea</div>
 									<div class="artist secondary different">植田佳奈（沙羅）</div>
-									<div class="duration numerical secondary">05:33</div>
+									<div class="duration numerical secondary">05:32</div>
 								</li>
 								<li>
 									<div class="track numerical secondary">08</div>
@@ -5671,7 +5509,7 @@ const toggle_detail = (function() {
 									<div class="track numerical secondary">09</div>
 									<div class="title">KIZUNA（リナソロバージョン）</div>
 									<div class="artist secondary different">浅野まゆみ（洞院リナ）</div>
-									<div class="duration numerical secondary">04:38</div>
+									<div class="duration numerical secondary">04:37</div>
 								</li>
 								<li>
 									<div class="track numerical secondary">10</div>
@@ -5727,7 +5565,7 @@ const toggle_detail = (function() {
 								</tr>
 								<tr>
 									<th>Size</th>
-									<td>287.40 MB</td>
+									<td>42.08 MB</td>
 								</tr>
 							</tbody>
 						</table>
@@ -5849,7 +5687,7 @@ const toggle_detail = (function() {
 								</tr>
 								<tr>
 									<th>Size</th>
-									<td>406.94 MB</td>
+									<td>64.07 MB</td>
 								</tr>
 							</tbody>
 						</table>
@@ -5923,134 +5761,6 @@ const toggle_detail = (function() {
 				</div>
 			</article>
 			<figure class="cover" onclick="toggle_detail(this)">
-				<img src="covers/Various_Artists-Super_Hatsune_Beat_Vol%2C_1.jpg">
-			</figure>
-			<article class="detail">
-				<div>
-					<header>
-						<h2 class="album">Super Hatsune Beat Vol. 1</h2>
-						<div class="albumartist secondary">Various Artists</div>
-					</header>
-					<aside>
-						<figure class="artwork">
-							<img src="covers/Various_Artists-Super_Hatsune_Beat_Vol%2C_1.jpg">
-						</figure>
-						<table class="properties secondary">
-							<tbody>
-								<tr>
-									<th>Year</th>
-									<td>2012</td>
-								</tr>
-								<tr>
-									<th>Genre</th>
-									<td>Electronic</td>
-								</tr>
-								<tr>
-									<th>Style</th>
-									<td>Vocaloid</td>
-								</tr>
-								<tr>
-									<th>Tracks</th>
-									<td>13</td>
-								</tr>
-								<tr>
-									<th>Duration</th>
-									<td>00:39:17</td>
-								</tr>
-								<tr>
-									<th>Size</th>
-									<td>321.40 MB</td>
-								</tr>
-							</tbody>
-						</table>
-					</aside>
-					<ol class="discs">
-						<li>
-							<ol class="tracks">
-								<li>
-									<div class="track numerical secondary">01</div>
-									<div class="title">恋スルVOC@LOID (ゆうゆP Euro Arrange)</div>
-									<div class="artist secondary different">初音ミク</div>
-									<div class="duration numerical secondary">01:43</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">02</div>
-									<div class="title">White Letter (ゆうゆP Euro Arrange)</div>
-									<div class="artist secondary different">初音ミク</div>
-									<div class="duration numerical secondary">01:45</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">03</div>
-									<div class="title">なぜか変換できない (ゆうゆP Euro Arrange)</div>
-									<div class="artist secondary different">初音ミク</div>
-									<div class="duration numerical secondary">01:13</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">04</div>
-									<div class="title">えれくとりっく・えんじぇぅ (ゆうゆP Euro Arrange)</div>
-									<div class="artist secondary different">初音ミク</div>
-									<div class="duration numerical secondary">01:14</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">05</div>
-									<div class="title">タイムリミット (ゆうゆP Euro Arrange)</div>
-									<div class="artist secondary different">初音ミク</div>
-									<div class="duration numerical secondary">02:02</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">06</div>
-									<div class="title">みくみくにしてあげる♪【してやんよ】 (ゆうゆP Euro Arrange)</div>
-									<div class="artist secondary different">初音ミク</div>
-									<div class="duration numerical secondary">01:45</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">07</div>
-									<div class="title">クローバー♣クラブ (ゆうゆP Euro Arrange)</div>
-									<div class="artist secondary different">初音ミク</div>
-									<div class="duration numerical secondary">04:15</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">08</div>
-									<div class="title">エレクトリック・ラブ (ゆうゆP Euro Arrange)</div>
-									<div class="artist secondary different">初音ミク</div>
-									<div class="duration numerical secondary">03:57</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">09</div>
-									<div class="title">ダブルラリアット (ゆうゆP Euro Arrange)</div>
-									<div class="artist secondary different">巡音ルカ</div>
-									<div class="duration numerical secondary">03:37</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">10</div>
-									<div class="title">ぽっぴっぽー (ねぎぶえP Euro Arrange)</div>
-									<div class="artist secondary different">初音ミク</div>
-									<div class="duration numerical secondary">05:27</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">11</div>
-									<div class="title">崩壊歌姫 -disruptive diva- (ねぎぶえP Euro Arrange)</div>
-									<div class="artist secondary different">初音ミク</div>
-									<div class="duration numerical secondary">04:27</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">12</div>
-									<div class="title">深海少女 (SCP Euro Arrange)</div>
-									<div class="artist secondary different">初音ミク</div>
-									<div class="duration numerical secondary">03:52</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">13</div>
-									<div class="title">ルカルカ★ナイトフィーバー</div>
-									<div class="artist secondary different">巡音ルカ</div>
-									<div class="duration numerical secondary">04:00</div>
-								</li>
-							</ol>
-						</li>
-					</ol>
-				</div>
-			</article>
-			<figure class="cover" onclick="toggle_detail(this)">
 				<img src="covers/Various_Artists-The_Greatest_Switch_Box.jpg">
 			</figure>
 			<article class="detail">
@@ -6087,7 +5797,7 @@ const toggle_detail = (function() {
 								</tr>
 								<tr>
 									<th>Size</th>
-									<td>7.46 GB</td>
+									<td>1.06 GB</td>
 								</tr>
 							</tbody>
 						</table>
@@ -7420,6 +7130,164 @@ const toggle_detail = (function() {
 				</div>
 			</article>
 			<figure class="cover" onclick="toggle_detail(this)">
+				<img src="covers/Various_Artists-魔法少女まどか☆マギカ_Ultimate_Best.jpg">
+			</figure>
+			<article class="detail">
+				<div>
+					<header>
+						<h2 class="album">魔法少女まどか☆マギカ Ultimate Best</h2>
+						<div class="albumartist secondary">Various Artists</div>
+					</header>
+					<aside>
+						<figure class="artwork">
+							<img src="covers/Various_Artists-魔法少女まどか☆マギカ_Ultimate_Best.jpg">
+						</figure>
+						<table class="properties secondary">
+							<tbody>
+								<tr>
+									<th>Year</th>
+									<td>2017</td>
+								</tr>
+								<tr>
+									<th>Genre</th>
+									<td>Soundtrack</td>
+								</tr>
+								<tr>
+									<th>Style</th>
+									<td>Anime</td>
+								</tr>
+								<tr>
+									<th>Tracks</th>
+									<td>18</td>
+								</tr>
+								<tr>
+									<th>Duration</th>
+									<td>01:04:17</td>
+								</tr>
+								<tr>
+									<th>Size</th>
+									<td>61.67 MB</td>
+								</tr>
+							</tbody>
+						</table>
+					</aside>
+					<ol class="discs">
+						<li>
+							<ol class="tracks">
+								<li>
+									<div class="track numerical secondary">01</div>
+									<div class="title">コネクト</div>
+									<div class="artist secondary different">ClariS</div>
+									<div class="duration numerical secondary">04:30</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">02</div>
+									<div class="title">また あした</div>
+									<div class="artist secondary different">鹿目まどか (CV：悠木碧)</div>
+									<div class="duration numerical secondary">04:24</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">03</div>
+									<div class="title">Credens justitiam</div>
+									<div class="artist secondary different">梶浦由記</div>
+									<div class="duration numerical secondary">01:56</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">04</div>
+									<div class="title">Sis puella magica!</div>
+									<div class="artist secondary different">梶浦由記</div>
+									<div class="duration numerical secondary">02:49</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">05</div>
+									<div class="title">and I'm home</div>
+									<div class="artist secondary different">美樹さやか (CV：喜多村英梨), 佐倉杏子 (CV：野中藍)</div>
+									<div class="duration numerical secondary">02:50</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">06</div>
+									<div class="title">Magia</div>
+									<div class="artist secondary different">Kalafina</div>
+									<div class="duration numerical secondary">05:14</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">07</div>
+									<div class="title">ルミナス</div>
+									<div class="artist secondary different">ClariS</div>
+									<div class="duration numerical secondary">04:10</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">08</div>
+									<div class="title">she is a witch</div>
+									<div class="artist secondary different">梶浦由記</div>
+									<div class="duration numerical secondary">01:41</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">09</div>
+									<div class="title">ひかりふる</div>
+									<div class="artist secondary different">Kalafina</div>
+									<div class="duration numerical secondary">04:54</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">10</div>
+									<div class="title">naturally</div>
+									<div class="artist secondary different">鹿目まどか (CV：悠木碧), 美樹さやか (CV：喜多村英梨)</div>
+									<div class="duration numerical secondary">04:29</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">11</div>
+									<div class="title">あこがれ咲いた</div>
+									<div class="artist secondary different">鹿目まどか (CV：悠木碧)</div>
+									<div class="duration numerical secondary">03:52</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">12</div>
+									<div class="title">Mebius Ash</div>
+									<div class="artist secondary different">暁美ほむら (CV：斎藤千和)</div>
+									<div class="duration numerical secondary">04:03</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">13</div>
+									<div class="title">ユメおと</div>
+									<div class="artist secondary different">鹿目まどか (CV：悠木碧), 暁美ほむら (CV：斎藤千和)</div>
+									<div class="duration numerical secondary">03:57</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">14</div>
+									<div class="title">Stairs</div>
+									<div class="artist secondary different">巴マミ (CV：水橋かおり), 佐倉杏子 (CV：野中藍)</div>
+									<div class="duration numerical secondary">03:51</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">15</div>
+									<div class="title">まだダメよ</div>
+									<div class="artist secondary different">ASUKA（結城アイラ）</div>
+									<div class="duration numerical secondary">00:57</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">16</div>
+									<div class="title">Noi!</div>
+									<div class="artist secondary different">梶浦由記</div>
+									<div class="duration numerical secondary">01:00</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">17</div>
+									<div class="title">カラフル</div>
+									<div class="artist secondary different">ClariS</div>
+									<div class="duration numerical secondary">04:33</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">18</div>
+									<div class="title">君の銀の庭</div>
+									<div class="artist secondary different">Kalafina</div>
+									<div class="duration numerical secondary">05:07</div>
+								</li>
+							</ol>
+						</li>
+					</ol>
+				</div>
+			</article>
+			<figure class="cover" onclick="toggle_detail(this)">
 				<img src="covers/Various_Artists-We_can!!_HUGっと!_プリキュア_-_HUGっと!未来☆ドリーマー.jpg">
 			</figure>
 			<article class="detail">
@@ -7456,7 +7324,7 @@ const toggle_detail = (function() {
 								</tr>
 								<tr>
 									<th>Size</th>
-									<td>126.59 MB</td>
+									<td>17.35 MB</td>
 								</tr>
 							</tbody>
 						</table>
@@ -7530,7 +7398,7 @@ const toggle_detail = (function() {
 								</tr>
 								<tr>
 									<th>Size</th>
-									<td>123.72 MB</td>
+									<td>19.43 MB</td>
 								</tr>
 							</tbody>
 						</table>
@@ -7561,6 +7429,104 @@ const toggle_detail = (function() {
 									<div class="title">ミラクルっと♥Link Ring!（オリジナル・メロディ・カラオケ）</div>
 									<div class="artist secondary different">大橋莉子</div>
 									<div class="duration numerical secondary">04:05</div>
+								</li>
+							</ol>
+						</li>
+					</ol>
+				</div>
+			</article>
+			<figure class="cover" onclick="toggle_detail(this)">
+				<img src="covers/Various_Artists-ヒーリングっど♥プリキュア_ボーカルアルバム_〜Voice_of_Life〜.png">
+			</figure>
+			<article class="detail">
+				<div>
+					<header>
+						<h2 class="album">ヒーリングっど♥プリキュア ボーカルアルバム 〜Voice of Life〜</h2>
+						<div class="albumartist secondary">Various Artists</div>
+					</header>
+					<aside>
+						<figure class="artwork">
+							<img src="covers/Various_Artists-ヒーリングっど♥プリキュア_ボーカルアルバム_〜Voice_of_Life〜.png">
+						</figure>
+						<table class="properties secondary">
+							<tbody>
+								<tr>
+									<th>Year</th>
+									<td>2020/07/08</td>
+								</tr>
+								<tr>
+									<th>Genre</th>
+									<td>Pop</td>
+								</tr>
+								<tr>
+									<th>Style</th>
+									<td>Anime</td>
+								</tr>
+								<tr>
+									<th>Tracks</th>
+									<td>8</td>
+								</tr>
+								<tr>
+									<th>Duration</th>
+									<td>00:31:49</td>
+								</tr>
+								<tr>
+									<th>Size</th>
+									<td>38.06 MB</td>
+								</tr>
+							</tbody>
+						</table>
+					</aside>
+					<ol class="discs">
+						<li>
+							<ol class="tracks">
+								<li>
+									<div class="track numerical secondary">01</div>
+									<div class="title">LOVE FOR ALL</div>
+									<div class="artist secondary different">Machico</div>
+									<div class="duration numerical secondary">04:36</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">02</div>
+									<div class="title">ワタシBlooming</div>
+									<div class="artist secondary different">花寺のどか (CV：悠木碧), ラビリン​ (CV：加隈亜衣)</div>
+									<div class="duration numerical secondary">04:03</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">03</div>
+									<div class="title">ホッとスプリング</div>
+									<div class="artist secondary different">沢泉ちゆ (CV：依田菜津), ペギタン​ (CV：武田華)</div>
+									<div class="duration numerical secondary">04:15</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">04</div>
+									<div class="title">カワイイ Be Ambitious!!</div>
+									<div class="artist secondary different">平光ひなた (CV：河野ひより), ニャトラン​ (CV：金田アキ)</div>
+									<div class="duration numerical secondary">04:04</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">05</div>
+									<div class="title">Good Good ハ〜イ!!</div>
+									<div class="artist secondary different">Machico with 吉武千颯</div>
+									<div class="duration numerical secondary">03:46</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">06</div>
+									<div class="title">かえりたい場所</div>
+									<div class="artist secondary different">北川理恵, 宮本佳那子</div>
+									<div class="duration numerical secondary">04:04</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">07</div>
+									<div class="title">シェアして! プリキュア</div>
+									<div class="artist secondary different">五條真由美</div>
+									<div class="duration numerical secondary">05:04</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">08</div>
+									<div class="title">ふたごの目玉焼き、だ〜れだ</div>
+									<div class="artist secondary different">北川理恵</div>
+									<div class="duration numerical secondary">01:57</div>
 								</li>
 							</ol>
 						</li>
@@ -7604,7 +7570,7 @@ const toggle_detail = (function() {
 								</tr>
 								<tr>
 									<th>Size</th>
-									<td>560.53 MB</td>
+									<td>106.59 MB</td>
 								</tr>
 							</tbody>
 						</table>
@@ -7656,7 +7622,7 @@ const toggle_detail = (function() {
 								</li>
 								<li>
 									<div class="track numerical secondary">08</div>
-									<div class="title">Ready Steady ➡ プリキュア!!</div>
+									<div class="title">Ready Steady ➡︎ プリキュア!!</div>
 									<div class="artist secondary different">キュアグレース (CV：悠木碧), キュアフォンテーヌ (CV：依田菜津), キュアスパークル (CV：河野ひより), キュアアース (CV：三森すずこ)</div>
 									<div class="duration numerical secondary">04:45</div>
 								</li>
@@ -7768,7 +7734,7 @@ const toggle_detail = (function() {
 								</tr>
 								<tr>
 									<th>Size</th>
-									<td>383.80 MB</td>
+									<td>219.61 MB</td>
 								</tr>
 							</tbody>
 						</table>
@@ -7938,6 +7904,318 @@ const toggle_detail = (function() {
 				</div>
 			</article>
 			<figure class="cover" onclick="toggle_detail(this)">
+				<img src="covers/Various_Artists-キミとアイドルプリキュア♪_主題歌シングル.jpg">
+			</figure>
+			<article class="detail">
+				<div>
+					<header>
+						<h2 class="album">キミとアイドルプリキュア♪ 主題歌シングル</h2>
+						<div class="albumartist secondary">Various Artists</div>
+					</header>
+					<aside>
+						<figure class="artwork">
+							<img src="covers/Various_Artists-キミとアイドルプリキュア♪_主題歌シングル.jpg">
+						</figure>
+						<table class="properties secondary">
+							<tbody>
+								<tr>
+									<th>Year</th>
+									<td>2025/03/26</td>
+								</tr>
+								<tr>
+									<th>Genre</th>
+									<td>Pop</td>
+								</tr>
+								<tr>
+									<th>Style</th>
+									<td>Anime</td>
+								</tr>
+								<tr>
+									<th>Tracks</th>
+									<td>6</td>
+								</tr>
+								<tr>
+									<th>Duration</th>
+									<td>00:19:01</td>
+								</tr>
+								<tr>
+									<th>Size</th>
+									<td>45.31 MB</td>
+								</tr>
+							</tbody>
+						</table>
+					</aside>
+					<ol class="discs">
+						<li>
+							<ol class="tracks">
+								<li>
+									<div class="track numerical secondary">01</div>
+									<div class="title">キミとアイドルプリキュア♪ Light Up!</div>
+									<div class="artist secondary different">石井あみ, 熊田茜音, 吉武千颯</div>
+									<div class="duration numerical secondary">04:18</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">02</div>
+									<div class="title">Trio Dreams</div>
+									<div class="artist secondary different">キュアアイドル (CV：松岡美里), キュアウインク (CV：髙橋ミナミ), キュアキュンキュン (CV：高森奈津美)</div>
+									<div class="duration numerical secondary">03:41</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">03</div>
+									<div class="title">キミとアイドルプリキュア♪ Light Up!（オリジナル・メロディ・カラオケ）</div>
+									<div class="artist secondary different">広川恵一 (MONACA)</div>
+									<div class="duration numerical secondary">04:18</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">04</div>
+									<div class="title">Trio Dreams（オリジナル・メロディ・カラオケ）</div>
+									<div class="artist secondary different">馬瀬みさき</div>
+									<div class="duration numerical secondary">03:41</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">05</div>
+									<div class="title">キミとアイドルプリキュア♪ Light Up!（TVサイズ）</div>
+									<div class="artist secondary different">石井あみ, 熊田茜音, 吉武千颯</div>
+									<div class="duration numerical secondary">01:33</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">06</div>
+									<div class="title">Trio Dreams（TVサイズ）</div>
+									<div class="artist secondary different">キュアアイドル (CV：松岡美里), キュアウインク (CV：髙橋ミナミ), キュアキュンキュン (CV：高森奈津美)</div>
+									<div class="duration numerical secondary">01:30</div>
+								</li>
+							</ol>
+						</li>
+					</ol>
+				</div>
+			</article>
+			<figure class="cover" onclick="toggle_detail(this)">
+				<img src="covers/Various_Artists-TVアニメ『ひみつのアイプリ』ミュージックコレクション.jpg">
+			</figure>
+			<article class="detail">
+				<div>
+					<header>
+						<h2 class="album">TVアニメ『ひみつのアイプリ』ミュージックコレクション</h2>
+						<div class="albumartist secondary">Various Artists</div>
+					</header>
+					<aside>
+						<figure class="artwork">
+							<img src="covers/Various_Artists-TVアニメ『ひみつのアイプリ』ミュージックコレクション.jpg">
+						</figure>
+						<table class="properties secondary">
+							<tbody>
+								<tr>
+									<th>Year</th>
+									<td>2025/08/27</td>
+								</tr>
+								<tr>
+									<th>Genre</th>
+									<td>Pop</td>
+								</tr>
+								<tr>
+									<th>Style</th>
+									<td>Anime</td>
+								</tr>
+								<tr>
+									<th>Tracks</th>
+									<td>15</td>
+								</tr>
+								<tr>
+									<th>Duration</th>
+									<td>00:57:03</td>
+								</tr>
+								<tr>
+									<th>Size</th>
+									<td>155.06 MB</td>
+								</tr>
+							</tbody>
+						</table>
+					</aside>
+					<ol class="discs">
+						<li>
+							<ol class="tracks">
+								<li>
+									<div class="track numerical secondary">01</div>
+									<div class="title">P.O.P.P.Y</div>
+									<div class="artist secondary different">ひまり (CV. 藤寺美徳)</div>
+									<div class="duration numerical secondary">03:22</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">02</div>
+									<div class="title">シークレット・ドリーム</div>
+									<div class="artist secondary different">みつき (CV. 平塚紗依)</div>
+									<div class="duration numerical secondary">03:19</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">03</div>
+									<div class="title">ムテキDUOエナジー</div>
+									<div class="artist secondary different">ひまり (CV. 藤寺美徳) &amp; みつき (CV. 平塚紗依)</div>
+									<div class="duration numerical secondary">03:24</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">04</div>
+									<div class="title">Stand Get Up</div>
+									<div class="artist secondary different">ルビー＝ラズリ (CV. 日比優理香、鈴木杏奈)</div>
+									<div class="duration numerical secondary">03:47</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">05</div>
+									<div class="title">ネバギバラバー</div>
+									<div class="artist secondary different">アイスマイリン (CV. 徳井青空、和多田美咲)</div>
+									<div class="duration numerical secondary">04:08</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">06</div>
+									<div class="title">Perfect☆STARs</div>
+									<div class="artist secondary different">カルテットスター (CV. 日比優理香、鈴木杏奈、徳井青空、和多田美咲)</div>
+									<div class="duration numerical secondary">04:30</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">07</div>
+									<div class="title">We're The World</div>
+									<div class="artist secondary different">シークレットフレンズ∞ (CV. 藤寺美徳、平塚紗依、久保ユリカ)</div>
+									<div class="duration numerical secondary">04:05</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">08</div>
+									<div class="title">ヒカリノコトバ</div>
+									<div class="artist secondary different">つむぎ (CV. 久保ユリカ)</div>
+									<div class="duration numerical secondary">03:31</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">09</div>
+									<div class="title">GIRA GIRA STAR</div>
+									<div class="artist secondary different">チィ/ダークチィ (CV. 大地葉)</div>
+									<div class="duration numerical secondary">04:13</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">10</div>
+									<div class="title">ニュースタージョーカー</div>
+									<div class="artist secondary different">ダークカルテットスター (CV. 日比優理香、鈴木杏奈、徳井青空、和多田美咲)</div>
+									<div class="duration numerical secondary">04:05</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">11</div>
+									<div class="title">パステルステップデイズ</div>
+									<div class="artist secondary different">ひまり (CV. 藤寺美徳)</div>
+									<div class="duration numerical secondary">03:47</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">12</div>
+									<div class="title">きらめきのうた つむぎ Ver.</div>
+									<div class="artist secondary different">つむぎ (CV. 久保ユリカ)</div>
+									<div class="duration numerical secondary">03:45</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">13</div>
+									<div class="title">きらめきのうた シークレットフレンズ∞ Ver.</div>
+									<div class="artist secondary different">シークレットフレンズ∞ (CV. 藤寺美徳、平塚紗依、久保ユリカ)</div>
+									<div class="duration numerical secondary">03:45</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">14</div>
+									<div class="title">ひみつだけどね</div>
+									<div class="artist secondary different">ひまり (CV. 藤寺美徳) &amp; みつき (CV. 平塚紗依)</div>
+									<div class="duration numerical secondary">03:18</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">15</div>
+									<div class="title">アイプリバースイン!</div>
+									<div class="artist secondary different">ひまり (CV. 藤寺美徳) &amp; みつき (CV. 平塚紗依)</div>
+									<div class="duration numerical secondary">04:04</div>
+								</li>
+							</ol>
+						</li>
+					</ol>
+				</div>
+			</article>
+			<figure class="cover" onclick="toggle_detail(this)">
+				<img src="covers/キミとアイドルプリキュア♪-キミとアイドルプリキュア♪_デビューシングル.jpg">
+			</figure>
+			<article class="detail">
+				<div>
+					<header>
+						<h2 class="album">キミとアイドルプリキュア♪ デビューシングル</h2>
+						<div class="albumartist secondary">キミとアイドルプリキュア♪</div>
+					</header>
+					<aside>
+						<figure class="artwork">
+							<img src="covers/キミとアイドルプリキュア♪-キミとアイドルプリキュア♪_デビューシングル.jpg">
+						</figure>
+						<table class="properties secondary">
+							<tbody>
+								<tr>
+									<th>Year</th>
+									<td>2025/02/26</td>
+								</tr>
+								<tr>
+									<th>Genre</th>
+									<td>Pop</td>
+								</tr>
+								<tr>
+									<th>Style</th>
+									<td>Anime</td>
+								</tr>
+								<tr>
+									<th>Tracks</th>
+									<td>6</td>
+								</tr>
+								<tr>
+									<th>Duration</th>
+									<td>00:20:47</td>
+								</tr>
+								<tr>
+									<th>Size</th>
+									<td>27.98 MB</td>
+								</tr>
+							</tbody>
+						</table>
+					</aside>
+					<ol class="discs">
+						<li>
+							<ol class="tracks">
+								<li>
+									<div class="track numerical secondary">01</div>
+									<div class="title">笑顔のユニゾン♪</div>
+									<div class="artist secondary different">キュアアイドル (CV：松岡美里)</div>
+									<div class="duration numerical secondary">03:26</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">02</div>
+									<div class="title">まばたきの五線譜</div>
+									<div class="artist secondary different">キュアウインク (CV：髙橋ミナミ)</div>
+									<div class="duration numerical secondary">03:46</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">03</div>
+									<div class="title">ココロレボリューション</div>
+									<div class="artist secondary different">キュアキュンキュン (CV：高森奈津美)</div>
+									<div class="duration numerical secondary">03:13</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">04</div>
+									<div class="title">笑顔のユニゾン♪（オリジナル・カラオケ）</div>
+									<div class="artist secondary different">馬瀬みさき</div>
+									<div class="duration numerical secondary">03:26</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">05</div>
+									<div class="title">まばたきの五線譜（オリジナル・カラオケ）</div>
+									<div class="artist secondary different">馬瀬みさき</div>
+									<div class="duration numerical secondary">03:46</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">06</div>
+									<div class="title">ココロレボリューション（オリジナル・カラオケ）</div>
+									<div class="artist secondary different">馬瀬みさき</div>
+									<div class="duration numerical secondary">03:10</div>
+								</li>
+							</ol>
+						</li>
+					</ol>
+				</div>
+			</article>
+			<figure class="cover" onclick="toggle_detail(this)">
 				<img src="covers/キュアマカロン_(CV：藤田咲)-キラキラ☆プリキュアアラモード_sweet_etude_4_キュアマカロン_CAT_MEETS_SWEETS.jpg">
 			</figure>
 			<article class="detail">
@@ -7974,7 +8252,7 @@ const toggle_detail = (function() {
 								</tr>
 								<tr>
 									<th>Size</th>
-									<td>107.58 MB</td>
+									<td>13.50 MB</td>
 								</tr>
 							</tbody>
 						</table>
@@ -7999,68 +8277,6 @@ const toggle_detail = (function() {
 									<div class="title">CAT MEETS SWEETS（オリジナル・カラオケ）</div>
 									<div class="artist secondary different">サイトウヨシヒロ</div>
 									<div class="duration numerical secondary">04:24</div>
-								</li>
-							</ol>
-						</li>
-					</ol>
-				</div>
-			</article>
-			<figure class="cover" onclick="toggle_detail(this)">
-				<img src="covers/プラズマジカ-プラズマジカル☆ミュージカル♪.jpg">
-			</figure>
-			<article class="detail">
-				<div>
-					<header>
-						<h2 class="album">プラズマジカル☆ミュージカル♪</h2>
-						<div class="albumartist secondary">プラズマジカ</div>
-					</header>
-					<aside>
-						<figure class="artwork">
-							<img src="covers/プラズマジカ-プラズマジカル☆ミュージカル♪.jpg">
-						</figure>
-						<table class="properties secondary">
-							<tbody>
-								<tr>
-									<th>Year</th>
-									<td>2016</td>
-								</tr>
-								<tr>
-									<th>Genre</th>
-									<td>Pop</td>
-								</tr>
-								<tr>
-									<th>Style</th>
-									<td>Anime</td>
-								</tr>
-								<tr>
-									<th>Tracks</th>
-									<td>2</td>
-								</tr>
-								<tr>
-									<th>Duration</th>
-									<td>00:07:46</td>
-								</tr>
-								<tr>
-									<th>Size</th>
-									<td>19.36 MB</td>
-								</tr>
-							</tbody>
-						</table>
-					</aside>
-					<ol class="discs">
-						<li>
-							<ol class="tracks">
-								<li>
-									<div class="track numerical secondary">01</div>
-									<div class="title">プラズマジカル☆ミュージカル♪</div>
-									<div class="artist secondary same">プラズマジカ</div>
-									<div class="duration numerical secondary">03:54</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">02</div>
-									<div class="title">プラズマジカル☆ミュージカル♪ (Instrumental)</div>
-									<div class="artist secondary same">プラズマジカ</div>
-									<div class="duration numerical secondary">03:52</div>
 								</li>
 							</ol>
 						</li>
@@ -8104,7 +8320,7 @@ const toggle_detail = (function() {
 								</tr>
 								<tr>
 									<th>Size</th>
-									<td>2.78 GB</td>
+									<td>360.74 MB</td>
 								</tr>
 							</tbody>
 						</table>
@@ -8390,7 +8606,7 @@ const toggle_detail = (function() {
 								<li>
 									<div class="track numerical secondary">07</div>
 									<div class="title">Enjoy The Process</div>
-									<div class="artist secondary same">古代祐三</div>
+									<div class="artist secondary different">古代祐三 Feat. Andrew Choi</div>
 									<div class="duration numerical secondary">04:04</div>
 								</li>
 								<li>
@@ -8408,13 +8624,13 @@ const toggle_detail = (function() {
 								<li>
 									<div class="track numerical secondary">10</div>
 									<div class="title">Cause You're Different</div>
-									<div class="artist secondary same">古代祐三</div>
+									<div class="artist secondary different">古代祐三 Feat. Paula Terry</div>
 									<div class="duration numerical secondary">03:36</div>
 								</li>
 								<li>
 									<div class="track numerical secondary">11</div>
 									<div class="title">Feel The Moment</div>
-									<div class="artist secondary same">古代祐三</div>
+									<div class="artist secondary different">古代祐三 Feat. Paula Terry</div>
 									<div class="duration numerical secondary">06:22</div>
 								</li>
 								<li>
@@ -8741,7 +8957,7 @@ const toggle_detail = (function() {
 								<li>
 									<div class="track numerical secondary">13</div>
 									<div class="title">This Is My Destiny</div>
-									<div class="artist secondary same">古代祐三</div>
+									<div class="artist secondary different">古代祐三 Feat. Paula Terry</div>
 									<div class="duration numerical secondary">04:31</div>
 								</li>
 								<li>
@@ -8759,7 +8975,7 @@ const toggle_detail = (function() {
 								<li>
 									<div class="track numerical secondary">16</div>
 									<div class="title">Nothing Can Live Forever</div>
-									<div class="artist secondary same">古代祐三</div>
+									<div class="artist secondary different">古代祐三 Feat. Paula Terry</div>
 									<div class="duration numerical secondary">04:27</div>
 								</li>
 								<li>
@@ -8773,230 +8989,6 @@ const toggle_detail = (function() {
 									<div class="title">Until The Excitement Cools Down</div>
 									<div class="artist secondary same">古代祐三</div>
 									<div class="duration numerical secondary">02:56</div>
-								</li>
-							</ol>
-						</li>
-					</ol>
-				</div>
-			</article>
-			<figure class="cover" onclick="toggle_detail(this)">
-				<img src="covers/根岸貴幸-東京ミュウミュウ_オリジナルサウンドトラック.jpg">
-			</figure>
-			<article class="detail">
-				<div>
-					<header>
-						<h2 class="album">東京ミュウミュウ オリジナルサウンドトラック</h2>
-						<div class="albumartist secondary">根岸貴幸</div>
-					</header>
-					<aside>
-						<figure class="artwork">
-							<img src="covers/根岸貴幸-東京ミュウミュウ_オリジナルサウンドトラック.jpg">
-						</figure>
-						<table class="properties secondary">
-							<tbody>
-								<tr>
-									<th>Year</th>
-									<td>2002/09/25</td>
-								</tr>
-								<tr>
-									<th>Genre</th>
-									<td>Soundtrack</td>
-								</tr>
-								<tr>
-									<th>Style</th>
-									<td>Anime</td>
-								</tr>
-								<tr>
-									<th>Tracks</th>
-									<td>29</td>
-								</tr>
-								<tr>
-									<th>Duration</th>
-									<td>00:38:08</td>
-								</tr>
-								<tr>
-									<th>Size</th>
-									<td>95.05 MB</td>
-								</tr>
-							</tbody>
-						</table>
-					</aside>
-					<ol class="discs">
-						<li>
-							<ol class="tracks">
-								<li>
-									<div class="track numerical secondary">01</div>
-									<div class="title">my sweet heart（TVサイズ）</div>
-									<div class="artist secondary different">小松里賀</div>
-									<div class="duration numerical secondary">01:33</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">02</div>
-									<div class="title">サブタイトルにゃん</div>
-									<div class="artist secondary same">根岸貴幸</div>
-									<div class="duration numerical secondary">00:09</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">03</div>
-									<div class="title">さわやかな朝</div>
-									<div class="artist secondary same">根岸貴幸</div>
-									<div class="duration numerical secondary">01:54</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">04</div>
-									<div class="title">みんな おはよう!</div>
-									<div class="artist secondary same">根岸貴幸</div>
-									<div class="duration numerical secondary">01:41</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">05</div>
-									<div class="title">うわぁ〜、遅刻するぅー</div>
-									<div class="artist secondary same">根岸貴幸</div>
-									<div class="duration numerical secondary">01:45</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">06</div>
-									<div class="title">みんなでお喋り</div>
-									<div class="artist secondary same">根岸貴幸</div>
-									<div class="duration numerical secondary">01:33</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">07</div>
-									<div class="title">あ〜、つかれた</div>
-									<div class="artist secondary same">根岸貴幸</div>
-									<div class="duration numerical secondary">01:47</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">08</div>
-									<div class="title">カフェミュウミュウへようこそ!</div>
-									<div class="artist secondary same">根岸貴幸</div>
-									<div class="duration numerical secondary">01:41</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">09</div>
-									<div class="title">麗しのバレリーナ</div>
-									<div class="artist secondary same">根岸貴幸</div>
-									<div class="duration numerical secondary">02:08</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">10</div>
-									<div class="title">あこがれの青山くん</div>
-									<div class="artist secondary same">根岸貴幸</div>
-									<div class="duration numerical secondary">01:47</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">11</div>
-									<div class="title">青山くん…大好き♥</div>
-									<div class="artist secondary same">根岸貴幸</div>
-									<div class="duration numerical secondary">02:05</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">12</div>
-									<div class="title">アイキャッチにゃん</div>
-									<div class="artist secondary same">根岸貴幸</div>
-									<div class="duration numerical secondary">00:09</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">13</div>
-									<div class="title">キッシュのたくらみ</div>
-									<div class="artist secondary same">根岸貴幸</div>
-									<div class="duration numerical secondary">01:37</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">14</div>
-									<div class="title">不安な予感</div>
-									<div class="artist secondary same">根岸貴幸</div>
-									<div class="duration numerical secondary">01:38</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">15</div>
-									<div class="title">エイリアンが現れた!</div>
-									<div class="artist secondary same">根岸貴幸</div>
-									<div class="duration numerical secondary">01:40</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">16</div>
-									<div class="title">敵からの攻撃</div>
-									<div class="artist secondary same">根岸貴幸</div>
-									<div class="duration numerical secondary">01:28</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">17</div>
-									<div class="title">ミュウイチゴのテーマ</div>
-									<div class="artist secondary same">根岸貴幸</div>
-									<div class="duration numerical secondary">00:46</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">18</div>
-									<div class="title">ミュウミントのテーマ</div>
-									<div class="artist secondary same">根岸貴幸</div>
-									<div class="duration numerical secondary">01:05</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">19</div>
-									<div class="title">ミュウレタスのテーマ</div>
-									<div class="artist secondary same">根岸貴幸</div>
-									<div class="duration numerical secondary">01:05</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">20</div>
-									<div class="title">ミュウプリンのテーマ</div>
-									<div class="artist secondary same">根岸貴幸</div>
-									<div class="duration numerical secondary">01:04</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">21</div>
-									<div class="title">ミュウザクロのテーマ</div>
-									<div class="artist secondary same">根岸貴幸</div>
-									<div class="duration numerical secondary">01:07</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">22</div>
-									<div class="title">5人そろって、東京ミュウミュウ!</div>
-									<div class="artist secondary same">根岸貴幸</div>
-									<div class="duration numerical secondary">00:18</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">23</div>
-									<div class="title">地球の未来にご奉仕するにゃん♥</div>
-									<div class="artist secondary same">根岸貴幸</div>
-									<div class="duration numerical secondary">01:42</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">24</div>
-									<div class="title">ストロベリーチェック!!</div>
-									<div class="artist secondary same">根岸貴幸</div>
-									<div class="duration numerical secondary">00:28</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">25</div>
-									<div class="title">回収!</div>
-									<div class="artist secondary same">根岸貴幸</div>
-									<div class="duration numerical secondary">00:10</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">26</div>
-									<div class="title">今日も一日ごくろうさま</div>
-									<div class="artist secondary same">根岸貴幸</div>
-									<div class="duration numerical secondary">01:33</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">27</div>
-									<div class="title">また明日ね</div>
-									<div class="artist secondary same">根岸貴幸</div>
-									<div class="duration numerical secondary">02:13</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">28</div>
-									<div class="title">次回予告にゃん</div>
-									<div class="artist secondary same">根岸貴幸</div>
-									<div class="duration numerical secondary">00:34</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">29</div>
-									<div class="title">恋はア･ラ･モード（TVサイズ）</div>
-									<div class="artist secondary different">東京ミュウミュウ</div>
-									<div class="duration numerical secondary">01:28</div>
 								</li>
 							</ol>
 						</li>
@@ -9036,7 +9028,7 @@ const toggle_detail = (function() {
 								</tr>
 								<tr>
 									<th>Duration</th>
-									<td>00:46:14</td>
+									<td>00:46:15</td>
 								</tr>
 								<tr>
 									<th>Size</th>
@@ -9160,7 +9152,7 @@ const toggle_detail = (function() {
 									<div class="track numerical secondary">19</div>
 									<div class="title">キメラアニマ出現</div>
 									<div class="artist secondary same">根岸貴幸</div>
-									<div class="duration numerical secondary">01:33</div>
+									<div class="duration numerical secondary">01:34</div>
 								</li>
 								<li>
 									<div class="track numerical secondary">20</div>
@@ -9344,259 +9336,271 @@ const toggle_detail = (function() {
 				</div>
 			</article>
 			<figure class="cover" onclick="toggle_detail(this)">
-				<img src="covers/松山千春-松山千春スーパーベスト34.jpg">
+				<img src="covers/深澤恵梨香-キミとアイドルプリキュア♪_オリジナル・サウンドトラック_プリキュア・キラキラ・サウンド!!.jpg">
 			</figure>
 			<article class="detail">
 				<div>
 					<header>
-						<h2 class="album">松山千春スーパーベスト34</h2>
-						<div class="albumartist secondary">松山千春</div>
+						<h2 class="album">キミとアイドルプリキュア♪ オリジナル・サウンドトラック プリキュア・キラキラ・サウンド!!</h2>
+						<div class="albumartist secondary">深澤恵梨香, 馬瀬みさき</div>
 					</header>
 					<aside>
 						<figure class="artwork">
-							<img src="covers/松山千春-松山千春スーパーベスト34.jpg">
+							<img src="covers/深澤恵梨香-キミとアイドルプリキュア♪_オリジナル・サウンドトラック_プリキュア・キラキラ・サウンド!!.jpg">
 						</figure>
 						<table class="properties secondary">
 							<tbody>
 								<tr>
 									<th>Year</th>
-									<td>2009</td>
+									<td>2025/05/28</td>
 								</tr>
 								<tr>
 									<th>Genre</th>
-									<td>Pop</td>
+									<td>Soundtrack</td>
 								</tr>
 								<tr>
 									<th>Style</th>
-									<td>JPop</td>
+									<td>Anime</td>
 								</tr>
 								<tr>
 									<th>Tracks</th>
-									<td>34</td>
+									<td>37</td>
 								</tr>
 								<tr>
 									<th>Duration</th>
-									<td>02:24:49</td>
+									<td>01:00:32</td>
 								</tr>
 								<tr>
 									<th>Size</th>
-									<td>872.64 MB</td>
+									<td>109.34 MB</td>
 								</tr>
 							</tbody>
 						</table>
 					</aside>
 					<ol class="discs">
 						<li>
-							<h3 class="disc">Disc 1</h3>
 							<ol class="tracks">
 								<li>
 									<div class="track numerical secondary">01</div>
-									<div class="title">季節の中で</div>
-									<div class="artist secondary same">松山千春</div>
-									<div class="duration numerical secondary">03:15</div>
+									<div class="title">キミとキラッキランラン♪</div>
+									<div class="artist secondary different">深澤恵梨香</div>
+									<div class="duration numerical secondary">03:03</div>
 								</li>
 								<li>
 									<div class="track numerical secondary">02</div>
-									<div class="title">大空と大地の中で</div>
-									<div class="artist secondary same">松山千春</div>
-									<div class="duration numerical secondary">04:02</div>
+									<div class="title">キミとアイドルプリキュア♪ Light Up!（TVサイズ）</div>
+									<div class="artist secondary different">石井あみ, 熊田茜音, 吉武千颯</div>
+									<div class="duration numerical secondary">01:31</div>
 								</li>
 								<li>
 									<div class="track numerical secondary">03</div>
-									<div class="title">旅立ち</div>
-									<div class="artist secondary same">松山千春</div>
-									<div class="duration numerical secondary">03:08</div>
+									<div class="title">陽だまりのパレット</div>
+									<div class="artist secondary different">馬瀬みさき</div>
+									<div class="duration numerical secondary">01:45</div>
 								</li>
 								<li>
 									<div class="track numerical secondary">04</div>
-									<div class="title">かざぐるま</div>
-									<div class="artist secondary same">松山千春</div>
-									<div class="duration numerical secondary">04:21</div>
+									<div class="title">サブタイトル</div>
+									<div class="artist secondary different">深澤恵梨香</div>
+									<div class="duration numerical secondary">00:11</div>
 								</li>
 								<li>
 									<div class="track numerical secondary">05</div>
-									<div class="title">銀の雨</div>
-									<div class="artist secondary same">松山千春</div>
-									<div class="duration numerical secondary">03:33</div>
+									<div class="title">さくら色のティータイム</div>
+									<div class="artist secondary different">馬瀬みさき</div>
+									<div class="duration numerical secondary">01:36</div>
 								</li>
 								<li>
 									<div class="track numerical secondary">06</div>
-									<div class="title">君のために作った歌</div>
-									<div class="artist secondary same">松山千春</div>
-									<div class="duration numerical secondary">02:46</div>
+									<div class="title">チョッキリ団</div>
+									<div class="artist secondary different">深澤恵梨香</div>
+									<div class="duration numerical secondary">02:02</div>
 								</li>
 								<li>
 									<div class="track numerical secondary">07</div>
-									<div class="title">初恋</div>
-									<div class="artist secondary same">松山千春</div>
-									<div class="duration numerical secondary">03:41</div>
+									<div class="title">闇を照らす救世主</div>
+									<div class="artist secondary different">馬瀬みさき</div>
+									<div class="duration numerical secondary">01:49</div>
 								</li>
 								<li>
 									<div class="track numerical secondary">08</div>
-									<div class="title">時のいたずら</div>
-									<div class="artist secondary same">松山千春</div>
-									<div class="duration numerical secondary">03:47</div>
+									<div class="title">プリキュア!ライトアップ! (Short version)</div>
+									<div class="artist secondary different">深澤恵梨香</div>
+									<div class="duration numerical secondary">00:58</div>
 								</li>
 								<li>
 									<div class="track numerical secondary">09</div>
-									<div class="title">足寄より</div>
-									<div class="artist secondary same">松山千春</div>
-									<div class="duration numerical secondary">05:49</div>
+									<div class="title">笑顔のユニゾン♪ 〜プリキュア!アイドルスマイリング!〜</div>
+									<div class="artist secondary different">キュアアイドル (CV：松岡美里)</div>
+									<div class="duration numerical secondary">00:47</div>
 								</li>
 								<li>
 									<div class="track numerical secondary">10</div>
-									<div class="title">青春</div>
-									<div class="artist secondary same">松山千春</div>
-									<div class="duration numerical secondary">03:23</div>
+									<div class="title">うわさの人気者</div>
+									<div class="artist secondary different">馬瀬みさき</div>
+									<div class="duration numerical secondary">01:33</div>
 								</li>
 								<li>
 									<div class="track numerical secondary">11</div>
-									<div class="title">MY自転車</div>
-									<div class="artist secondary same">松山千春</div>
-									<div class="duration numerical secondary">03:25</div>
+									<div class="title">思い出に沈むとき</div>
+									<div class="artist secondary different">馬瀬みさき</div>
+									<div class="duration numerical secondary">01:39</div>
 								</li>
 								<li>
 									<div class="track numerical secondary">12</div>
-									<div class="title">こんな夜は</div>
-									<div class="artist secondary same">松山千春</div>
-									<div class="duration numerical secondary">04:43</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">13</div>
-									<div class="title">雨あがりの街</div>
-									<div class="artist secondary same">松山千春</div>
-									<div class="duration numerical secondary">04:18</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">14</div>
-									<div class="title">走れ夜汽車</div>
-									<div class="artist secondary same">松山千春</div>
-									<div class="duration numerical secondary">03:05</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">15</div>
-									<div class="title">帰ろうか</div>
-									<div class="artist secondary same">松山千春</div>
-									<div class="duration numerical secondary">04:33</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">16</div>
-									<div class="title">歩き続ける時</div>
-									<div class="artist secondary same">松山千春</div>
-									<div class="duration numerical secondary">06:28</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">17</div>
-									<div class="title">恋</div>
-									<div class="artist secondary same">松山千春</div>
-									<div class="duration numerical secondary">04:40</div>
-								</li>
-							</ol>
-						</li>
-						<li>
-							<h3 class="disc">Disc 2</h3>
-							<ol class="tracks">
-								<li>
-									<div class="track numerical secondary">01</div>
-									<div class="title">長い夜</div>
-									<div class="artist secondary same">松山千春</div>
-									<div class="duration numerical secondary">05:02</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">02</div>
-									<div class="title">人生の空から</div>
-									<div class="artist secondary same">松山千春</div>
-									<div class="duration numerical secondary">03:21</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">03</div>
-									<div class="title">青春Ⅱ</div>
-									<div class="artist secondary same">松山千春</div>
+									<div class="title">勇気のドアをあけて</div>
+									<div class="artist secondary different">深澤恵梨香</div>
 									<div class="duration numerical secondary">02:57</div>
 								</li>
 								<li>
-									<div class="track numerical secondary">04</div>
-									<div class="title">白い花</div>
-									<div class="artist secondary same">松山千春</div>
-									<div class="duration numerical secondary">04:42</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">05</div>
-									<div class="title">南風にのせて</div>
-									<div class="artist secondary same">松山千春</div>
-									<div class="duration numerical secondary">04:53</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">06</div>
-									<div class="title">雪化粧</div>
-									<div class="artist secondary same">松山千春</div>
-									<div class="duration numerical secondary">04:41</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">07</div>
-									<div class="title">街</div>
-									<div class="artist secondary same">松山千春</div>
-									<div class="duration numerical secondary">05:15</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">08</div>
-									<div class="title">あの日のままで</div>
-									<div class="artist secondary same">松山千春</div>
-									<div class="duration numerical secondary">02:57</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">09</div>
-									<div class="title">窓</div>
-									<div class="artist secondary same">松山千春</div>
-									<div class="duration numerical secondary">05:00</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">10</div>
-									<div class="title">卒業</div>
-									<div class="artist secondary same">松山千春</div>
-									<div class="duration numerical secondary">03:20</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">11</div>
-									<div class="title">空を飛ぶ鳥のように野を駈ける風のように</div>
-									<div class="artist secondary same">松山千春</div>
-									<div class="duration numerical secondary">02:55</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">12</div>
-									<div class="title">失くした心</div>
-									<div class="artist secondary same">松山千春</div>
-									<div class="duration numerical secondary">06:40</div>
-								</li>
-								<li>
 									<div class="track numerical secondary">13</div>
-									<div class="title">寒い夜</div>
-									<div class="artist secondary same">松山千春</div>
-									<div class="duration numerical secondary">04:22</div>
+									<div class="title">まばたきの五線譜 〜プリキュア!ウインククレッシェンド!〜</div>
+									<div class="artist secondary different">キュアウインク (CV：髙橋ミナミ)</div>
+									<div class="duration numerical secondary">00:46</div>
 								</li>
 								<li>
 									<div class="track numerical secondary">14</div>
-									<div class="title">帰郷</div>
-									<div class="artist secondary same">松山千春</div>
-									<div class="duration numerical secondary">04:05</div>
+									<div class="title">あこがれがとまらない</div>
+									<div class="artist secondary different">馬瀬みさき</div>
+									<div class="duration numerical secondary">01:43</div>
 								</li>
 								<li>
 									<div class="track numerical secondary">15</div>
-									<div class="title">生きがい</div>
-									<div class="artist secondary same">松山千春</div>
-									<div class="duration numerical secondary">07:15</div>
+									<div class="title">アイドルプリキュアをさがせ!</div>
+									<div class="artist secondary different">馬瀬みさき</div>
+									<div class="duration numerical secondary">01:32</div>
 								</li>
 								<li>
 									<div class="track numerical secondary">16</div>
-									<div class="title">夜明け</div>
-									<div class="artist secondary same">松山千春</div>
-									<div class="duration numerical secondary">03:41</div>
+									<div class="title">ココロレボリューション 〜プリキュア!キュンキュンビート!〜</div>
+									<div class="artist secondary different">キュアキュンキュン (CV：高森奈津美)</div>
+									<div class="duration numerical secondary">00:46</div>
 								</li>
 								<li>
 									<div class="track numerical secondary">17</div>
-									<div class="title">君を忘れない</div>
-									<div class="artist secondary same">松山千春</div>
-									<div class="duration numerical secondary">04:46</div>
+									<div class="title">はなみちタウンで会いましょう</div>
+									<div class="artist secondary different">深澤恵梨香</div>
+									<div class="duration numerical secondary">02:34</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">18</div>
+									<div class="title">アイドルキャッチ♪</div>
+									<div class="artist secondary different">深澤恵梨香</div>
+									<div class="duration numerical secondary">00:10</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">19</div>
+									<div class="title">光あふれる世界</div>
+									<div class="artist secondary different">馬瀬みさき</div>
+									<div class="duration numerical secondary">01:55</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">20</div>
+									<div class="title">私はピカリーネ</div>
+									<div class="artist secondary different">深澤恵梨香</div>
+									<div class="duration numerical secondary">02:05</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">21</div>
+									<div class="title">あの子のひみつ</div>
+									<div class="artist secondary different">馬瀬みさき</div>
+									<div class="duration numerical secondary">01:35</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">22</div>
+									<div class="title">すれちがいデュエット</div>
+									<div class="artist secondary different">馬瀬みさき</div>
+									<div class="duration numerical secondary">01:31</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">23</div>
+									<div class="title">プリプリルンルン〜♪</div>
+									<div class="artist secondary different">馬瀬みさき</div>
+									<div class="duration numerical secondary">01:28</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">24</div>
+									<div class="title">キラキラをふりまいて</div>
+									<div class="artist secondary different">馬瀬みさき</div>
+									<div class="duration numerical secondary">01:35</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">25</div>
+									<div class="title">闇の気配</div>
+									<div class="artist secondary different">馬瀬みさき</div>
+									<div class="duration numerical secondary">01:39</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">26</div>
+									<div class="title">世界をクラクラの真っ暗闇にせよ</div>
+									<div class="artist secondary different">深澤恵梨香</div>
+									<div class="duration numerical secondary">02:02</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">27</div>
+									<div class="title">キラッキランランにしちゃうよ</div>
+									<div class="artist secondary different">深澤恵梨香</div>
+									<div class="duration numerical secondary">02:05</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">28</div>
+									<div class="title">プリキュア!ライトアップ!</div>
+									<div class="artist secondary different">深澤恵梨香</div>
+									<div class="duration numerical secondary">01:28</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">29</div>
+									<div class="title">激闘のプレリュード</div>
+									<div class="artist secondary different">深澤恵梨香</div>
+									<div class="duration numerical secondary">02:02</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">30</div>
+									<div class="title">白熱のバトルステージ</div>
+									<div class="artist secondary different">深澤恵梨香</div>
+									<div class="duration numerical secondary">01:49</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">31</div>
+									<div class="title">歌って踊ってファンサして♡</div>
+									<div class="artist secondary different">深澤恵梨香</div>
+									<div class="duration numerical secondary">02:53</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">32</div>
+									<div class="title">Trio Dreams 〜プリキュア!ハイエモーション!〜</div>
+									<div class="artist secondary different">キュアアイドル (CV：松岡美里), キュアウインク (CV：髙橋ミナミ), キュアキュンキュン (CV：高森奈津美)</div>
+									<div class="duration numerical secondary">00:43</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">33</div>
+									<div class="title">夢色のときめき</div>
+									<div class="artist secondary different">馬瀬みさき</div>
+									<div class="duration numerical secondary">01:47</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">34</div>
+									<div class="title">川沿いの道を走ろう</div>
+									<div class="artist secondary different">馬瀬みさき</div>
+									<div class="duration numerical secondary">01:29</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">35</div>
+									<div class="title">キミと一緒に</div>
+									<div class="artist secondary different">深澤恵梨香</div>
+									<div class="duration numerical secondary">03:09</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">36</div>
+									<div class="title">Trio Dreams（TVサイズ）</div>
+									<div class="artist secondary different">キュアアイドル (CV：松岡美里), キュアウインク (CV：髙橋ミナミ), キュアキュンキュン (CV：高森奈津美)</div>
+									<div class="duration numerical secondary">01:32</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">37</div>
+									<div class="title">今日もキミと!キラッキランラン〜♪</div>
+									<div class="artist secondary different">広川恵一 (MONACA)</div>
+									<div class="duration numerical secondary">00:23</div>
 								</li>
 							</ol>
 						</li>
@@ -9628,7 +9632,7 @@ const toggle_detail = (function() {
 								</tr>
 								<tr>
 									<th>Style</th>
-									<td>JPop</td>
+									<td>J-Pop</td>
 								</tr>
 								<tr>
 									<th>Tracks</th>
@@ -9640,7 +9644,7 @@ const toggle_detail = (function() {
 								</tr>
 								<tr>
 									<th>Size</th>
-									<td>835.20 MB</td>
+									<td>114.27 MB</td>
 								</tr>
 							</tbody>
 						</table>
@@ -9852,7 +9856,7 @@ const toggle_detail = (function() {
 								</tr>
 								<tr>
 									<th>Style</th>
-									<td>JPop</td>
+									<td>J-Pop</td>
 								</tr>
 								<tr>
 									<th>Tracks</th>
@@ -9864,7 +9868,7 @@ const toggle_detail = (function() {
 								</tr>
 								<tr>
 									<th>Size</th>
-									<td>497.14 MB</td>
+									<td>77.00 MB</td>
 								</tr>
 							</tbody>
 						</table>
@@ -9962,23 +9966,23 @@ const toggle_detail = (function() {
 				</div>
 			</article>
 			<figure class="cover" onclick="toggle_detail(this)">
-				<img src="covers/東京ミュウミュウ-恋はア･ラ･モード.jpg">
+				<img src="covers/朝倉涼子（C%2CV%2C桑谷夏子）-涼宮ハルヒの憂鬱_キャラクターソング_Vol%2C5_–_朝倉涼子.jpg">
 			</figure>
 			<article class="detail">
 				<div>
 					<header>
-						<h2 class="album">恋はア･ラ･モード</h2>
-						<div class="albumartist secondary">東京ミュウミュウ</div>
+						<h2 class="album">涼宮ハルヒの憂鬱 キャラクターソング Vol.5 – 朝倉涼子</h2>
+						<div class="albumartist secondary">朝倉涼子（C.V.桑谷夏子）</div>
 					</header>
 					<aside>
 						<figure class="artwork">
-							<img src="covers/東京ミュウミュウ-恋はア･ラ･モード.jpg">
+							<img src="covers/朝倉涼子（C%2CV%2C桑谷夏子）-涼宮ハルヒの憂鬱_キャラクターソング_Vol%2C5_–_朝倉涼子.jpg">
 						</figure>
 						<table class="properties secondary">
 							<tbody>
 								<tr>
 									<th>Year</th>
-									<td>2002/06/05</td>
+									<td>2006/12/06</td>
 								</tr>
 								<tr>
 									<th>Genre</th>
@@ -9990,15 +9994,15 @@ const toggle_detail = (function() {
 								</tr>
 								<tr>
 									<th>Tracks</th>
-									<td>4</td>
+									<td>5</td>
 								</tr>
 								<tr>
 									<th>Duration</th>
-									<td>00:13:19</td>
+									<td>00:20:34</td>
 								</tr>
 								<tr>
 									<th>Size</th>
-									<td>32.06 MB</td>
+									<td>19.07 MB</td>
 								</tr>
 							</tbody>
 						</table>
@@ -10008,27 +10012,33 @@ const toggle_detail = (function() {
 							<ol class="tracks">
 								<li>
 									<div class="track numerical secondary">01</div>
-									<div class="title">恋はア･ラ･モード</div>
-									<div class="artist secondary same">東京ミュウミュウ</div>
-									<div class="duration numerical secondary">03:29</div>
+									<div class="title">小指でぎゅっ!</div>
+									<div class="artist secondary same">朝倉涼子（C.V.桑谷夏子）</div>
+									<div class="duration numerical secondary">04:40</div>
 								</li>
 								<li>
 									<div class="track numerical secondary">02</div>
-									<div class="title">のんびりDreamin'</div>
-									<div class="artist secondary different">桃宮いちご（中島沙樹）</div>
-									<div class="duration numerical secondary">03:12</div>
+									<div class="title">COOL EDITION</div>
+									<div class="artist secondary same">朝倉涼子（C.V.桑谷夏子）</div>
+									<div class="duration numerical secondary">03:49</div>
 								</li>
 								<li>
 									<div class="track numerical secondary">03</div>
-									<div class="title">恋はア･ラ･モード（オリジナル・カラオケ）</div>
-									<div class="artist secondary different">ホンダタカノブ</div>
-									<div class="duration numerical secondary">03:29</div>
+									<div class="title">ハレ晴レユカイ 〜Ver.朝倉涼子〜</div>
+									<div class="artist secondary same">朝倉涼子（C.V.桑谷夏子）</div>
+									<div class="duration numerical secondary">03:38</div>
 								</li>
 								<li>
 									<div class="track numerical secondary">04</div>
-									<div class="title">のんびりDreamin'（オリジナル・カラオケ）</div>
-									<div class="artist secondary different">ホンダタカノブ</div>
-									<div class="duration numerical secondary">03:09</div>
+									<div class="title">小指でぎゅっ! (off vocal)</div>
+									<div class="artist secondary different">田村信二</div>
+									<div class="duration numerical secondary">04:40</div>
+								</li>
+								<li>
+									<div class="track numerical secondary">05</div>
+									<div class="title">COOL EDITION (off vocal)</div>
+									<div class="artist secondary different">井出泰彰</div>
+									<div class="duration numerical secondary">03:47</div>
 								</li>
 							</ol>
 						</li>
@@ -10072,7 +10082,7 @@ const toggle_detail = (function() {
 								</tr>
 								<tr>
 									<th>Size</th>
-									<td>162.39 MB</td>
+									<td>23.45 MB</td>
 								</tr>
 							</tbody>
 						</table>
@@ -10116,23 +10126,23 @@ const toggle_detail = (function() {
 				</div>
 			</article>
 			<figure class="cover" onclick="toggle_detail(this)">
-				<img src="covers/浜崎あゆみ-A_BEST.jpg">
+				<img src="covers/八十亀最中_(CV-_戸松遥)-NA☆GO☆YA_ダンストゥナイト.jpg">
 			</figure>
 			<article class="detail">
 				<div>
 					<header>
-						<h2 class="album">A BEST</h2>
-						<div class="albumartist secondary">浜崎あゆみ</div>
+						<h2 class="album">NA☆GO☆YA ダンストゥナイト</h2>
+						<div class="albumartist secondary">八十亀最中 (CV: 戸松遥), 只草舞衣 (CV: 若井友希), 笹津やん菜 (CV: 小松未可子), OS☆U, dela</div>
 					</header>
 					<aside>
 						<figure class="artwork">
-							<img src="covers/浜崎あゆみ-A_BEST.jpg">
+							<img src="covers/八十亀最中_(CV-_戸松遥)-NA☆GO☆YA_ダンストゥナイト.jpg">
 						</figure>
 						<table class="properties secondary">
 							<tbody>
 								<tr>
 									<th>Year</th>
-									<td>2001</td>
+									<td>2019</td>
 								</tr>
 								<tr>
 									<th>Genre</th>
@@ -10140,19 +10150,19 @@ const toggle_detail = (function() {
 								</tr>
 								<tr>
 									<th>Style</th>
-									<td>JPop</td>
+									<td>Anime</td>
 								</tr>
 								<tr>
 									<th>Tracks</th>
-									<td>16</td>
+									<td>1</td>
 								</tr>
 								<tr>
 									<th>Duration</th>
-									<td>01:16:47</td>
+									<td>00:04:07</td>
 								</tr>
 								<tr>
 									<th>Size</th>
-									<td>539.78 MB</td>
+									<td>10.18 MB</td>
 								</tr>
 							</tbody>
 						</table>
@@ -10162,99 +10172,9 @@ const toggle_detail = (function() {
 							<ol class="tracks">
 								<li>
 									<div class="track numerical secondary">01</div>
-									<div class="title">A Song for ×× (New Vocal &amp; Mix)</div>
-									<div class="artist secondary same">浜崎あゆみ</div>
-									<div class="duration numerical secondary">04:50</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">02</div>
-									<div class="title">Trust (New Vocal &amp; Mix)</div>
-									<div class="artist secondary same">浜崎あゆみ</div>
-									<div class="duration numerical secondary">04:51</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">03</div>
-									<div class="title">Depend on you (New Vocal &amp; Mix)</div>
-									<div class="artist secondary same">浜崎あゆみ</div>
-									<div class="duration numerical secondary">04:22</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">04</div>
-									<div class="title">LOVE 〜Destiny〜</div>
-									<div class="artist secondary same">浜崎あゆみ</div>
-									<div class="duration numerical secondary">04:58</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">05</div>
-									<div class="title">TO BE</div>
-									<div class="artist secondary same">浜崎あゆみ</div>
-									<div class="duration numerical secondary">05:23</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">06</div>
-									<div class="title">Boys &amp; Girls</div>
-									<div class="artist secondary same">浜崎あゆみ</div>
-									<div class="duration numerical secondary">03:57</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">07</div>
-									<div class="title">Trauma</div>
-									<div class="artist secondary same">浜崎あゆみ</div>
-									<div class="duration numerical secondary">04:20</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">08</div>
-									<div class="title">End roll</div>
-									<div class="artist secondary same">浜崎あゆみ</div>
-									<div class="duration numerical secondary">04:45</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">09</div>
-									<div class="title">appears</div>
-									<div class="artist secondary same">浜崎あゆみ</div>
-									<div class="duration numerical secondary">05:40</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">10</div>
-									<div class="title">Fly high</div>
-									<div class="artist secondary same">浜崎あゆみ</div>
-									<div class="duration numerical secondary">04:09</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">11</div>
-									<div class="title">vogue</div>
-									<div class="artist secondary same">浜崎あゆみ</div>
-									<div class="duration numerical secondary">04:31</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">12</div>
-									<div class="title">Far away</div>
-									<div class="artist secondary same">浜崎あゆみ</div>
-									<div class="duration numerical secondary">05:36</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">13</div>
-									<div class="title">SEASONS</div>
-									<div class="artist secondary same">浜崎あゆみ</div>
-									<div class="duration numerical secondary">04:29</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">14</div>
-									<div class="title">SURREAL</div>
-									<div class="artist secondary same">浜崎あゆみ</div>
-									<div class="duration numerical secondary">04:46</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">15</div>
-									<div class="title">ℳ</div>
-									<div class="artist secondary same">浜崎あゆみ</div>
-									<div class="duration numerical secondary">04:32</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">16</div>
-									<div class="title">Who...</div>
-									<div class="artist secondary same">浜崎あゆみ</div>
-									<div class="duration numerical secondary">05:38</div>
+									<div class="title">NA☆GO☆YA ダンストゥナイト</div>
+									<div class="artist secondary same">八十亀最中 (CV: 戸松遥), 只草舞衣 (CV: 若井友希), 笹津やん菜 (CV: 小松未可子), OS☆U, dela</div>
+									<div class="duration numerical secondary">04:07</div>
 								</li>
 							</ol>
 						</li>
@@ -10298,7 +10218,7 @@ const toggle_detail = (function() {
 								</tr>
 								<tr>
 									<th>Size</th>
-									<td>133.90 MB</td>
+									<td>15.55 MB</td>
 								</tr>
 							</tbody>
 						</table>
@@ -10329,80 +10249,6 @@ const toggle_detail = (function() {
 									<div class="title">アイシテ! (off vocal)</div>
 									<div class="artist secondary different">黒須克彦</div>
 									<div class="duration numerical secondary">04:17</div>
-								</li>
-							</ol>
-						</li>
-					</ol>
-				</div>
-			</article>
-			<figure class="cover" onclick="toggle_detail(this)">
-				<img src="covers/平野綾-ハレ晴レユカイ.jpg">
-			</figure>
-			<article class="detail">
-				<div>
-					<header>
-						<h2 class="album">ハレ晴レユカイ</h2>
-						<div class="albumartist secondary">平野綾, 茅原実里, 後藤邑子</div>
-					</header>
-					<aside>
-						<figure class="artwork">
-							<img src="covers/平野綾-ハレ晴レユカイ.jpg">
-						</figure>
-						<table class="properties secondary">
-							<tbody>
-								<tr>
-									<th>Year</th>
-									<td>2006/05/10</td>
-								</tr>
-								<tr>
-									<th>Genre</th>
-									<td>Pop</td>
-								</tr>
-								<tr>
-									<th>Style</th>
-									<td>Anime</td>
-								</tr>
-								<tr>
-									<th>Tracks</th>
-									<td>4</td>
-								</tr>
-								<tr>
-									<th>Duration</th>
-									<td>00:14:01</td>
-								</tr>
-								<tr>
-									<th>Size</th>
-									<td>109.75 MB</td>
-								</tr>
-							</tbody>
-						</table>
-					</aside>
-					<ol class="discs">
-						<li>
-							<ol class="tracks">
-								<li>
-									<div class="track numerical secondary">01</div>
-									<div class="title">ハレ晴レユカイ</div>
-									<div class="artist secondary same">平野綾, 茅原実里, 後藤邑子</div>
-									<div class="duration numerical secondary">03:38</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">02</div>
-									<div class="title">うぇるかむUNKNOWN</div>
-									<div class="artist secondary same">平野綾, 茅原実里, 後藤邑子</div>
-									<div class="duration numerical secondary">03:24</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">03</div>
-									<div class="title">ハレ晴レユカイ (off vocal)</div>
-									<div class="artist secondary different">田代智一</div>
-									<div class="duration numerical secondary">03:38</div>
-								</li>
-								<li>
-									<div class="track numerical secondary">04</div>
-									<div class="title">うぇるかむUNKNOWN (off vocal)</div>
-									<div class="artist secondary different">鈴木盛広</div>
-									<div class="duration numerical secondary">03:21</div>
 								</li>
 							</ol>
 						</li>
