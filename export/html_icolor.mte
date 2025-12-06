@@ -3,22 +3,37 @@ $filename(html,utf-8)<!DOCTYPE html>
 	<head>
 		<meta charset="utf-8">
 		<title>Album List | Mp3tag</title>
+		<meta name="viewport" content="width=device-width, viewport-fit=cover">
 		<meta name="description" content="Created with Mp3tag">
+		<meta name="generator" content="Mp3tag">
 		<style>
 * {
 	margin: 0px;
 	padding: 0px;
 	box-sizing: border-box;
 }
+html {
+	text-size-adjust: 100%%;
+	-webkit-text-size-adjust: 100%%;
+	-moz-text-size-adjust: 100%%;
+}
+html, body {
+	overscroll-behavior: none auto;
+	scroll-behavior: smooth;
+	scroll-padding-top: 25px;
+}
 body {
 	min-width: 480px;
 	color: #fff;
 	background-color: #000;
 	font-family: sans-serif;
+	font-kerning: auto;
+	font-feature-settings: "pkna" 1;
 	font-size: 16px;
 	line-height: 1.6;
 	word-break: keep-all;
 	overflow-wrap: break-word;
+	text-wrap: pretty;
 }
 body > header {
 	padding: 4px 12px;
@@ -28,7 +43,12 @@ h1 {
 	font-size: 1.8em;
 	font-weight: bold;
 }
+h1, h2, h3, h4, h5, h6 {
+	font-kerning: normal;
+	font-feature-settings: "palt" 1;
+}
 main {
+	container-type: inline-size;
 	display: grid;
 	grid-auto-flow: row dense;
 	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -190,7 +210,7 @@ div.numerical {
 	font-size: 0.96em;
 	line-height: 1.625;
 }
-@media (min-width: 540px) {
+@container (min-width: 540px) {
 	article.detail aside {
 		display: grid;
 		grid-template-columns: 3fr 2fr;
@@ -200,7 +220,7 @@ div.numerical {
 		align-self: center;
 	}
 }
-@media (min-width: 768px) {
+@container (min-width: 768px) {
 	article.detail > div {
 		grid-template-columns: 300px 1fr;
 	}
@@ -219,12 +239,12 @@ div.numerical {
 		grid-column: 2;
 	}
 }
-@media (min-width: 1320px) {
+@container (min-width: 1320px) {
 	article.detail > div {
 		grid-template-columns: 400px 1fr;
 	}
 }
-@media (min-width: 1366px) {
+@container (min-width: 1366px) {
 	article.detail.large ol.discs > li:first-child:last-child {
 		width: 100%%;
 		max-width: 1080px;
@@ -245,7 +265,7 @@ div.numerical {
 		column-rule: solid 1px currentcolor;
 	}
 }
-@media (min-width: 1920px) {
+@container (min-width: 1920px) {
 	article.detail > div {
 		grid-template-columns: 500px 1fr;
 	}
